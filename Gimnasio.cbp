@@ -40,6 +40,10 @@
 		<Unit filename="Fecha.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="Horario.cpp" />
+		<Unit filename="Horario.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Persona.cpp" />
 		<Unit filename="Persona.h">
 			<Option target="&lt;{~None~}&gt;" />

@@ -3,18 +3,20 @@
 class Domicilio{
 
     private:
-       std::string _direccion;
+       char _calle[50];
        int _altura;
        int _piso;
-       char _departamento[1];
-       std::string _codigoPostal;
+       char _departamento;
+       char _codigoPostal[10];
+       char _partido[20];
+       char _provincia[20];
     public:
 
     Domicilio();
-    Domicilio(std::string direccion, int altura, int piso, char departamento[1], std::string codigoPostal);
+    Domicilio(const char* calle, int altura, int piso, char departamento, const char* codigoPostal, const char* partido, const char* provincia);
 
-    void setDireccion(std::string direccion);
-    std::string getDireccion();
+    void setCalle(const char* calle);
+    const char* getCalle();
 
     void setAltura(int altura);
     int getAltura();
@@ -22,11 +24,17 @@ class Domicilio{
     void setPiso(int piso);
     int getPiso();
 
-    void setDepartamento(char departamento[1]);
+    void setDepartamento(char departamento);
     char getDepartamento();
 
-    void setCodigoPostal(std::string codigoPostal);
-    std::string getCodigoPostal();
+    void setCodigoPostal(const char* codigoPostal);
+    const char* getCodigoPostal();
+
+    void setPartido(const char* partido);
+    const char* getPartido();
+
+    void setProvincia(const char* Provincia);
+    const char* getProvincia();
 
     void cargar();
     void mostrar();

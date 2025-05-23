@@ -1,33 +1,37 @@
 #include <iostream>
+#include <cstring>
 #include "Domicilio.h"
 using namespace std;
 
 
  Domicilio::Domicilio(){
-    _direccion=" ";
+    strcpy(_calle, "");
     _altura = 0;
     _piso = 0;
-    _departamento[0] = 'A';
-    _codigoPostal = " ";
-
+    _departamento = ' ';
+    strcpy(_codigoPostal, "");
+    strcpy(_partido, "");
+    strcpy(_provincia, "");
 }
 
- Domicilio::Domicilio(std::string direccion, int altura, int piso, char departamento, string codigoPostal){
-    setDireccion(direccion);
+ Domicilio::Domicilio(const char* calle, int altura, int piso, char departamento,const char* codigoPostal, const char* partido, const char* provincia){
+    setCalle(calle);
     setAltura(altura);
     setPiso(piso);
     setDepartamento(departamento);
     setCodigoPostal(codigoPostal);
+    setPartido(partido);
+    setProvincia(provincia);
  }
 
 
 
-void Domicilio::setDireccion(string direccion){
-    _direccion=direccion;
+void Domicilio::setCalle(const char* calle){
+    strcpy(_calle, calle);
 }
 
-string Domicilio::getDireccion() {
-    return _direccion;
+const char* Domicilio::getCalle() {
+    return _calle;
 }
 
 void Domicilio::setAltura(int altura){
@@ -55,18 +59,34 @@ char Domicilio::getDepartamento(){
     return _departamento;
 }
 
-void Domicilio::setCodigoPostal(string codigoPostal){
-    _codigoPostal = codigoPostal;
+void Domicilio::setCodigoPostal(const char* codigoPostal){
+    strcpy(_codigoPostal,codigoPostal);
 }
 
 string Domicilio::getCodigoPostal(){
     return _codigoPostal;
 }
 
+void Domicilio::setPartido(const char* partido){
+    strcpy(_partido,partido);
+}
+
+const char* Domicilio::getPartido(){
+    return _partido;
+}
+
+void Domicilio::setProvincia(const char* provincia){
+    strcpy(_provincia, provincia);
+}
+
+const char* Domicilio::getProvincia(){
+    return _provincia;
+}
+
 void Domicilio::cargar() {
-    cout << "Ingrese direccion: ";
+    cout << "Ingrese calle: ";
     cin.ignore();
-    getline(cin, _direccion);
+    cin.getline(_calle, 50);
 
     cout << "Ingrese altura: ";
     cin >> _altura;
@@ -77,15 +97,20 @@ void Domicilio::cargar() {
     cout << "Ingrese departamento (una letra): ";
     cin >> _departamento;
 
-    cout << "Ingrese código postal: ";
+    cout << "Ingrese codigo postal: ";
     cin.ignore();
-    getline(cin, _codigoPostal);
+    cin.getline(_codigoPostal, 10);
+
+    cout << "Ingrese partido: ";
+    cin.getline(_partido, 20);
+
+    cout << "Ingrese provincia: ";
+    cin.getline(_provincia, 20);
 }
 
 void Domicilio::mostrar() {
-    cout << "Direccion: " << _direccion << " " << _altura;
-    cout << ", Piso: " << _piso << ", Depto: " << _departamento << endl;
-    cout << "Código Postal: " << _codigoPostal << endl;
+    cout << "Domicilio: " << _calle << " " << _altura << ", Piso " << _piso << ", Depto " << _departamento << endl;
+    cout << "Codigo Postal: " << _codigoPostal << ", Partido: " << _partido << ", Provincia: " << _provincia << endl;
 }
 
 
