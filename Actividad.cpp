@@ -1,19 +1,19 @@
-#pragma once
-#include "Horario.h"
-#include "Tutor.h"
+#include <iostream>
+#include <cstring>
+#include "Actividad.h"
 
-class Actividad{
+using namespace std;
 
-    private:
-    int _idActividad;
-    char _nombre[20];
-    char _diaDeLaSemana[10];
-    int _cuposDisponibles;
-    Horario _horarioActividad;
-    Tutor _idTutorACargo;
+Actividad::Actividad(){
+    _idActividad=0;
+    strcpy(_nombre,"");
+    strcpy(_diaDeLaSemana,"");
+    _cuposDisponibles=0;
+    _horarioActividad=Horario.Horario();
+    _idTutorACargo=Tutor.Tutor();
 
-    public:
-    Actividad();
+}
+
     Actividad(int idActividad, const char* nombre, const char* diaDeLaSemana, int cuposDisponibles, Horario horarioActividad, Tutor idTutorACargo);
     void setIdActividad(int idActividad);
     int getIdActividad();
@@ -27,5 +27,3 @@ class Actividad{
     Horario getHorarioActividad();
     void setIdTutorACargo(Tutor idTutorACargo);
     Tutor getIdTutorACargo();
-
-};
