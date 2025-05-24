@@ -9,6 +9,7 @@ private:
     char _nombres[40];
     char _apellidos[40];
     char _dni[9];
+    int _edad;
     Fecha _fechaNacimiento;
     char _genero[20];
     char _telefono[11];
@@ -18,13 +19,16 @@ private:
 
 public:
     Persona();
-    Persona(const char* nombres, const char* apellidos, const char* dni, Fecha fechaNacimiento, const char* genero, const char* telefono, const char* email, Domicilio domicilio, bool estado);
+    Persona(const char* nombres, const char* apellidos, const char* dni,int edad, Fecha fechaNacimiento, const char* genero, const char* telefono, const char* email, Domicilio domicilio, bool estado);
 
     void setNombres(const char* nombres);
     const char* getNombres();
 
     void setApellidos(const char* apellidos);
     const char* getApellidos();
+
+    void setEdad(int edad);
+    int getEdad();
 
     void setDni(const char* dni);
     const char* getDni();
