@@ -11,10 +11,12 @@ Actividad::Actividad(){
     _cuposDisponibles=0;
     _horarioActividad=Horario.Horario();
     _idTutorACargo=Tutor.Tutor();
+    _estado=true;
 
 }
 
-Actividad::Actividad(int idActividad, const char* nombre, const char* diaDeLaSemana, int cuposDisponibles, Horario horarioActividad, Tutor idTutorACargo){
+Actividad::Actividad(int idActividad, const char* nombre, const char* diaDeLaSemana, int cuposDisponibles, Horario horarioActividad,
+Tutor idTutorACargo, bool estado){
 
     setIdActividad(idActividad);
     setNombre(nombre);
@@ -22,7 +24,7 @@ Actividad::Actividad(int idActividad, const char* nombre, const char* diaDeLaSem
     setCuposDisponibles(cuposDisponibles);
     setHorarioActividad(horarioActividad);
     setIdTutorACargo(idTutorACargo);
-
+    setEstado(estado);
 
 }
 void Actividad::setIdActividad(int idActividad){
@@ -40,8 +42,9 @@ void Actividad::setNombre(const char* nombre){
 
     if (strlen(nombres) > 0) {
         strcpy(_nombres, nombres);
-    } else {
-        strcpy(_nombres, "SinNombre");
+    }
+    else {
+        strcpy(_nombres, "Sin Nombre");
     }
 
 }
@@ -50,11 +53,64 @@ const char* Actividad::getNombre(){
     return _nombre;
 
 }
-    void setDiaDeLaSemana(const char* diaDeLaSemana);
-    const char* getDiaDeLaSemana();
-    void setCuposDisponibles(int cuposDisponibles);
-    int getCuposDisponibles();
-    void setHorarioActividad(Horario horirioActividad);
-    Horario getHorarioActividad();
-    void setIdTutorACargo(Tutor idTutorACargo);
-    Tutor getIdTutorACargo();
+void Actividad::setDiaDeLaSemana(const char* diaDeLaSemana){
+
+    if (strlen(nombres) > 0) {
+        strcpy(_diaDeLaSemana, diaDeLaSemana);
+    }
+    else {
+        strcpy(_diaDeLaSemana, "Sin Dia Asignado");
+    }
+
+}
+const char* Actividad::getDiaDeLaSemana(){
+
+    return _diaDeLaSemana;
+
+}
+void Actividad::setCuposDisponibles(int cuposDisponibles){
+
+    if(cuposDisponibles>0){
+
+        _cuposDisponibles=cuposDisponibles;
+    }
+    else{
+
+        _cuposDisponibles=0;
+    }
+}
+int Actividad::getCuposDisponibles(){
+
+    return _cuposDisponibles;
+
+}
+void Actividad::setHorarioActividad(Horario horirioActividad){
+
+    _horarioActividad=horirioActividad;
+
+}
+Horario Actividad::getHorarioActividad(){
+
+    return _horarioActividad;
+
+}
+void Actividad::setIdTutorACargo(Tutor idTutorACargo){
+
+    _idTutorACargo=idTutorACargo;
+
+}
+Tutor Actividad::getIdTutorACargo(){
+
+    return _idTutorACargo;
+
+}
+void Actividad::setEstado(bool estado){
+
+    _estado=estado;
+
+}
+bool Actividad::getEstado(){
+
+    return _estado;
+
+}

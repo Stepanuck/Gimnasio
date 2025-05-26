@@ -11,10 +11,12 @@ class Actividad{
     int _cuposDisponibles;
     Horario _horarioActividad;
     Tutor _idTutorACargo;
+    bool _estado;
 
     public:
     Actividad();
-    Actividad(int idActividad, const char* nombre, const char* diaDeLaSemana, int cuposDisponibles, Horario horarioActividad, Tutor idTutorACargo);
+    Actividad(int idActividad, const char* nombre, const char* diaDeLaSemana, int cuposDisponibles,
+    Horario horarioActividad, Tutor idTutorACargo, bool estado);
     void setIdActividad(int idActividad);
     int getIdActividad();
     void setNombre(const char* nombre);
@@ -27,5 +29,7 @@ class Actividad{
     Horario getHorarioActividad();
     void setIdTutorACargo(Tutor idTutorACargo);
     Tutor getIdTutorACargo();
+    void setEstado(bool estado);
+    bool getEstado();
 
 };
