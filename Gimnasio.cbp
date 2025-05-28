@@ -51,6 +51,10 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Plan.h" />
+		<Unit filename="Socio.cpp" />
+		<Unit filename="Socio.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Tutor.cpp" />
 		<Unit filename="Tutor.h">
 			<Option target="&lt;{~None~}&gt;" />
