@@ -9,8 +9,8 @@ Actividad::Actividad(){
     strcpy(_nombre,"");
     strcpy(_diaDeLaSemana,"");
     _cuposDisponibles=0;
-    _horarioActividad=Horario.Horario();
-    _idTutorACargo=Tutor.Tutor();
+    _horarioActividad=Horario();
+    _idTutorACargo=Tutor();
     _estado=true;
 
 }
@@ -40,11 +40,11 @@ int Actividad::getIdActividad(){
 }
 void Actividad::setNombre(const char* nombre){
 
-    if (strlen(nombres) > 0) {
-        strcpy(_nombres, nombres);
+    if (strlen(nombre) > 0) {
+        strcpy(_nombre, nombre);
     }
     else {
-        strcpy(_nombres, "Sin Nombre");
+        strcpy(_nombre, "Sin Nombre");
     }
 
 }
@@ -55,7 +55,7 @@ const char* Actividad::getNombre(){
 }
 void Actividad::setDiaDeLaSemana(const char* diaDeLaSemana){
 
-    if (strlen(nombres) > 0) {
+    if (strlen(diaDeLaSemana) > 0) {
         strcpy(_diaDeLaSemana, diaDeLaSemana);
     }
     else {

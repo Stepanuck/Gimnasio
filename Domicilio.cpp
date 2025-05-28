@@ -63,7 +63,7 @@ void Domicilio::setCodigoPostal(const char* codigoPostal){
     strcpy(_codigoPostal,codigoPostal);
 }
 
-string Domicilio::getCodigoPostal(){
+const char* Domicilio::getCodigoPostal(){
     return _codigoPostal;
 }
 
@@ -84,28 +84,84 @@ const char* Domicilio::getProvincia(){
 }
 
 void Domicilio::cargar() {
+    char opc[3];
+
+    //verificacion de que calle no este vacio
+    do{
     cout << "Ingrese calle: ";
     cin.ignore();
     cin.getline(_calle, 50);
+     if(strlen(_calle)==0){
+        cout<<"No se puede ingresar una calle vacia"<<endl;
+     }
+    }while(strlen(_calle)==0);
 
+    // que altura no sea menor de 0
+    do{
     cout << "Ingrese altura: ";
     cin >> _altura;
+    if(_altura<0){
+        cout<<"La altura no puede ser menor a 0"<<endl;
+    }
+    }while(_altura<0);
 
-    cout << "Ingrese piso: ";
-    cin >> _piso;
+    //Verifica si vive en departamento o no
+  do {
+        cout << "¿Vive en departamento? (SI / NO): ";
+        cin.ignore();
+        cin.getline(opc, 3);
 
-    cout << "Ingrese departamento (una letra): ";
-    cin >> _departamento;
+        if (!(strcmp(opc, "SI") == 0 || strcmp(opc, "Si") == 0 || strcmp(opc, "si") == 0 ||
+              strcmp(opc, "NO") == 0 || strcmp(opc, "No") == 0 || strcmp(opc, "no") == 0)) {
+            cout << "Respuesta inválida. Escriba SI o NO.\n";
+        }
+    } while (!(strcmp(opc, "SI") == 0 || strcmp(opc, "Si") == 0 || strcmp(opc, "si") == 0 ||
+               strcmp(opc, "NO") == 0 || strcmp(opc, "No") == 0 || strcmp(opc, "no") == 0));
 
+    if (strcmp(opc, "SI") == 0 || strcmp(opc, "Si") == 0 || strcmp(opc, "si") == 0) {
+        do {
+            cout << "Ingrese piso (mayor o igual a 0): ";
+            cin >> _piso;
+            if (_piso < 0) {
+                cout << "El piso no puede ser negativo.\n";
+            }
+        } while (_piso < 0);
+
+        do {
+            cout << "Ingrese departamento (una letra): ";
+            cin >> _departamento;
+        } while (!((_departamento >= 'A' && _departamento <= 'Z') || (_departamento >= 'a' && _departamento <= 'z')));
+    } else {
+        _piso = 0;
+        _departamento = ' ';
+    }
+    //verificacion del codigo postal
+    do{
     cout << "Ingrese codigo postal: ";
     cin.ignore();
     cin.getline(_codigoPostal, 10);
+    if(strlen(_codigoPostal)==0){
+        cout<<"El codigo Postal no puede estar vacio"<<endl;
+    }
+    }while(strlen(_codigoPostal)==0);
 
+    //Verificacion de provincia
+    do{
     cout << "Ingrese partido: ";
     cin.getline(_partido, 20);
+    if(strlen(_partido)==0){
+        cout<<"El partido no puede estar vacio"<<endl;
+    }
+    }while(strlen(_partido)==0);
 
+    //verificacion de provincia
+    do{
     cout << "Ingrese provincia: ";
     cin.getline(_provincia, 20);
+    if(strlen(_provincia)==0){
+        cout<<"La provincia no puede estar vacia"<<endl;
+    }
+    }while(strlen(_provincia) == 0);
 }
 
 void Domicilio::mostrar() {

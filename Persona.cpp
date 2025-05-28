@@ -107,7 +107,7 @@ const char* Persona::getTelefono(){
     return _telefono;
 }
 //verifica que el email contenga un @
-//verifica que el email contenga un @
+
 void Persona::setEmail(const char* email){
      if (strchr(email, '@') != nullptr) {
         strcpy(_email, email);
@@ -134,4 +134,56 @@ void Persona::setEstado(bool estado){
 
 bool Persona::getEstado(){
     return _estado;
+}
+
+
+
+void Persona::cargar() {
+    cout << "Ingrese nombres: ";
+    cin.getline(_nombres, 40);
+
+    cout << "Ingrese apellidos: ";
+    cin.getline(_apellidos, 40);
+
+    cout << "Ingrese DNI: ";
+    cin.getline(_dni, 9);
+
+    cout << "Ingrese edad: ";
+    cin >> _edad;
+    cin.ignore();
+
+    cout << "Ingrese genero (Masculino/Femenino/Otro): ";
+    cin.getline(_genero, 20);
+
+    cout << "Ingrese telefono: ";
+    cin.getline(_telefono, 11);
+
+    cout << "Ingrese email: ";
+    cin.getline(_email, 50);
+
+    cout << "Ingrese fecha de nacimiento:" << endl;
+    _fechaNacimiento.cargar();
+
+    cout << "Ingrese domicilio:" << endl;
+    _domicilio.cargar();
+
+    _estado = true;
+}
+
+void Persona::mostrar() {
+    cout << "Nombre: " << _nombres << endl;
+    cout << "Apellido: " << _apellidos << endl;
+    cout << "DNI: " << _dni << endl;
+    cout << "Edad: " << _edad << endl;
+    cout << "Genero: " << _genero << endl;
+    cout << "Telefono: " << _telefono << endl;
+    cout << "Email: " << _email << endl;
+
+    cout << "Fecha de nacimiento: ";
+    _fechaNacimiento.mostrar();
+
+    cout << "Domicilio: ";
+    _domicilio.mostrar();
+
+    cout << "Estado: " << (_estado ? "Activo" : "Inactivo") << endl;
 }

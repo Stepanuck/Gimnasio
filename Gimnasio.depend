@@ -9,3 +9,60 @@
 
 1747961701 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\persona.cpp
 
+1748390777 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\fecha.cpp
+	<iostream>
+	"Fecha.h"
+
+1747963693 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\fecha.h
+
+1747966502 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\horario.cpp
+	<iostream>
+	<cstring>
+	"Horario.h"
+
+1747966504 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\horario.h
+
+1748385821 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\tutor.cpp
+	<iostream>
+	"Tutor.h"
+	"Persona.h"
+
+1748387372 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\main.cpp
+	<iostream>
+	"Fecha.h"
+	"Persona.h"
+	"Tutor.h"
+
+1748049011 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\persona.h
+	"Fecha.h"
+	"Domicilio.h"
+
+1747962558 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\domicilio.h
+
+1748385821 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\tutor.h
+	"Persona.h"
+
+1748393898 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\persona.cpp
+	<iostream>
+	<cstring>
+	"Persona.h"
+	"Fecha.h"
+	"Domicilio.h"
+
+1748393898 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\domicilio.cpp
+	<iostream>
+	<cstring>
+	"Domicilio.h"
+
+1748384187 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\actividad.cpp
+	<iostream>
+	<cstring>
+	"Actividad.h"
+
+1748381387 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\actividad.h
+	"Horario.h"
+	"Tutor.h"
+
+1748391752 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\socio.cpp
+	<iostream>
+
