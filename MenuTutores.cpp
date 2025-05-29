@@ -20,8 +20,8 @@ int MenuTutores() {
         cin>>opc;
         system("cls");
         switch(opc){
-            case 1:
                     break;
+            case 1:
             case 2:
                     break;
             case 3:

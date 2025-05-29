@@ -5,6 +5,7 @@
 		<Option title="Gimnasio" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="Managers.h/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Gimnasio" prefix_auto="1" extension_auto="1" />
@@ -44,6 +45,18 @@
 		</Unit>
 		<Unit filename="Horario.cpp" />
 		<Unit filename="Horario.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ManagerSocio.h">
+			<Option virtualFolder="Managers.h/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="MenuSocios.cpp" />
+		<Unit filename="MenuSocios.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="MenuTutores.cpp" />
+		<Unit filename="MenuTutores.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Persona.cpp" />

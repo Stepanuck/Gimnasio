@@ -10,14 +10,6 @@ Tutor::Tutor(){
 }
 
 
-Tutor::Tutor(int id){
-    setIDTutor(id);
-    if(id > _ultimoid){
-        _ultimoid = id;
-    }
-}
-
-
 
 void Tutor::setIDTutor(int id){
     _IDTutor=id;
