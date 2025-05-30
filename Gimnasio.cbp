@@ -5,7 +5,7 @@
 		<Option title="Gimnasio" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Managers.h/" />
+		<Option virtualFolders="Managers.h/;Archivos.h/;Archivos.cpp/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Gimnasio" prefix_auto="1" extension_auto="1" />
@@ -35,6 +35,20 @@
 		</Compiler>
 		<Unit filename="Actividad.cpp" />
 		<Unit filename="Actividad.h" />
+		<Unit filename="Archivo.cpp">
+			<Option virtualFolder="Archivos.cpp/" />
+		</Unit>
+		<Unit filename="Archivo.h">
+			<Option virtualFolder="Archivos.h/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ArchivoSocio.cpp">
+			<Option virtualFolder="Archivos.cpp/" />
+		</Unit>
+		<Unit filename="ArchivoSocio.h">
+			<Option virtualFolder="Archivos.h/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Domicilio.cpp" />
 		<Unit filename="Domicilio.h">
 			<Option target="&lt;{~None~}&gt;" />
@@ -45,6 +59,10 @@
 		</Unit>
 		<Unit filename="Horario.cpp" />
 		<Unit filename="Horario.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Manager.h">
+			<Option virtualFolder="Managers.h/" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="ManagerSocio.h">

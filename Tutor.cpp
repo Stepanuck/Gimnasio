@@ -11,9 +11,6 @@ Tutor::Tutor(){
 
 
 
-void Tutor::setIDTutor(int id){
-    _IDTutor=id;
-}
 
 int Tutor::getIDTutor(){
     return _IDTutor;
