@@ -11,10 +11,7 @@ private:
 
 public:
     Tutor();
-    Tutor(int id);
-    void setIDTutor(int id);
     int getIDTutor();
-
     void cargar();
     void mostrar();
 };

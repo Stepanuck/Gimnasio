@@ -5,6 +5,7 @@
 		<Option title="Gimnasio" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="Managers.h/;Archivos.h/;Archivos.cpp/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Gimnasio" prefix_auto="1" extension_auto="1" />
@@ -34,6 +35,20 @@
 		</Compiler>
 		<Unit filename="Actividad.cpp" />
 		<Unit filename="Actividad.h" />
+		<Unit filename="Archivo.cpp">
+			<Option virtualFolder="Archivos.cpp/" />
+		</Unit>
+		<Unit filename="Archivo.h">
+			<Option virtualFolder="Archivos.h/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ArchivoSocio.cpp">
+			<Option virtualFolder="Archivos.cpp/" />
+		</Unit>
+		<Unit filename="ArchivoSocio.h">
+			<Option virtualFolder="Archivos.h/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Domicilio.cpp" />
 		<Unit filename="Domicilio.h">
 			<Option target="&lt;{~None~}&gt;" />
@@ -46,10 +61,22 @@
 		<Unit filename="Horario.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="Menu.cpp" />
-		<Unit filename="Menu.h" />
-		<Unit filename="MenuPrincipal.cpp" />
-		<Unit filename="MenuPrincipal.h" />
+		<Unit filename="Manager.h">
+			<Option virtualFolder="Managers.h/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ManagerSocio.h">
+			<Option virtualFolder="Managers.h/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="MenuSocios.cpp" />
+		<Unit filename="MenuSocios.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="MenuTutores.cpp" />
+		<Unit filename="MenuTutores.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Persona.cpp" />
 		<Unit filename="Persona.h">
 			<Option target="&lt;{~None~}&gt;" />
@@ -59,20 +86,6 @@
 		<Unit filename="Socio.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="SubMenuActividades.cpp" />
-		<Unit filename="SubMenuActividades.h" />
-		<Unit filename="SubMenuConfiguraciones.cpp" />
-		<Unit filename="SubMenuConfiguraciones.h" />
-		<Unit filename="SubMenuInformes.cpp" />
-		<Unit filename="SubMenuInformes.h" />
-		<Unit filename="SubMenuInscripciones.cpp" />
-		<Unit filename="SubMenuInscripciones.h" />
-		<Unit filename="SubMenuPlanes.cpp" />
-		<Unit filename="SubMenuPlanes.h" />
-		<Unit filename="SubMenuSocios.cpp" />
-		<Unit filename="SubMenuSocios.h" />
-		<Unit filename="SubMenuTutores.cpp" />
-		<Unit filename="SubMenuTutores.h" />
 		<Unit filename="Tutor.cpp" />
 		<Unit filename="Tutor.h">
 			<Option target="&lt;{~None~}&gt;" />

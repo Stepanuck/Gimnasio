@@ -8,10 +8,8 @@ private:
     int _idsocio;
     static int _ultimoid;
 public:
-
-    void setIDSocio(int id);
+    Socio();
     int getIDSocio();
-
     void cargar();
     void mostrar();
 

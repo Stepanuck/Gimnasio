@@ -20,7 +20,7 @@
 
 1747963693 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\fecha.h
 
-1747966502 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\horario.cpp
+1748485092 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\horario.cpp
 	<iostream>
 	<cstring>
 	"Horario.h"
@@ -32,11 +32,14 @@
 	"Tutor.h"
 	"Persona.h"
 
-1748387372 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\main.cpp
+1748469000 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\main.cpp
 	<iostream>
 	"Fecha.h"
 	"Persona.h"
 	"Tutor.h"
+	"Actividad.h"
+	"MenuSocios.h"
+	"MenuTutores.h"
 
 1748049011 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\persona.h
 	"Fecha.h"
@@ -44,7 +47,7 @@
 
 1747962558 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\domicilio.h
 
-1748385821 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\tutor.h
+1748483986 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\tutor.h
 	"Persona.h"
 
 1748393898 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\persona.cpp
@@ -54,7 +57,7 @@
 	"Fecha.h"
 	"Domicilio.h"
 
-1748393898 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\domicilio.cpp
+1748394396 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\domicilio.cpp
 	<iostream>
 	<cstring>
 	"Domicilio.h"
@@ -68,8 +71,10 @@
 	"Horario.h"
 	"Tutor.h"
 
-1748391752 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\socio.cpp
+1748484000 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\socio.cpp
 	<iostream>
+	"Socio.h"
+	"Persona.h"
 
 1748483333 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.cpp
 	<iostream>
@@ -229,4 +234,23 @@
 	<cstring>
 	"Menu.h"
 	"SubMenuConfiguraciones.h"
+
+1748469000 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\menusocios.h
+
+1748469000 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\menututores.h
+
+1748469000 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\menusocios.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"MenuSocios.h"
+
+1748483534 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\menututores.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"MenuTutores.h"
+
+1748483987 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\socio.h
+	"Persona.h"
 
