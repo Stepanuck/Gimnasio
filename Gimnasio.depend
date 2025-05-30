@@ -71,7 +71,7 @@
 1748391752 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\socio.cpp
 	<iostream>
 
-1748402867 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.cpp
+1748483333 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.cpp
 	<iostream>
 	<cstring>
 	"Actividad.h"
@@ -101,27 +101,132 @@
 	<cstring>
 	"Horario.h"
 
-1748407223 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\main.cpp
+1748578041 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\main.cpp
 	<iostream>
 	"Fecha.h"
 	"Persona.h"
 	"Tutor.h"
 	"Actividad.h"
-	"MenuSocios.h"
-	"MenuTutores.h"
+	"MenuPrincipal.h"
 
 1748399665 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\tutor.cpp
 	<iostream>
 	"Tutor.h"
 	"Persona.h"
 
-1748405799 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menusocios.h
+1748579609 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menusocios.h
 
-1748405897 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menusocios.cpp
+1748579655 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menusocios.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"Menu.h"
 	"MenuSocios.h"
 
-1748407223 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menututores.h
+1748577345 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menututores.h
+	"Menu.h"
+
+1748399665 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\socio.cpp
+	<iostream>
+
+1748579192 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menututores.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"MenuTutores.h"
+
+1748572449 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menu.h
+
+1748585518 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menu.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+
+1748577164 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menuprincipal.h
+	"Menu.h"
+
+1748585743 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menuprincipal.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"MenuPrincipal.h"
+	"SubMenuSocios.h"
+	"SubMenuTutores.h"
+	"SubMenuActividades.h"
+	"SubMenuPlanes.h"
+	"SubMenuInscripciones.h"
+	"SubMenuInformes.h"
+	"SubMenuConfiguraciones.h"
+
+1748585890 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenusocios.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"SubMenuSocios.h"
+
+1748580296 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenusocios.h
+
+1748585890 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenututores.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"SubMenuTutores.h"
+
+1748580729 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenututores.h
+	"Menu.h"
+
+1748585890 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuactividades.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"SubMenuActividades.h"
+
+1748581505 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuactividades.h
+	"Menu.h"
+
+1748585890 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuplanes.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"SubMenuPlanes.h"
+
+1748581982 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuplanes.h
+	"Menu.h"
+
+1748583120 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinscripciones.h
+	"Menu.h"
+
+1748585743 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinscripciones.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"SubMenuInscripciones.h"
+
+1748585743 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinformes.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"SubMenuInformes.h"
+
+1748583907 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinformes.h
+	"Menu.h"
+
+1748584592 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuconfiguraciones.h
+	"Menu.h"
+
+1748585743 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuconfiguraciones.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"SubMenuConfiguraciones.h"
 

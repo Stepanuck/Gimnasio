@@ -46,6 +46,10 @@
 		<Unit filename="Horario.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Menu.h" />
+		<Unit filename="MenuPrincipal.cpp" />
+		<Unit filename="MenuPrincipal.h" />
 		<Unit filename="Persona.cpp" />
 		<Unit filename="Persona.h">
 			<Option target="&lt;{~None~}&gt;" />
@@ -55,6 +59,20 @@
 		<Unit filename="Socio.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="SubMenuActividades.cpp" />
+		<Unit filename="SubMenuActividades.h" />
+		<Unit filename="SubMenuConfiguraciones.cpp" />
+		<Unit filename="SubMenuConfiguraciones.h" />
+		<Unit filename="SubMenuInformes.cpp" />
+		<Unit filename="SubMenuInformes.h" />
+		<Unit filename="SubMenuInscripciones.cpp" />
+		<Unit filename="SubMenuInscripciones.h" />
+		<Unit filename="SubMenuPlanes.cpp" />
+		<Unit filename="SubMenuPlanes.h" />
+		<Unit filename="SubMenuSocios.cpp" />
+		<Unit filename="SubMenuSocios.h" />
+		<Unit filename="SubMenuTutores.cpp" />
+		<Unit filename="SubMenuTutores.h" />
 		<Unit filename="Tutor.cpp" />
 		<Unit filename="Tutor.h">
 			<Option target="&lt;{~None~}&gt;" />
