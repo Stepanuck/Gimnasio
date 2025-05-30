@@ -87,7 +87,7 @@
 
 1748042737 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\horario.h
 
-1748399665 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\tutor.h
+1748586143 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\tutor.h
 	"Persona.h"
 
 1748082882 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\persona.h
@@ -101,7 +101,7 @@
 	<cstring>
 	"Domicilio.h"
 
-1748042737 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\horario.cpp
+1748586143 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\horario.cpp
 	<iostream>
 	<cstring>
 	"Horario.h"
@@ -114,7 +114,7 @@
 	"Actividad.h"
 	"MenuPrincipal.h"
 
-1748399665 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\tutor.cpp
+1748586143 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\tutor.cpp
 	<iostream>
 	"Tutor.h"
 	"Persona.h"
@@ -131,8 +131,10 @@
 1748577345 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menututores.h
 	"Menu.h"
 
-1748399665 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\socio.cpp
+1748586143 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\socio.cpp
 	<iostream>
+	"Socio.h"
+	"Persona.h"
 
 1748579192 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menututores.cpp
 	<iostream>
@@ -253,4 +255,25 @@
 
 1748483987 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\socio.h
 	"Persona.h"
+
+1748586143 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\socio.h
+	"Persona.h"
+
+1748586877 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivo.cpp
+	<iostream>
+	"Archivo.h"
+
+1748586143 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivo.h
+	<cstring>
+
+1748586848 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivosocio.cpp
+	<iostream>
+	<cstring>
+	"Socio.h"
+	"Archivo.h"
+	"ArchivoSocio.h"
+
+1748586143 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivosocio.h
+	"Archivo.h"
+	"Socio.h"
 
