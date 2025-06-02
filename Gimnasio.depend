@@ -175,3 +175,179 @@
 	"Tutor.h"
 	"Persona.h"
 
+1748384187 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\actividad.cpp
+	<iostream>
+	<cstring>
+	"Actividad.h"
+
+1748381387 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\actividad.h
+	"Horario.h"
+	"Tutor.h"
+
+1747966504 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\horario.h
+
+1748483986 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\tutor.h
+	"Persona.h"
+
+1748049011 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\persona.h
+	"Fecha.h"
+	"Domicilio.h"
+
+1747963693 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\fecha.h
+
+1747962558 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\domicilio.h
+
+1748903732 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivo.cpp
+	<iostream>
+	"Archivo.h"
+
+1748903715 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivo.h
+	<cstring>
+
+1748574296 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivosocio.cpp
+	<iostream>
+	<cstring>
+	"Socio.h"
+	"Archivo.h"
+	"ArchivoSocio.h"
+
+1748483987 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\socio.h
+	"Persona.h"
+
+1748574300 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivosocio.h
+	"Archivo.h"
+	"Socio.h"
+
+1748394396 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\domicilio.cpp
+	<iostream>
+	<cstring>
+	"Domicilio.h"
+
+1748390777 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\fecha.cpp
+	<iostream>
+	"Fecha.h"
+
+1748485092 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\horario.cpp
+	<iostream>
+	<cstring>
+	"Horario.h"
+
+1748643178 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\main.cpp
+	<iostream>
+	"Fecha.h"
+	"Persona.h"
+	"Tutor.h"
+	"Actividad.h"
+	"MenuPrincipal.h"
+
+1748643178 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\menuprincipal.h
+	"Menu.h"
+
+1748643178 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\menu.h
+
+1748643178 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\menu.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+
+1748643178 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\menuprincipal.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"MenuPrincipal.h"
+	"SubMenuSocios.h"
+	"SubMenuTutores.h"
+	"SubMenuActividades.h"
+	"SubMenuPlanes.h"
+	"SubMenuInscripciones.h"
+	"SubMenuInformes.h"
+	"SubMenuConfiguraciones.h"
+
+1748643178 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenusocios.h
+
+1748643178 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenututores.h
+	"Menu.h"
+
+1748643178 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuactividades.h
+	"Menu.h"
+
+1748643178 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuplanes.h
+	"Menu.h"
+
+1748643178 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuinscripciones.h
+	"Menu.h"
+
+1748643178 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuinformes.h
+	"Menu.h"
+
+1748643178 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuconfiguraciones.h
+	"Menu.h"
+
+1748393898 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\persona.cpp
+	<iostream>
+	<cstring>
+	"Persona.h"
+	"Fecha.h"
+	"Domicilio.h"
+
+1748484000 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\socio.cpp
+	<iostream>
+	"Socio.h"
+	"Persona.h"
+
+1748643178 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuactividades.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"SubMenuActividades.h"
+
+1748643178 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuconfiguraciones.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"SubMenuConfiguraciones.h"
+
+1748643178 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuinformes.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"SubMenuInformes.h"
+
+1748643178 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuinscripciones.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"SubMenuInscripciones.h"
+
+1748643178 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuplanes.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"SubMenuPlanes.h"
+
+1748643178 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenusocios.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"SubMenuSocios.h"
+
+1748643178 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenututores.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Menu.h"
+	"SubMenuTutores.h"
+
+1748565963 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\tutor.cpp
+	<iostream>
+	"Tutor.h"
+	"Persona.h"
+

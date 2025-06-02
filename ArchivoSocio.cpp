@@ -4,7 +4,7 @@
 #include "Archivo.h"
 #include "ArchivoSocio.h"
 
-
+/*
     ArchivoSocio::ArchivoSocio(const char* nombre = "Socios.dat")
     : Archivo (nombre, sizeof(Socio)){}
 
@@ -70,4 +70,4 @@
     bool ArchivoSocio::bajaLogica(const char* dni);
     bool ArchivoSocio::altaLogica(const char* dni);
 
-
+*/
