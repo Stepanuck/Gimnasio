@@ -1,12 +1,8 @@
 #include <iostream>
 #include <cstring>
 #include "Socio.h"
-#include "Archivo.h"
 #include "ArchivoSocio.h"
-
-/*
-    ArchivoSocio::ArchivoSocio(const char* nombre = "Socios.dat")
-    : Archivo (nombre, sizeof(Socio)){}
+    using namespace std;
 
     int ArchivoSocio::agregarRegistro(Socio soc){
         FILE *pSocio;
@@ -15,27 +11,45 @@
             cout<<"Error de archivo"<<endl;
             return -1;
         }
-        int escribio = fwrite(&soc, _tamanio, 1, pSocio);
+        int escribio = fwrite(&soc, sizeof(Socio), 1, pSocio);
         fclose(pSocio);
         return escribio;
     }
     Socio ArchivoSocio::Leer(int pos){
+        FILE *pSocio;
        Socio soc;
-    FILE *pSocio;
     pSocio=fopen(_nombre,"rb");
     soc.setDni("-1");
     if(pSocio==nullptr){  ///NULL
-       /// cout<<"ERROR DE ARCHIVO"<<endl;
+      cout<<"ERROR DE ARCHIVO"<<endl;
         return soc;
     }
 
-    fseek(pSocio, pos*_tamanio,0);
-    fread(&soc, _tamanio, 1, pSocio);
+    fseek(pSocio, sizeof(Socio)* pos,0);
+    fread(&soc, sizeof(Socio), 1, pSocio);
 
     fclose(pSocio);
     return soc;
     }
-    int modificarSocio(Socio soc, int pos){
+    int ArchivoSocio::getCantidadRegistros(){
+        int  total, cantidad;
+        FILE* pSocio;
+
+        pSocio = fopen(_nombre, "rb");
+
+        if(pSocio==nullptr){
+            cout<<"Error de archivo"<<endl;
+            return -1;
+        }
+        fseek(pSocio, 0, SEEK_END);
+
+        total = ftell(pSocio);
+        cantidad = total / sizeof(Socio);
+        fclose(pSocio);
+        return cantidad;
+    }
+
+    int ArchivoSocio::modificarSocio(Socio soc, int pos){
         FILE *pSocio;
         pSocio=fopen(_nombre,"rb+");
         if(pSocio ==nullptr){
@@ -43,12 +57,12 @@
             return -1;
         }
 
-    fseek(pSocio, pos*_tamanio, 0);
-    int escribio = fwrite(&soc, _tamanio, 1, pSocio);
+    fseek(pSocio, pos*sizeof(Socio), SEEK_SET);
+    int escribio = fwrite(&soc, sizeof(Socio), 1, pSocio);
         fclose(pSocio);
         return escribio;
     }
-    int ArchivoSocio::BuscarSocio(const char* dniSocio){
+    int ArchivoSocio::buscarSocio(const char* dniSocio){
         Socio soc;
         FILE *pSocio;
         pSocio = fopen(_nombre, "rb");
@@ -58,7 +72,7 @@
         }
 
         int pos = 0;
-        while(fread(&soc, _tamanio, 1, pSocio)==1){
+        while(fread(&soc, sizeof(Socio), 1, pSocio)==1){
             if(strcmp(soc.getDni(), dniSocio)==0){
                 return pos;
             }
@@ -67,7 +81,23 @@
         fclose (pSocio);
         return -1;
     }
-    bool ArchivoSocio::bajaLogica(const char* dni);
-    bool ArchivoSocio::altaLogica(const char* dni);
+    bool ArchivoSocio::altaLogica(const char* dni){
+        Socio soc;
+        ArchivoSocio archiv;
+        int pos = archiv.buscarSocio(dni);
+        if(pos==-1) return false;
+        soc = archiv.Leer(pos);
+        soc.setEstado(true);
+        return archiv.modificarSocio(soc, pos);
+    }
+    bool ArchivoSocio::bajaLogica(const char* dni){
+        Socio soc;
+        ArchivoSocio archiv;
+        int pos = archiv.buscarSocio(dni);
+        if(pos==-1) return false;
+        soc=archiv.Leer(pos);
+        soc.setEstado(false);
+        return archiv.modificarSocio(soc, pos);
+    }
 
-*/
+

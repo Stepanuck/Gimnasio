@@ -1,21 +1,21 @@
 #pragma once
-#include "Archivo.h"
 #include "Socio.h"
 
 
 
+class ArchivoSocio{
 
-class ArchivoSocio : public Archivo{
-
+private:
+  char _nombre[50];
 public:
-
-    ArchivoSocio(const char* nombre = "Socios.dat");
-
-    int agregarRegistro(Socio soc);
-    Socio Leer(int pos);
-    int modificarSocio(Socio soc, int pos);
-    int BuscarSocio(const char* dniSocio);
-    bool bajaLogica(const char* dni);
-    bool altaLogica(const char* dni);
-} ;
+        ArchivoSocio(const char* nombreArchivo = "Socios.dat");
+        int buscarSocio(const char* dni);
+        int agregarRegistro(Socio soc);
+        bool listarRegistros();
+        Socio Leer(int pos);
+        int getCantidadRegistros();
+        int modificarSocio(Socio soc, int pos);
+        bool bajaLogica(const char* dni);
+        bool altaLogica(const char* dni);
+};
 

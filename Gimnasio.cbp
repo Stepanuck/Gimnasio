@@ -35,10 +35,24 @@
 		</Compiler>
 		<Unit filename="Actividad.cpp" />
 		<Unit filename="Actividad.h" />
-		<Unit filename="Archivo.cpp">
+		<Unit filename="ArchivoActividad.cpp">
 			<Option virtualFolder="Archivos.cpp/" />
 		</Unit>
-		<Unit filename="Archivo.h">
+		<Unit filename="ArchivoActividad.h">
+			<Option virtualFolder="Archivos.h/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ArchivoInscripcion.cpp">
+			<Option virtualFolder="Archivos.cpp/" />
+		</Unit>
+		<Unit filename="ArchivoInscripcion.h">
+			<Option virtualFolder="Archivos.h/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ArchivoPlan.cpp">
+			<Option virtualFolder="Archivos.cpp/" />
+		</Unit>
+		<Unit filename="ArchivoPlan.h">
 			<Option virtualFolder="Archivos.h/" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -46,6 +60,13 @@
 			<Option virtualFolder="Archivos.cpp/" />
 		</Unit>
 		<Unit filename="ArchivoSocio.h">
+			<Option virtualFolder="Archivos.h/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ArchivoTutor.cpp">
+			<Option virtualFolder="Archivos.cpp/" />
+		</Unit>
+		<Unit filename="ArchivoTutor.h">
 			<Option virtualFolder="Archivos.h/" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>

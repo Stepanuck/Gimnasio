@@ -204,18 +204,16 @@
 1748903715 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivo.h
 	<cstring>
 
-1748574296 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivosocio.cpp
+1749002663 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivosocio.cpp
 	<iostream>
 	<cstring>
 	"Socio.h"
-	"Archivo.h"
 	"ArchivoSocio.h"
 
 1748483987 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\socio.h
 	"Persona.h"
 
-1748574300 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivosocio.h
-	"Archivo.h"
+1748919625 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivosocio.h
 	"Socio.h"
 
 1748394396 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\domicilio.cpp
@@ -346,8 +344,28 @@
 	"Menu.h"
 	"SubMenuTutores.h"
 
-1748565963 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\tutor.cpp
+1748904383 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\tutor.cpp
 	<iostream>
 	"Tutor.h"
 	"Persona.h"
+
+1749002436 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivoplan.cpp
+	<iostream>
+
+1749001831 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivotutor.cpp
+	<iostream>
+	<cstring>
+	"Tutor.h"
+	"ArchivoTutor.h"
+
+1748996923 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivotutor.h
+
+1749002586 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivoactividad.cpp
+	<iostream>
+	<cstring>
+	"Actividad.h"
+	"ArchivoActividad.h"
+
+1749002456 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivoactividad.h
+	"Actividad.h"
 
