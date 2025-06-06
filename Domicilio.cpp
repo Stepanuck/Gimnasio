@@ -85,11 +85,12 @@ const char* Domicilio::getProvincia(){
 
 void Domicilio::cargar() {
     char opc[3];
+    bool SiDpto=false;
 
     //verificacion de que calle no este vacio
     do{
     cout << "Ingrese calle: ";
-    cin.ignore();
+    //cin.ignore();
     cin.getline(_calle, 50);
      if(strlen(_calle)==0){
         cout<<"No se puede ingresar una calle vacia"<<endl;
@@ -115,10 +116,8 @@ void Domicilio::cargar() {
               strcmp(opc, "NO") == 0 || strcmp(opc, "No") == 0 || strcmp(opc, "no") == 0)) {
             cout << "Respuesta inválida. Escriba SI o NO.\n";
         }
-    } while (!(strcmp(opc, "SI") == 0 || strcmp(opc, "Si") == 0 || strcmp(opc, "si") == 0 ||
-               strcmp(opc, "NO") == 0 || strcmp(opc, "No") == 0 || strcmp(opc, "no") == 0));
 
-    if (strcmp(opc, "SI") == 0 || strcmp(opc, "Si") == 0 || strcmp(opc, "si") == 0) {
+        if (strcmp(opc, "SI") == 0 || strcmp(opc, "Si") == 0 || strcmp(opc, "si") == 0) {
         do {
             cout << "Ingrese piso (mayor o igual a 0): ";
             cin >> _piso;
@@ -130,15 +129,17 @@ void Domicilio::cargar() {
         do {
             cout << "Ingrese departamento (una letra): ";
             cin >> _departamento;
+            cin.ignore();
         } while (!((_departamento >= 'A' && _departamento <= 'Z') || (_departamento >= 'a' && _departamento <= 'z')));
     } else {
         _piso = 0;
         _departamento = ' ';
     }
+    } while (!(strcmp(opc, "SI") == 0 || strcmp(opc, "Si") == 0 || strcmp(opc, "si") == 0 ||
+               strcmp(opc, "NO") == 0 || strcmp(opc, "No") == 0 || strcmp(opc, "no") == 0));
     //verificacion del codigo postal
     do{
     cout << "Ingrese codigo postal: ";
-    cin.ignore();
     cin.getline(_codigoPostal, 10);
     if(strlen(_codigoPostal)==0){
         cout<<"El codigo Postal no puede estar vacio"<<endl;

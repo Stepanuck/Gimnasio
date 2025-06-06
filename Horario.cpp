@@ -16,7 +16,7 @@ Horario::Horario(){
 }
 
 void Horario::setHora(int hora){
-    if(hora>0 && hora<24){
+    if(hora>=0 && hora<24){
     _hora = hora;
     }else{
         cout<<"Hora invalida"<<endl;
@@ -28,7 +28,7 @@ int Horario::getHora(){
 }
 
 void Horario::setMinuto(int minuto){
-    if(minuto>0 && minuto<59){
+    if(minuto>=0 && minuto<59){
     _minuto = minuto;
     }else{
         cout<<"Minuto invalida"<<endl;

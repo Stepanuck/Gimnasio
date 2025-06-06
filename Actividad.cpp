@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstring>
 #include "Actividad.h"
+#include "Tutor.h"
+
 
 using namespace std;
 
@@ -10,13 +12,13 @@ Actividad::Actividad(){
     strcpy(_diaDeLaSemana,"");
     _cuposDisponibles=0;
     _horarioActividad=Horario();
-    _idTutorACargo=Tutor();
+    _idTutorACargo=0;
     _estado=true;
 
 }
 
 Actividad::Actividad(int idActividad, const char* nombre, const char* diaDeLaSemana, int cuposDisponibles, Horario horarioActividad,
-Tutor idTutorACargo, bool estado){
+int idTutorACargo, bool estado){
 
     setIdActividad(idActividad);
     setNombre(nombre);
@@ -55,11 +57,21 @@ const char* Actividad::getNombre(){
 }
 void Actividad::setDiaDeLaSemana(const char* diaDeLaSemana){
 
-    if (strlen(diaDeLaSemana) > 0) {
-        strcpy(_diaDeLaSemana, diaDeLaSemana);
+    string DiasDeLaSemana[7]={ "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"};
+    bool band=false;
+
+    for(int i=0; i<7; i++){
+
+        if(diaDeLaSemana==DiasDeLaSemana[i]){
+
+           strcpy(_diaDeLaSemana, diaDeLaSemana);
+           band=true;
+
+        }
     }
-    else {
-        strcpy(_diaDeLaSemana, "Sin Dia Asignado");
+    if(!band){
+
+        strcpy(_diaDeLaSemana, "Falta Dia");
     }
 
 }
@@ -94,12 +106,12 @@ Horario Actividad::getHorarioActividad(){
     return _horarioActividad;
 
 }
-void Actividad::setIdTutorACargo(Tutor idTutorACargo){
+void Actividad::setIdTutorACargo(int idTutorACargo){
 
     _idTutorACargo=idTutorACargo;
 
 }
-Tutor Actividad::getIdTutorACargo(){
+int Actividad::getIdTutorACargo(){
 
     return _idTutorACargo;
 

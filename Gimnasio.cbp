@@ -118,9 +118,7 @@
 		<Unit filename="SubMenuTutores.cpp" />
 		<Unit filename="SubMenuTutores.h" />
 		<Unit filename="Tutor.cpp" />
-		<Unit filename="Tutor.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="Tutor.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
