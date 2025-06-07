@@ -11,6 +11,9 @@ Socio::Socio(){
     _idsocio = ++_ultimoid;
 }
 
+    void Socio::setIdSocio(int id){
+        _idsocio=id;
+    }
 
 int Socio::getIDSocio(){
     return _idsocio;

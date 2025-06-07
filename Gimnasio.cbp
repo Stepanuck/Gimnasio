@@ -5,7 +5,7 @@
 		<Option title="Gimnasio" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Managers.h/;Archivos.h/;Archivos.cpp/" />
+		<Option virtualFolders="Managers.h/;Archivos.h/;Archivos.cpp/;Menus.h/;Menus.cpp/;Managers.cpp/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Gimnasio" prefix_auto="1" extension_auto="1" />
@@ -82,18 +82,33 @@
 		<Unit filename="Horario.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="Inscripcion.cpp" />
+		<Unit filename="Inscripcion.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Manager.h">
 			<Option virtualFolder="Managers.h/" />
 			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ManagerSocio.cpp">
+			<Option virtualFolder="Managers.cpp/" />
 		</Unit>
 		<Unit filename="ManagerSocio.h">
 			<Option virtualFolder="Managers.h/" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="Menu.cpp" />
-		<Unit filename="Menu.h" />
-		<Unit filename="MenuPrincipal.cpp" />
-		<Unit filename="MenuPrincipal.h" />
+		<Unit filename="Menu.cpp">
+			<Option virtualFolder="Menus.cpp/" />
+		</Unit>
+		<Unit filename="Menu.h">
+			<Option virtualFolder="Menus.h/" />
+		</Unit>
+		<Unit filename="MenuPrincipal.cpp">
+			<Option virtualFolder="Menus.cpp/" />
+		</Unit>
+		<Unit filename="MenuPrincipal.h">
+			<Option virtualFolder="Menus.h/" />
+		</Unit>
 		<Unit filename="Persona.cpp" />
 		<Unit filename="Persona.h">
 			<Option target="&lt;{~None~}&gt;" />
@@ -103,20 +118,48 @@
 		<Unit filename="Socio.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="SubMenuActividades.cpp" />
-		<Unit filename="SubMenuActividades.h" />
-		<Unit filename="SubMenuConfiguraciones.cpp" />
-		<Unit filename="SubMenuConfiguraciones.h" />
-		<Unit filename="SubMenuInformes.cpp" />
-		<Unit filename="SubMenuInformes.h" />
-		<Unit filename="SubMenuInscripciones.cpp" />
-		<Unit filename="SubMenuInscripciones.h" />
-		<Unit filename="SubMenuPlanes.cpp" />
-		<Unit filename="SubMenuPlanes.h" />
-		<Unit filename="SubMenuSocios.cpp" />
-		<Unit filename="SubMenuSocios.h" />
-		<Unit filename="SubMenuTutores.cpp" />
-		<Unit filename="SubMenuTutores.h" />
+		<Unit filename="SubMenuActividades.cpp">
+			<Option virtualFolder="Menus.cpp/" />
+		</Unit>
+		<Unit filename="SubMenuActividades.h">
+			<Option virtualFolder="Menus.h/" />
+		</Unit>
+		<Unit filename="SubMenuConfiguraciones.cpp">
+			<Option virtualFolder="Menus.cpp/" />
+		</Unit>
+		<Unit filename="SubMenuConfiguraciones.h">
+			<Option virtualFolder="Menus.h/" />
+		</Unit>
+		<Unit filename="SubMenuInformes.cpp">
+			<Option virtualFolder="Menus.cpp/" />
+		</Unit>
+		<Unit filename="SubMenuInformes.h">
+			<Option virtualFolder="Menus.h/" />
+		</Unit>
+		<Unit filename="SubMenuInscripciones.cpp">
+			<Option virtualFolder="Menus.cpp/" />
+		</Unit>
+		<Unit filename="SubMenuInscripciones.h">
+			<Option virtualFolder="Menus.h/" />
+		</Unit>
+		<Unit filename="SubMenuPlanes.cpp">
+			<Option virtualFolder="Menus.cpp/" />
+		</Unit>
+		<Unit filename="SubMenuPlanes.h">
+			<Option virtualFolder="Menus.h/" />
+		</Unit>
+		<Unit filename="SubMenuSocios.cpp">
+			<Option virtualFolder="Menus.cpp/" />
+		</Unit>
+		<Unit filename="SubMenuSocios.h">
+			<Option virtualFolder="Menus.h/" />
+		</Unit>
+		<Unit filename="SubMenuTutores.cpp">
+			<Option virtualFolder="Menus.cpp/" />
+		</Unit>
+		<Unit filename="SubMenuTutores.h">
+			<Option virtualFolder="Menus.h/" />
+		</Unit>
 		<Unit filename="Tutor.cpp" />
 		<Unit filename="Tutor.h" />
 		<Unit filename="main.cpp" />

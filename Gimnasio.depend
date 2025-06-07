@@ -173,12 +173,13 @@
 	"Tutor.h"
 	"Persona.h"
 
-1748384187 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\actividad.cpp
+1749249800 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\actividad.cpp
 	<iostream>
 	<cstring>
 	"Actividad.h"
+	"Tutor.h"
 
-1748381387 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\actividad.h
+1749249800 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\actividad.h
 	"Horario.h"
 	"Tutor.h"
 
@@ -214,21 +215,21 @@
 1748919625 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivosocio.h
 	"Socio.h"
 
-1748394396 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\domicilio.cpp
+1749249800 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\domicilio.cpp
 	<iostream>
 	<cstring>
 	"Domicilio.h"
 
-1748390777 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\fecha.cpp
+1749249800 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\fecha.cpp
 	<iostream>
 	"Fecha.h"
 
-1748485092 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\horario.cpp
+1749249800 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\horario.cpp
 	<iostream>
 	<cstring>
 	"Horario.h"
 
-1748643178 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\main.cpp
+1749249800 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\main.cpp
 	<iostream>
 	"Fecha.h"
 	"Persona.h"
@@ -347,8 +348,11 @@
 	"Tutor.h"
 	"Persona.h"
 
-1749002436 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivoplan.cpp
+1749004156 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivoplan.cpp
 	<iostream>
+	<cstring>
+	"Plan.h"
+	"ArchivoPlan.h"
 
 1749001831 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivotutor.cpp
 	<iostream>
@@ -400,4 +404,10 @@
 
 1749084275 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivoinscripcion.h
 	"Inscripcion.h"
+
+1748381387 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\plan.h
+	"Actividad.h"
+
+1749004158 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivoplan.h
+	"Plan.h"
 

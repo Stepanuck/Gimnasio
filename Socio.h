@@ -10,6 +10,7 @@ private:
 public:
     Socio();
     int getIDSocio();
+    void setIdSocio(int id);
     void cargar();
     void mostrar();
 

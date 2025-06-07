@@ -7,10 +7,10 @@ class ManagerSocio {
     private:
 
     public:
-    void cargar();
-    void listar();
-    void modificar();
-    void eliminarLogico();
-    void buscar();
+    void altaSocio();
+    void listarSocios();
+    void modificarSocio();
+    void eliminarLogicoSocio();
+    void buscarSocio();
 
 };
