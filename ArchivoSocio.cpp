@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <cstring>
 #include "Socio.h"
 #include "ArchivoSocio.h"
@@ -100,4 +100,4 @@
         return archiv.modificarSocio(soc, pos);
     }
 
-
+*/

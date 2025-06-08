@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "Socio.h"
 
 
@@ -18,4 +18,4 @@ public:
         bool bajaLogica(const char* dni);
         bool altaLogica(const char* dni);
 };
-
+*/

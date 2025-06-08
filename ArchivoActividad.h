@@ -7,7 +7,8 @@ private:
     char _nombre[50];
 public:
 
-    ArchivoActividad(const char* nombreArchivo= "Actividad.dat");
+    ArchivoActividad();
+    ArchivoActividad(const char* nombreArchivo);
     int buscarActividad(int idActividad);
     int agregarRegistro(Actividad act);
     Actividad leer(int pos);
@@ -17,3 +18,4 @@ public:
     bool bajaLogica(int idActividad);
     bool altaLogica(int idActividad);
 };
+

@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "Plan.h"
 
 
@@ -19,3 +19,4 @@ public:
         bool altaLogica(int idPlan);
 };
 
+*/

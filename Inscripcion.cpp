@@ -7,9 +7,6 @@
 using namespace std;
 
 
-
-
-
 Plan Inscripcion::getIdPlanInscripto(){
     return _idPlanIncripto;
 }
@@ -26,9 +23,9 @@ Plan Inscripcion::getIdPlanInscripto(){
         return _fechaDePago;
     }
 
-    void setPago(bool pago){
+    void Inscripcion::setPago(bool pago){
         _pago = pago;
     }
-    bool getPago(){
+    bool Inscripcion::getPago(){
         return _pago;
     }

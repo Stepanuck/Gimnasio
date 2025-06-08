@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <cstring>
 #include "Plan.h"
 #include "ArchivoPlan.h"
@@ -105,7 +105,7 @@ using namespace std;
     }
 
 
-
+*/
 
 
 

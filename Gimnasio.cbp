@@ -38,10 +38,7 @@
 		<Unit filename="ArchivoActividad.cpp">
 			<Option virtualFolder="Archivos.cpp/" />
 		</Unit>
-		<Unit filename="ArchivoActividad.h">
-			<Option virtualFolder="Archivos.h/" />
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="ArchivoActividad.h" />
 		<Unit filename="ArchivoInscripcion.cpp">
 			<Option virtualFolder="Archivos.cpp/" />
 		</Unit>
@@ -79,23 +76,22 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Horario.cpp" />
-		<Unit filename="Horario.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="Horario.h" />
 		<Unit filename="Inscripcion.cpp" />
 		<Unit filename="Inscripcion.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="Manager.h">
+		<Unit filename="ManagerActividad.cpp">
+			<Option virtualFolder="Managers.cpp/" />
+		</Unit>
+		<Unit filename="ManagerActividad.h">
 			<Option virtualFolder="Managers.h/" />
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="ManagerSocio.cpp">
 			<Option virtualFolder="Managers.cpp/" />
 		</Unit>
 		<Unit filename="ManagerSocio.h">
 			<Option virtualFolder="Managers.h/" />
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Menu.cpp">
 			<Option virtualFolder="Menus.cpp/" />

@@ -63,3 +63,12 @@ void Horario::mostrar() {
     if (_minuto < 10) cout << "0";
     cout << _minuto << endl;
 }
+
+bool Horario::operator == (Horario Aux){
+
+    if(_hora!=Aux._hora)return false;
+    if(_minuto!=Aux._minuto)return false;
+
+    return true;
+
+}

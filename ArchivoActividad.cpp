@@ -5,8 +5,16 @@
 
 using namespace std;
 
+    ArchivoActividad::ArchivoActividad(){
 
+        strcpy(_nombre, "Actividad.dat");
+    }
 
+    ArchivoActividad::ArchivoActividad(const char* nombreArchivo= "Actividad.dat"){
+
+        strcpy(_nombre,nombreArchivo);
+
+    }
 
     int ArchivoActividad::agregarRegistro(Actividad act){
         FILE *pActividad;
@@ -24,7 +32,7 @@ using namespace std;
         FILE *pActividad;
         Actividad act;
         pActividad = fopen(_nombre, "rb");
-        act.setIdActividad(-1);///
+        ///act.setIdActividad(-1);///
         if(pActividad==nullptr){
             cout<<"Error de archivo"<<endl;
             return act;
@@ -85,9 +93,9 @@ using namespace std;
         return -1;
     }
 
-    bool ArchivoActividad::altaLogica(int idActividad){
+    /*bool ArchivoActividad::altaLogica(int idActividad){
         Actividad act;
-        ArchivoActividad archiv;
+        ArchivoActividad archiv("Actvidad.dat");
         int pos = archiv.buscarActividad(idActividad);
         if(pos==-1)return false;
         act=archiv.leer(pos);
@@ -104,7 +112,7 @@ using namespace std;
         act.setEstado(false);
         return archiv.modificarActividad(act, pos);
     }
-
+*/
 
 
 

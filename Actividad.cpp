@@ -2,9 +2,25 @@
 #include <cstring>
 #include "Actividad.h"
 #include "Tutor.h"
+#include "ArchivoActividad.h"
 
-
+int Actividad:: _ultimoIdActividad = Actividad::cargarUltimoId();
 using namespace std;
+
+int Actividad::cargarUltimoId(){
+    ArchivoActividad Archivo;
+    Actividad Act;
+    int ultimoID=0;
+    int cantReg=Archivo.getCantidadRegistros();
+    cout << cantReg;
+
+    Act=Archivo.leer(cantReg-1);
+    ultimoID=Act.getIdActividad();
+    cout << ultimoID;
+    system("pause");
+    return ultimoID;
+
+}
 
 Actividad::Actividad(){
     _idActividad=0;
@@ -17,10 +33,10 @@ Actividad::Actividad(){
 
 }
 
-Actividad::Actividad(int idActividad, const char* nombre, const char* diaDeLaSemana, int cuposDisponibles, Horario horarioActividad,
+Actividad::Actividad(const char* nombre, const char* diaDeLaSemana, int cuposDisponibles, Horario horarioActividad,
 int idTutorACargo, bool estado){
 
-    setIdActividad(idActividad);
+    _idActividad=_ultimoIdActividad++;
     setNombre(nombre);
     setDiaDeLaSemana(diaDeLaSemana);
     setCuposDisponibles(cuposDisponibles);
@@ -29,12 +45,7 @@ int idTutorACargo, bool estado){
     setEstado(estado);
 
 }
-void Actividad::setIdActividad(int idActividad){
 
-    _idActividad=idActividad;
-
-
-}
 int Actividad::getIdActividad(){
 
     return _idActividad;
@@ -124,5 +135,24 @@ void Actividad::setEstado(bool estado){
 bool Actividad::getEstado(){
 
     return _estado;
+
+}
+bool Actividad::operator == (Actividad Act){
+
+    if(strcmp(_nombre,Act._nombre)==0&&strcmp(_diaDeLaSemana,Act._diaDeLaSemana)==0&&_horarioActividad==Act._horarioActividad
+       &&_idTutorACargo==Act._idTutorACargo){
+
+       return true;
+
+    }
+    else {
+
+        return false;
+
+    }
+}
+void Actividad::GuardarUltimoId(int idGuardado){
+
+        _ultimoIdActividad=idGuardado;
 
 }

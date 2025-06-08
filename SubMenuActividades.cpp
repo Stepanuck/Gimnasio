@@ -3,6 +3,7 @@
 #include <cstring>
 #include "Menu.h"
 #include "SubMenuActividades.h"
+#include "ManagerActividad.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ SubMenuActividades::SubMenuActividades(string nombre)
 
 }
 int SubMenuActividades::EjecutarSubMenuActividades(){
+    ManagerActividad ManagerAct;
 
     SubMenuActividades mActividad("ACTIVIDADES");
 
@@ -29,11 +31,11 @@ int SubMenuActividades::EjecutarSubMenuActividades(){
         mActividad.Mostrar();
 
         switch(mActividad.SeleccionarOpcion()){
-        case 1:
+        case 1:ManagerAct.CargarActividad();
             break;
         case 2:
             break;
-        case 3:
+        case 3:ManagerAct.ListarActividades();
            break;
         case 4:
             break;

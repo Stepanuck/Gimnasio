@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 
 
 class ArchivoTutor{
@@ -17,3 +17,4 @@ public:
         bool altaLogica(const char* dni);
 };
 
+*/

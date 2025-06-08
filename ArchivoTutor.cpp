@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <cstring>
 #include "Tutor.h"
 #include "ArchivoTutor.h"
@@ -107,7 +107,7 @@ using namespace std;
         return archiv.modificarTutor(tut, pos);
     }
 
-
+*/
 
 
 

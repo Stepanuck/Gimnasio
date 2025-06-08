@@ -19,5 +19,5 @@ class Horario{
         void cargar();
         void mostrar();
 
-
+        bool operator == (Horario Aux);
 };

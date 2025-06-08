@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include "Socio.h"
 #include "ManagerSocio.h"
 #include "ArchivoSocio.h"
@@ -35,3 +35,4 @@ void ManagerSocio::altaSocio(){
 
 
 }
+*/

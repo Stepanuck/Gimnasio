@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <cstring>
 #include "Inscripcion.h"
 #include "ArchivoInscripcion.h"
@@ -105,7 +105,7 @@ using namespace std;
         return archiv.modificarInscripcion(insc, pos);
     }
 
-
+*/
 
 
 
