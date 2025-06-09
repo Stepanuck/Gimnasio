@@ -33,13 +33,13 @@ int SubMenuActividades::EjecutarSubMenuActividades(){
         switch(mActividad.SeleccionarOpcion()){
         case 1:ManagerAct.CargarActividad();
             break;
-        case 2:
+        case 2:ManagerAct.ModificarActividad();
             break;
         case 3:ManagerAct.ListarActividades();
            break;
         case 4:
             break;
-        case 5:
+        case 5:ManagerAct.EliminarActividad();
             break;
         case 0: return 0;
             break;

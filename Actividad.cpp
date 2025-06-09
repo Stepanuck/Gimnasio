@@ -4,23 +4,9 @@
 #include "Tutor.h"
 #include "ArchivoActividad.h"
 
-int Actividad:: _ultimoIdActividad = Actividad::cargarUltimoId();
+int Actividad:: _ultimoIdActividad = 0;
 using namespace std;
 
-int Actividad::cargarUltimoId(){
-    ArchivoActividad Archivo;
-    Actividad Act;
-    int ultimoID=0;
-    int cantReg=Archivo.getCantidadRegistros();
-    cout << cantReg;
-
-    Act=Archivo.leer(cantReg-1);
-    ultimoID=Act.getIdActividad();
-    cout << ultimoID;
-    system("pause");
-    return ultimoID;
-
-}
 
 Actividad::Actividad(){
     _idActividad=0;
@@ -151,8 +137,4 @@ bool Actividad::operator == (Actividad Act){
 
     }
 }
-void Actividad::GuardarUltimoId(int idGuardado){
 
-        _ultimoIdActividad=idGuardado;
-
-}

@@ -34,6 +34,5 @@ class Actividad{
     void setEstado(bool estado);
     bool getEstado();
     bool operator == (Actividad Act);
-    static void GuardarUltimoId(int idGuardado);
 
 };
