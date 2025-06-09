@@ -69,7 +69,7 @@ void ManagerSocio::modificarSocio(){
     cout<<"Ingrese los nuevos datos: "<<endl;
     soc.cargar();//pedimos lo nuevos datos
     soc.setIdSocio(archiv.Leer(pos).getIDSocio());//le seteo el idsocio que ya tenia previamente para conservarle el mismo id
-    archiv.modificarSocio(soc,pos);
+    archiv.modificarSocio(soc,pos);//modifica el socio
     cout<<"Socio modificado correctamente."<<endl;
 }
 

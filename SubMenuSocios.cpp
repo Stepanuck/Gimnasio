@@ -34,9 +34,11 @@ int SubMenuSocios::EjecutarSubMenuSocios(){
         case 1:
             cin.ignore();
             mSoc.altaSocio();
+            system("Pause");
             break;
         case 2:
             mSoc.modificarSocio();
+            system("Pause");
             break;
         case 3:
             mSoc.listarTodosLosSocios();
@@ -44,9 +46,11 @@ int SubMenuSocios::EjecutarSubMenuSocios(){
            break;
         case 4:
             mSoc.buscarSocio();
+            system("Pause");
             break;
         case 5:
             mSoc.eliminarLogicoSocio();
+            system("Pause");
             break;
         case 0: return 0;
             break;

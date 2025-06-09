@@ -93,9 +93,9 @@ int Actividad::getCuposDisponibles(){
     return _cuposDisponibles;
 
 }
-void Actividad::setHorarioActividad(Horario horirioActividad){
+void Actividad::setHorarioActividad(Horario horarioActividad){
 
-    _horarioActividad=horirioActividad;
+    _horarioActividad=horarioActividad;
 
 }
 Horario Actividad::getHorarioActividad(){

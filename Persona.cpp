@@ -190,5 +190,5 @@ void Persona::mostrar() {
     cout << "Domicilio: ";
     _domicilio.mostrar();
 
-    cout << "Estado: " << (_estado ? "Activo" : "Inactivo") << endl;
+    //cout << "Estado: " << (_estado ? "Activo" : "Inactivo") << endl;
 }
