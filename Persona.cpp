@@ -67,6 +67,10 @@ void Persona::setDni(const char* dni){
         strcpy(_dni,"00000000");
     }
 }
+const char* Persona::getDni() {
+    return _dni;
+}
+
 
 void Persona::setEdad(int edad){
     if(edad>0){
@@ -164,6 +168,7 @@ void Persona::cargar() {
     cout << "Ingrese fecha de nacimiento:" << endl;
     _fechaNacimiento.cargar();
 
+    cin.ignore();
     cout << "Ingrese domicilio:" << endl;
     _domicilio.cargar();
 

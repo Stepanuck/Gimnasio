@@ -3,6 +3,7 @@
 #include <cstring>
 #include "Menu.h"
 #include "SubMenuSocios.h"
+#include "ManagerSocio.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ SubMenuSocios::SubMenuSocios(string nombre)
 }
 
 int SubMenuSocios::EjecutarSubMenuSocios(){
-
+    ManagerSocio mSoc;
     SubMenuSocios mSocio("SOCIOS");
 
     mSocio.CargarOpciones("CARGAR SOCIO");
@@ -31,14 +32,21 @@ int SubMenuSocios::EjecutarSubMenuSocios(){
 
         switch(mSocio.SeleccionarOpcion()){
         case 1:
+            cin.ignore();
+            mSoc.altaSocio();
             break;
         case 2:
+            mSoc.modificarSocio();
             break;
         case 3:
+            mSoc.listarTodosLosSocios();
+            system("Pause");
            break;
         case 4:
+            mSoc.buscarSocio();
             break;
         case 5:
+            mSoc.eliminarLogicoSocio();
             break;
         case 0: return 0;
             break;

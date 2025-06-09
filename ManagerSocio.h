@@ -8,7 +8,9 @@ class ManagerSocio {
 
     public:
     void altaSocio();
-    void listarSocios();
+    void listarSociosActivos();
+    void listarTodosLosSocios();
+    void listarSociosInactivos();
     void modificarSocio();
     void eliminarLogicoSocio();
     void buscarSocio();

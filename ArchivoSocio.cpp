@@ -1,9 +1,14 @@
-/*#include <iostream>
+#include <iostream>
 #include <cstring>
 #include "Socio.h"
 #include "ArchivoSocio.h"
     using namespace std;
 
+
+
+    ArchivoSocio::ArchivoSocio(const char* nombreArchivo) {
+    strcpy(_nombre, nombreArchivo);
+}
     int ArchivoSocio::agregarRegistro(Socio soc){
         FILE *pSocio;
         pSocio = fopen(_nombre, "ab");
@@ -15,6 +20,7 @@
         fclose(pSocio);
         return escribio;
     }
+
     Socio ArchivoSocio::Leer(int pos){
         FILE *pSocio;
        Socio soc;
@@ -30,6 +36,63 @@
 
     fclose(pSocio);
     return soc;
+    }
+
+    bool ArchivoSocio::listarRegistrosActivos(){
+        Socio soc;
+        FILE *pSocio;
+        pSocio = fopen(_nombre, "rb");
+        if(pSocio == nullptr){
+            cout<<"Error de archivo"<<endl;
+            return false;
+        }
+        while(fread(&soc, sizeof(Socio),1,pSocio)==1){
+            if(soc.getEstado()){
+                soc.mostrar();
+            }
+        }
+        fclose(pSocio);
+        return true;
+    }
+    bool ArchivoSocio::listarTodosLosRegistros(){
+        Socio soc;
+        FILE *pSocio = fopen(_nombre, "rb");
+        if(pSocio==nullptr){
+            cout<<"Error de archivo"<<endl;
+            return false;
+        }
+        while(fread(&soc,sizeof(Socio), 1, pSocio)==1){
+            soc.mostrar();
+            cout<<"Estado: "<<(soc.getEstado()? "Activo" : "Inactivo")<<endl;
+            cout<<"-------------------------------"<<endl;
+        }
+        fclose(pSocio);
+        return true;
+    }
+
+    bool ArchivoSocio::listarRegistrosInactivos(){
+        Socio soc;
+        FILE *pSocio = fopen(_nombre, "rb");
+
+        if(pSocio==nullptr){
+            cout<<"Error de archivo"<<endl;
+            return false;
+        }
+
+        bool hayInactivos = true;
+
+        while (fread(&soc, sizeof(Socio),1,pSocio)==1){
+            if(!soc.getEstado()){
+                soc.mostrar();
+                hayInactivos= true;
+            }
+        }
+        fclose(pSocio);
+
+        if(!hayInactivos){
+        cout<<"No hay socios inactivos."<<endl;
+        }
+        return hayInactivos;
     }
     int ArchivoSocio::getCantidadRegistros(){
         int  total, cantidad;
@@ -62,6 +125,7 @@
         fclose(pSocio);
         return escribio;
     }
+
     int ArchivoSocio::buscarSocio(const char* dniSocio){
         Socio soc;
         FILE *pSocio;
@@ -100,4 +164,4 @@
         return archiv.modificarSocio(soc, pos);
     }
 
-*/
+

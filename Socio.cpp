@@ -4,11 +4,10 @@
 
 using namespace std;
 
-    int Socio::_ultimoid = 0;
 
 
 Socio::Socio(){
-    _idsocio = ++_ultimoid;
+    _idsocio = 0;
 }
 
     void Socio::setIdSocio(int id){

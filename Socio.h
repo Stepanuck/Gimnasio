@@ -6,7 +6,7 @@ class Socio : public Persona {
 
 private:
     int _idsocio;
-    static int _ultimoid;
+
 public:
     Socio();
     int getIDSocio();
