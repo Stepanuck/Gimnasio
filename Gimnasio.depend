@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1749372250 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.cpp
+1749529320 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.cpp
 	<iostream>
 	<cstring>
 	"Actividad.h"
 	"Tutor.h"
 	"ArchivoActividad.h"
 
-1749372376 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.h
+1749529336 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.h
 	"Horario.h"
 	"Tutor.h"
 
@@ -30,15 +30,16 @@
 1748586143 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivo.h
 	<cstring>
 
-1749084553 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivosocio.cpp
+1749526555 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivosocio.cpp
+	<iostream>
 	<cstring>
 	"Socio.h"
 	"ArchivoSocio.h"
 
-1749305473 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\socio.h
+1749447518 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\socio.h
 	"Persona.h"
 
-1749084553 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivosocio.h
+1749447518 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivosocio.h
 	"Socio.h"
 
 1749088826 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\domicilio.cpp
@@ -55,20 +56,22 @@
 	<cstring>
 	"Horario.h"
 
-1749329582 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\main.cpp
+1749447518 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\main.cpp
 	<iostream>
 	"Fecha.h"
 	"Persona.h"
 	"Tutor.h"
 	"Actividad.h"
 	"MenuPrincipal.h"
+	"ArchivoSocio.h"
+	"Socio.h"
 
 1748577164 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menuprincipal.h
 	"Menu.h"
 
 1748572449 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menu.h
 
-1748585518 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menu.cpp
+1749528554 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menu.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -108,19 +111,19 @@
 1748584592 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuconfiguraciones.h
 	"Menu.h"
 
-1748399665 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\persona.cpp
+1749526555 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\persona.cpp
 	<iostream>
 	<cstring>
 	"Persona.h"
 	"Fecha.h"
 	"Domicilio.h"
 
-1749305473 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\socio.cpp
+1749447518 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\socio.cpp
 	<iostream>
 	"Socio.h"
 	"Persona.h"
 
-1749331697 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuactividades.cpp
+1749530257 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuactividades.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -156,12 +159,13 @@
 	"Menu.h"
 	"SubMenuPlanes.h"
 
-1748585890 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenusocios.cpp
+1749526555 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenusocios.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
 	"Menu.h"
 	"SubMenuSocios.h"
+	"ManagerSocio.h"
 
 1748585890 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenututores.cpp
 	<iostream>
@@ -422,7 +426,7 @@
 	"Socio.h"
 	"Fecha.h"
 
-1749305473 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managersocio.h
+1749447518 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managersocio.h
 
 1749306752 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\inscripcion.cpp
 	<iostream>
@@ -431,12 +435,13 @@
 	"Plan.h"
 	"Inscripcion.h"
 
-1749329247 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managersocio.cpp
+1749526555 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managersocio.cpp
+	<iostream>
 	"Socio.h"
 	"ManagerSocio.h"
 	"ArchivoSocio.h"
 
-1749372251 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\manageractividad.cpp
+1749531412 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\manageractividad.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -444,6 +449,7 @@
 	"Actividad.h"
 	"Horario.h"
 	"ArchivoActividad.h"
+	"Menu.h"
 
 1749327491 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\manageractividad.h
 

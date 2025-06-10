@@ -59,6 +59,6 @@ int Menu::SeleccionarOpcion(){
 
         cout<<"LA SELECCION NO ES CORRECTA"<<endl;
         system("pause");
-        return -1;
+
     }
 }

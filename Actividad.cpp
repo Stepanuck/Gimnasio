@@ -4,7 +4,7 @@
 #include "Tutor.h"
 #include "ArchivoActividad.h"
 
-int Actividad:: _ultimoIdActividad = 0;
+
 using namespace std;
 
 
@@ -19,10 +19,10 @@ Actividad::Actividad(){
 
 }
 
-Actividad::Actividad(const char* nombre, const char* diaDeLaSemana, int cuposDisponibles, Horario horarioActividad,
+Actividad::Actividad(int idActividad, const char* nombre, const char* diaDeLaSemana, int cuposDisponibles, Horario horarioActividad,
 int idTutorACargo, bool estado){
 
-    _idActividad=_ultimoIdActividad++;
+    setIdActividad(idActividad);
     setNombre(nombre);
     setDiaDeLaSemana(diaDeLaSemana);
     setCuposDisponibles(cuposDisponibles);
@@ -31,7 +31,11 @@ int idTutorACargo, bool estado){
     setEstado(estado);
 
 }
+void Actividad::setIdActividad(int idActividad){
 
+    _idActividad=idActividad;
+
+}
 int Actividad::getIdActividad(){
 
     return _idActividad;
@@ -137,4 +141,13 @@ bool Actividad::operator == (Actividad Act){
 
     }
 }
+void Actividad::MostrarActividad(){
 
+    cout << "ID: " << getIdActividad() << endl;
+    cout << "Actividad: " << getNombre() << endl;
+    cout << getDiaDeLaSemana() << endl;
+    getHorarioActividad().mostrar();
+    cout << "Cupos: " << getCuposDisponibles() << endl;
+    cout << "Tutor a Cargo: "<< getIdTutorACargo() << endl;
+
+}

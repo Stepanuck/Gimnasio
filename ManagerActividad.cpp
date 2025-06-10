@@ -13,13 +13,22 @@ void ManagerActividad::CargarActividad(){
 
     ArchivoActividad Archivo;
     Actividad Act, ActGuardada;
+    int idActividad;
     char nombre[20];
     char diaDeLaSemana[10];
     int cuposDisponibles;
     Horario horarioActividad;
     int idTutorACargo;
     bool estado;
+    int cantReg=Archivo.getCantidadRegistros();
 
+    if(cantReg>0){
+
+        idActividad=Archivo.leer(cantReg-1).getIdActividad()+1;
+    }
+    else{
+        idActividad=1;
+    }
     cin.ignore();
     cout << "Ingresar nombre de la actividad: ";
     cin.getline(nombre,20);
@@ -37,9 +46,8 @@ void ManagerActividad::CargarActividad(){
 
     estado=true;
 
-    Act=Actividad(nombre, diaDeLaSemana,cuposDisponibles,horarioActividad,idTutorACargo,estado);
+    Act=Actividad(idActividad,nombre, diaDeLaSemana,cuposDisponibles,horarioActividad,idTutorACargo,estado);
 
-    int cantReg=Archivo.getCantidadRegistros();
     bool existe=false;
 
     if (cantReg>0){
@@ -87,12 +95,9 @@ void ManagerActividad::ListarActividades(){
         Act=Archivo.leer(i);
 
         if(Act.getEstado()){
-        cout << "ID: " << Act.getIdActividad()+1 << endl;
-        cout << "Actividad: " << Act.getNombre() << endl;
-        cout << Act.getDiaDeLaSemana() << endl;
-        Act.getHorarioActividad().mostrar();
-        cout << "Cupos: " << Act.getCuposDisponibles() << endl;
-        cout << "Tutor a Cargo: "<< Act.getIdTutorACargo() << endl;
+
+            Act.MostrarActividad();
+
         }
     }
     system("pause");
@@ -123,7 +128,7 @@ void ManagerActividad::ModificarActividad(){
             cin >> id;
             cin.ignore();
 
-            posicion=Archivo.buscarActividad(id-1);
+            posicion=Archivo.buscarActividad(id);
 
             if(posicion>=0){
 
@@ -189,7 +194,7 @@ void ManagerActividad::ModificarActividad(){
             cin >> id;
             cin.ignore();
 
-            posicion=Archivo.buscarActividad(id-1);
+            posicion=Archivo.buscarActividad(id);
 
             if(posicion>=0){
 
@@ -255,7 +260,7 @@ void ManagerActividad::ModificarActividad(){
             cin >> id;
             cin.ignore();
 
-            posicion=Archivo.buscarActividad(id-1);
+            posicion=Archivo.buscarActividad(id);
 
             if(posicion>=0){
 
@@ -321,7 +326,7 @@ void ManagerActividad::ModificarActividad(){
             cin >> id;
 
 
-            posicion=Archivo.buscarActividad(id-1);
+            posicion=Archivo.buscarActividad(id);
 
             if(posicion>=0){
 
@@ -387,7 +392,8 @@ void ManagerActividad::ModificarActividad(){
             cin >> id;
 
 
-            posicion=Archivo.buscarActividad(id-1);
+            posicion=Archivo.buscarActividad(id);
+
 
             if(posicion>=0){
 
@@ -496,4 +502,98 @@ void ManagerActividad::EliminarActividad(){
 
 
 }
-void BuscarActividad();
+void ManagerActividad::BuscarActividad(){
+    Menu submenu("BUSCAR ACTIVIDAD");
+
+    submenu.CargarOpciones("POR ID");
+    submenu.CargarOpciones("POR NOMBRE");
+    submenu.CargarOpciones("POR DIA");
+    submenu.CargarOpciones("REGRESAR");
+    bool band=false;
+    do{
+        system("cls");
+        submenu.Mostrar();
+
+        switch(submenu.SeleccionarOpcion()){
+        case 1:{
+            int id, posicion;
+            ArchivoActividad Archivo;
+            Actividad Act;
+
+            cout << "Ingresar ID Actividad a buscar: ";
+            cin >> id;
+            cin.ignore();
+
+            posicion=Archivo.buscarActividad(id);
+
+            Act=Archivo.leer(posicion);
+
+            Act.MostrarActividad();
+
+            system("pause");
+
+            break;
+        }
+        case 2:{
+            char nombre[20];
+            ArchivoActividad Archivo;
+            Actividad Act;
+            int cantReg=Archivo.getCantidadRegistros();
+            bool band=false;
+
+            cin.ignore();
+            cout << "Ingresar Nombre Actividad a buscar: ";
+            cin.getline(nombre,20);
+
+            for(int i=0; i<cantReg; i++){
+
+                Act=Archivo.leer(i);
+
+                if(strcmp(nombre,Act.getNombre())==0){
+
+                    Act.MostrarActividad();
+                    band=true;
+                }
+
+            }
+            if(!band){
+                cout << "No se encontraron Actividades con ese nombre." << endl;
+            }
+            system("pause");
+            break;
+        }
+        case 3:{
+            char diaDeLaSemana[10];
+            ArchivoActividad Archivo;
+            Actividad Act;
+            int cantReg=Archivo.getCantidadRegistros();
+            bool band=false;
+
+            cin.ignore();
+            cout << "Ingresar dia de la semana: ";
+            cin.getline(diaDeLaSemana,10);
+
+            for(int i=0; i<cantReg; i++){
+
+                Act=Archivo.leer(i);
+
+                if(strcmp(diaDeLaSemana,Act.getDiaDeLaSemana())==0){
+
+                    Act.MostrarActividad();
+                    band=true;
+                }
+
+            }
+            if(!band){
+                cout << "No se encontraron Actividades en ese dia de la semana." << endl;
+            }
+            system("pause");
+
+            break;
+        }
+        case 0: band=true;
+            break;
+        }
+    }while(!band);
+
+}

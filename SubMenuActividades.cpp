@@ -37,7 +37,7 @@ int SubMenuActividades::EjecutarSubMenuActividades(){
             break;
         case 3:ManagerAct.ListarActividades();
            break;
-        case 4:
+        case 4:ManagerAct.BuscarActividad();
             break;
         case 5:ManagerAct.EliminarActividad();
             break;

@@ -6,20 +6,19 @@ class Actividad{
 
     private:
     int _idActividad;
-    static int _ultimoIdActividad;
     char _nombre[20];
     char _diaDeLaSemana[10];
     int _cuposDisponibles;
     Horario _horarioActividad;
     int _idTutorACargo;
     bool _estado;
-    static int cargarUltimoId();
 
 
     public:
     Actividad();
-    Actividad(const char* nombre, const char* diaDeLaSemana, int cuposDisponibles,
+    Actividad(int idActividad, const char* nombre, const char* diaDeLaSemana, int cuposDisponibles,
     Horario horarioActividad, int idTutorACargo, bool estado);
+    void setIdActividad(int idActividad);
     int getIdActividad();
     void setNombre(const char* nombre);
     const char* getNombre();
@@ -34,5 +33,5 @@ class Actividad{
     void setEstado(bool estado);
     bool getEstado();
     bool operator == (Actividad Act);
-
+    void MostrarActividad();
 };
