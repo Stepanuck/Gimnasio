@@ -71,10 +71,11 @@
 
 1748572449 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menu.h
 
-1749528554 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menu.cpp
+1749612708 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menu.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	<limits>
 	"Menu.h"
 
 1748585743 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menuprincipal.cpp
@@ -441,7 +442,7 @@
 	"ManagerSocio.h"
 	"ArchivoSocio.h"
 
-1749531412 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\manageractividad.cpp
+1749532404 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\manageractividad.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>

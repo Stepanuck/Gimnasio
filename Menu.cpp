@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include <limits>
 #include "Menu.h"
 
 using namespace std;
@@ -47,18 +48,32 @@ int Menu::SeleccionarOpcion(){
 
     int opc;
 
-    cout << "SELECCIONAR OPCION " << endl;
-    cin>>opc;
+    while(true){
 
-    if(opc>=0 && opc <_numOpcion){
+        cout << "SELECCIONAR OPCION " << endl;
+        cin>>opc;
 
-        return opc;
+        if(cin.fail()){///cin.fail se usa para identificar si lo ingresado no es un numero.
+            cin.clear();///cin clear limpia el error.
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');///Descarta todo el contenido para dejar la variable sin basura.
 
-    }
-    else {
+            cout << "INGRESO INVALIDO, DEBE INGRESAR UN NUMERO" <<endl;
 
-        cout<<"LA SELECCION NO ES CORRECTA"<<endl;
-        system("pause");
+            system("pause");
 
+            continue;///Salta al  siguiente ciclo del bucle, omitiendo el resto del codigo,
+            ///regresando al inicio para sollicitar un nuevo ingreso y lo evalua.
+        }
+        if(opc>=0 && opc <_numOpcion){
+
+            return opc;
+
+        }
+        else {
+
+            cout<<"LA SELECCION NO ES CORRECTA, INTENTELO NUEVAMENTE"<<endl;
+            system("pause");
+
+        }
     }
 }
