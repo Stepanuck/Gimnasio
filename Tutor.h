@@ -7,10 +7,10 @@ class Tutor : public Persona{
 
 private:
     int _IDTutor;
-    static int _ultimoid;
 
 public:
     Tutor();
+    void setIDTutor(int id);
     int getIDTutor();
     void cargar();
     void mostrar();

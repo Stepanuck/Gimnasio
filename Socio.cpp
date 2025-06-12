@@ -10,9 +10,9 @@ Socio::Socio(){
     _idsocio = 0;
 }
 
-    void Socio::setIdSocio(int id){
-        _idsocio=id;
-    }
+void Socio::setIdSocio(int id){
+    _idsocio=id;
+}
 
 int Socio::getIDSocio(){
     return _idsocio;

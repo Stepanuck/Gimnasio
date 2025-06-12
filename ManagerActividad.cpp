@@ -467,7 +467,7 @@ void ManagerActividad::EliminarActividad(){
             cin >> id;
 
 
-            posicion=Archivo.buscarActividad(id-1);
+            posicion=Archivo.buscarActividad(id);
 
             if(posicion>=0){
 

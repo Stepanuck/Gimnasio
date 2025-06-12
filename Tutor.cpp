@@ -2,14 +2,15 @@
 #include "Tutor.h"
 #include "Persona.h"
 using namespace std;
-/// validarlo siempre con el ultimo registro del archivo //siempre tener en cuenta que el primero es 0 ...
-int Tutor::_ultimoid = 0;
 
 Tutor::Tutor(){
-    _IDTutor = ++_ultimoid;
+    _IDTutor = 0;
 }
 
+void Tutor::setIDTutor(int id){
+    _IDTutor=id;
 
+}
 
 
 int Tutor::getIDTutor(){

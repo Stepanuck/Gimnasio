@@ -3,6 +3,7 @@
 #include <cstring>
 #include "Menu.h"
 #include "SubMenuPlanes.h"
+#include "ManagerPlan.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ SubMenuPlanes::SubMenuPlanes(string nombre)
 
 }
 int SubMenuPlanes::EjecutarSubMenuPlanes(){
+    ManagerPlan managerPlan;
 
     SubMenuPlanes mPlan("PLANES");
 
@@ -29,15 +31,15 @@ int SubMenuPlanes::EjecutarSubMenuPlanes(){
         mPlan.Mostrar();
 
         switch(mPlan.SeleccionarOpcion()){
-        case 1:
+        case 1:managerPlan.CargarPlan();
             break;
-        case 2:
+        case 2:managerPlan.ModificarPlan();
             break;
-        case 3:
+        case 3:managerPlan.ListarPlanes();
            break;
-        case 4:
+        case 4:managerPlan.BuscarPlan();
             break;
-        case 5:
+        case 5:managerPlan.EliminarPlan();
             break;
         case 0: return 0;
             break;

@@ -1,12 +1,20 @@
-/*#include <iostream>
+#include <iostream>
 #include <cstring>
 #include "Plan.h"
 #include "ArchivoPlan.h"
 
 using namespace std;
 
+    ArchivoPlan::ArchivoPlan(){
 
+        strcpy(_nombre, "Plan.dat");
+    }
 
+    ArchivoPlan::ArchivoPlan(const char* nombreArchivo= "Plan.dat"){
+
+        strcpy(_nombre,nombreArchivo);
+
+    }
     int ArchivoPlan::agregarRegistro(Plan pla){
         FILE* pPlan;
         pPlan = fopen(_nombre, "ab");
@@ -84,7 +92,7 @@ using namespace std;
     }
 
 
-    bool ArchivoPlan::altaLogica(int idPlan){
+/*bool ArchivoPlan::altaLogica(int idPlan){
         Plan pla;
         ArchivoPlan archiv;
         int pos = archiv.buscarPlan(idPlan);
@@ -103,9 +111,9 @@ using namespace std;
         pla.setEstado(false);
         return archiv.modificarPlan(pla, pos);
     }
-
-
 */
+
+
 
 
 

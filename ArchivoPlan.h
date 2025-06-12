@@ -1,4 +1,4 @@
-/*#pragma once
+#pragma once
 #include "Plan.h"
 
 
@@ -8,7 +8,8 @@ class ArchivoPlan{
 private:
   char _nombre[50];
 public:
-        ArchivoPlan(const char* nombreArchivo = "Planes.dat");
+        ArchivoPlan();
+        ArchivoPlan(const char* nombreArchivo);
         int buscarPlan(int idPlan);
         int agregarRegistro(Plan pla);
         bool listarRegistros();
@@ -19,4 +20,4 @@ public:
         bool altaLogica(int idPlan);
 };
 
-*/
+
