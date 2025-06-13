@@ -139,6 +139,7 @@
         int pos = 0;//inicializamos el contador de la posicion en 0
         while(fread(&soc, sizeof(Socio), 1, pSocio)==1){//leemos socio por socio
             if(strcmp(soc.getDni(), dniSocio)==0){//comparamos el dni buscado con el dni del socio
+                fclose(pSocio);
                 return pos;//si coincide cierra el archivo y retorna la posicion
             }
             pos++;//si no lo encontramos incrementa el contador

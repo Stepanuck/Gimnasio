@@ -87,11 +87,22 @@
 		<Unit filename="ManagerActividad.h">
 			<Option virtualFolder="Managers.h/" />
 		</Unit>
+		<Unit filename="ManagerPlan.cpp">
+			<Option virtualFolder="Managers.cpp/" />
+		</Unit>
+		<Unit filename="ManagerPlan.h">
+			<Option virtualFolder="Managers.h/" />
+			<Option target="Release" />
+		</Unit>
 		<Unit filename="ManagerSocio.cpp">
 			<Option virtualFolder="Managers.cpp/" />
 		</Unit>
 		<Unit filename="ManagerSocio.h">
 			<Option virtualFolder="Managers.h/" />
+		</Unit>
+		<Unit filename="ManagerTutor.cpp" />
+		<Unit filename="ManagerTutor.h">
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Menu.cpp">
 			<Option virtualFolder="Menus.cpp/" />

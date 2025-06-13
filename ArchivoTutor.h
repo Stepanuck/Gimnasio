@@ -1,4 +1,4 @@
-/*#pragma once
+#pragma once
 
 
 class ArchivoTutor{
@@ -9,7 +9,9 @@ public:
         ArchivoTutor(const char* nombreArchivo = "Tutor.dat");
         int buscarTutor(const char* dni);
         int agregarRegistro(Tutor tut);
-        bool listarRegistros();
+        bool listarRegistrosActivos();
+        bool listarTodosLosRegistros();
+        bool listarRegistrosInactivos();
         Tutor Leer(int pos);
         int getCantidadRegistros();
         int modificarTutor(Tutor tut, int pos);
@@ -17,4 +19,3 @@ public:
         bool altaLogica(const char* dni);
 };
 
-*/
