@@ -21,7 +21,6 @@ int SubMenuInscripciones::EjecutarSubMenuInscripciones(){
     mInscripcion.CargarOpciones("MODIFICAR INSCRIPCION");
     mInscripcion.CargarOpciones("LISTAR INSCRIPCIONES");
     mInscripcion.CargarOpciones("BUSCAR INSCRIPCION");
-    mInscripcion.CargarOpciones("ELIMINAR INSCRIPCION");
     mInscripcion.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
 
     while(true){
@@ -36,8 +35,6 @@ int SubMenuInscripciones::EjecutarSubMenuInscripciones(){
         case 3:
            break;
         case 4:
-            break;
-        case 5:
             break;
         case 0: return 0;
             break;

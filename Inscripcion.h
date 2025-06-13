@@ -1,6 +1,4 @@
 #pragma once
-#include "Plan.h"
-#include "Socio.h"
 #include "Fecha.h"
 
 
@@ -10,21 +8,23 @@
 class Inscripcion{
 
 private:
-    Socio _idSocioInscripto;
-    Plan _idPlanIncripto;
+    int _idSocioInscripto;
+    int _idPlanIncripto;
     Fecha _fechaDePago;
     bool _pago;
 public:
 
-    Socio getIdSocioInscripto();
-    Plan getIdPlanInscripto();
-
+    Inscripcion();
+    Inscripcion(int idSocio, int idPlan, Fecha fechaPago, bool pago);
+    void setIdSocioInscripto(int idSocio);
+    int getIdSocioInscripto();
+    void setIdPlanInscripto(int idPlan);
+    int getIdPlanInscripto();
     void setFechaDePago(Fecha fechaPago);
     Fecha getFechaDePago();
-
     void setPago(bool pago);
     bool getPago();
-
+    bool operator == (Inscripcion Insc);
 
 
 };

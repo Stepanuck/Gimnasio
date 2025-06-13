@@ -6,26 +6,66 @@
 
 using namespace std;
 
-
-Plan Inscripcion::getIdPlanInscripto(){
-    return _idPlanIncripto;
+Inscripcion::Inscripcion(){
 }
+Inscripcion::Inscripcion(int idSocio, int idPlan, Fecha fechaPago, pago){
 
+    setIdSocioInscripto(idSocio);
+    setIdPlanInscripto(idPlan);
+    setFechaDePago(fechaPago);
+    setPago(pago);
 
-    Socio Inscripcion::getIdSocioInscripto(){
-        return _idSocioInscripto;
-    }
+}
+void Inscripcion::setIdSocioInscripto(int idSocio){
 
-    void Inscripcion::setFechaDePago(Fecha fechaPago){
-        _fechaDePago = fechaPago;
-    }
-    Fecha Inscripcion::getFechaDePago(){
-        return _fechaDePago;
-    }
+    _idSocioInscripto=idSocio;
 
-    void Inscripcion::setPago(bool pago){
-        _pago = pago;
+}
+int Inscripcion::getIdSocioInscripto(){
+
+    return _idSocioInscripto;
+
+}
+void Inscripcion::setIdPlanInscripto(int idPlan){
+
+    _idPlanIncripto=idPlan;
+
+}
+int Inscripcion::getIdPlanInscripto(){
+
+    return _idPlanIncripto;
+
+}
+void Inscripcion::setFechaDePago(Fecha fechaPago){
+
+    _fechaDePago = fechaPago;
+
+}
+Fecha Inscripcion::getFechaDePago(){
+
+    return _fechaDePago;
+
+}
+void Inscripcion::setPago(bool pago){
+
+    _pago = pago;
+
+}
+bool Inscripcion::getPago(){
+
+    return _pago;
+
+}
+bool Inscripcion::operator == (Inscripcion Insc){
+
+    if(_idSocioInscripto==Insc._idSocioInscripto&&_idPlanIncripto==Insc._idPlanIncripto&&_fechaDePago==Insc._fechaDePago){
+
+       return true;
+
     }
-    bool Inscripcion::getPago(){
-        return _pago;
+    else {
+
+        return false;
+
     }
+}

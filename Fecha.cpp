@@ -73,12 +73,16 @@ void Fecha::cargar(){
     }
     }while(_anio<1925 || _anio >2025);
 }
-
-
-
-
 void Fecha::mostrar(){
 
     cout<<_dia<<"/"<<_mes<<"/"<<_anio<<endl;
 
+}
+bool Fecha::operator == (Fecha fecha){
+
+    if(_dia!=fecha._dia)return false;
+    if(_mes!=fecha._mes)return false;
+    if(_anio!=fecha._anio)return false;
+
+    return true;
 }

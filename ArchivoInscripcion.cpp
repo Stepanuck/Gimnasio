@@ -1,4 +1,4 @@
-/*#include <iostream>
+#include <iostream>
 #include <cstring>
 #include "Inscripcion.h"
 #include "ArchivoInscripcion.h"
@@ -22,7 +22,7 @@ using namespace std;
     Inscripcion ArchivoInscripcion::Leer(int pos){
         FILE* pInscripcion;
         Inscripcion insc;
-        insc.setIdInscripcion(-1);
+       // insc.setIdInscripcion(-1);
         pInscripcion = fopen(_nombre, "rb");
 
         if(pInscripcion == nullptr){
@@ -74,7 +74,7 @@ using namespace std;
         }
         int pos = 0;
         while(fread(&insc, sizeof(Inscripcion),1,pInscripcion)==1){
-            if(insc.getIdInscripcion()==idincripcion){
+            if(insc.getIdInscripcion()==idIncripcion){
                 fclose(pInscripcion);
                 return pos;
             }
@@ -84,7 +84,7 @@ using namespace std;
         return -1;
     }
 
-
+/*
     bool ArchivoInscripcion::altaLogica(int idInscripcion){
         Inscripcion insc;
         ArchivoInscripcion archiv;

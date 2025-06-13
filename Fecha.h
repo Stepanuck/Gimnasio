@@ -22,4 +22,6 @@ class Fecha{
 
         void cargar();
         void mostrar();
+
+        bool operator == (Fecha fecha);
 };

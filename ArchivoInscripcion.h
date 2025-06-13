@@ -1,4 +1,4 @@
-/*#pragma once
+#pragma once
 #include "Inscripcion.h"
 
 
@@ -11,16 +11,16 @@ private:
 public:
 
     ArchivoInscripcion(const char* nombre = "Inscripciones.dat");
-    Actividad Leer(int pos);
+    Inscripcion Leer(int pos);
     int buscarInscripcion(int idInscripcion);
     int agregarRegistro (Inscripcion insc);
     bool listarRegistros();
     int getCantidadRegistros();
-    int modificarInscripcion(Inscripcion insc, int pos)
+    int modificarInscripcion(Inscripcion insc, int pos);
     bool bajaLogica(int idInscripcion);
     bool altaLogica(int idInscripcion);
 
 
 
 };
-*/
+

@@ -1,4 +1,5 @@
 #pragma once
+#include "Tutor.h"
 
 
 class ArchivoTutor{
