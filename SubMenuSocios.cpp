@@ -21,7 +21,9 @@ int SubMenuSocios::EjecutarSubMenuSocios(){
 
     mSocio.CargarOpciones("CARGAR SOCIO");
     mSocio.CargarOpciones("MODIFICAR SOCIO");
-    mSocio.CargarOpciones("LISTAR SOCIOS");
+    mSocio.CargarOpciones("LISTAR TODOS LOS SOCIOS");
+    mSocio.CargarOpciones("LISTAR SOCIOS INACTIVOS");
+    mSocio.CargarOpciones("LISTAR SOCIOS ACTIVOS");
     mSocio.CargarOpciones("BUSCAR SOCIO");
     mSocio.CargarOpciones("ELIMINAR SOCIO");
     mSocio.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
@@ -45,10 +47,18 @@ int SubMenuSocios::EjecutarSubMenuSocios(){
             system("Pause");
            break;
         case 4:
-            mSoc.buscarSocio();
+            mSoc.listarSociosInactivos();
             system("Pause");
             break;
         case 5:
+            mSoc.listarSociosActivos();
+            system("Pause");
+            break;
+        case 6:
+            mSoc.buscarSocio();
+            system("Pause");
+            break;
+        case 7:
             mSoc.eliminarLogicoSocio();
             system("Pause");
             break;

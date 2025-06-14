@@ -9,7 +9,7 @@ using namespace std;
     void ManagerTutor::altaTutor(){
         ArchivoTutor archiv;
     Tutor tut;
-
+    cin.ignore();
     tut.cargar();//Se le piden los datos al tutor
 
    int pos = archiv.buscarTutor(tut.getDni());
@@ -56,7 +56,7 @@ using namespace std;
 
         Tutor tut = archiv.Leer(pos);//existe lo leo
         cout<<"Datos actuales del tutor:"<<endl;
-        tut.mostrar();
+        tut.mostrar();// muestro los datos actuales
 
         cout<<"Ingrese los nuevos datos: "<<endl;
         tut.cargar();

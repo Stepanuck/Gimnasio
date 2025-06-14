@@ -5,6 +5,7 @@ using namespace std;
 
 Tutor::Tutor(){
     _IDTutor = 0;
+    _Estado = true;
 }
 
 void Tutor::setIDTutor(int id){
@@ -17,6 +18,12 @@ int Tutor::getIDTutor(){
     return _IDTutor;
 }
 
+void Tutor::setEstado(bool estado){
+    _Estado = estado;
+}
+bool Tutor::getEstado(){
+    return _Estado;
+}
 
 void Tutor::cargar(){
     Persona::cargar();

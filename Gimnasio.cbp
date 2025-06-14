@@ -38,7 +38,9 @@
 		<Unit filename="ArchivoActividad.cpp">
 			<Option virtualFolder="Archivos.cpp/" />
 		</Unit>
-		<Unit filename="ArchivoActividad.h" />
+		<Unit filename="ArchivoActividad.h">
+			<Option virtualFolder="Archivos.h/" />
+		</Unit>
 		<Unit filename="ArchivoInscripcion.cpp">
 			<Option virtualFolder="Archivos.cpp/" />
 		</Unit>
@@ -65,7 +67,6 @@
 		</Unit>
 		<Unit filename="ArchivoTutor.h">
 			<Option virtualFolder="Archivos.h/" />
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Domicilio.cpp" />
 		<Unit filename="Domicilio.h">
@@ -87,6 +88,12 @@
 		<Unit filename="ManagerActividad.h">
 			<Option virtualFolder="Managers.h/" />
 		</Unit>
+		<Unit filename="ManagerInscripcion.cpp">
+			<Option virtualFolder="Managers.cpp/" />
+		</Unit>
+		<Unit filename="ManagerInscripcion.h">
+			<Option virtualFolder="Managers.h/" />
+		</Unit>
 		<Unit filename="ManagerPlan.cpp">
 			<Option virtualFolder="Managers.cpp/" />
 		</Unit>
@@ -100,9 +107,11 @@
 		<Unit filename="ManagerSocio.h">
 			<Option virtualFolder="Managers.h/" />
 		</Unit>
-		<Unit filename="ManagerTutor.cpp" />
+		<Unit filename="ManagerTutor.cpp">
+			<Option virtualFolder="Managers.cpp/" />
+		</Unit>
 		<Unit filename="ManagerTutor.h">
-			<Option target="&lt;{~None~}&gt;" />
+			<Option virtualFolder="Managers.h/" />
 		</Unit>
 		<Unit filename="Menu.cpp">
 			<Option virtualFolder="Menus.cpp/" />
@@ -120,6 +129,7 @@
 		<Unit filename="Persona.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="Plan.cpp" />
 		<Unit filename="Plan.h" />
 		<Unit filename="Socio.cpp" />
 		<Unit filename="Socio.h">

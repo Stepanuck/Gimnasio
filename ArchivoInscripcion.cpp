@@ -6,6 +6,10 @@
 using namespace std;
 
 
+ArchivoInscripcion::ArchivoInscripcion(const char* nombreArchivo) {
+    strcpy(_nombre, nombreArchivo);
+}
+
 
     int ArchivoInscripcion::agregarRegistro(Inscripcion insc){
         FILE* pInscripcion;
@@ -64,7 +68,7 @@ using namespace std;
     }
 
 
-    int ArchivoInscripcion::buscarInscripcion(int idincripcion){
+    int ArchivoInscripcion::buscarInscripcion(int idInscripcion){
         Inscripcion insc;
         FILE* pInscripcion;
         pInscripcion= fopen(_nombre, "rb");
@@ -74,7 +78,7 @@ using namespace std;
         }
         int pos = 0;
         while(fread(&insc, sizeof(Inscripcion),1,pInscripcion)==1){
-            if(insc.getIdInscripcion()==idIncripcion){
+            if(insc.getIdInscripcion()==idInscripcion){
                 fclose(pInscripcion);
                 return pos;
             }

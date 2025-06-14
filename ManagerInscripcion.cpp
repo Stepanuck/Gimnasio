@@ -8,13 +8,20 @@ using namespace std;
 
 void ManagerInscripcion::CargarInscripcion(){
 
-    ArchivoInscrpcion Archivo;
+    ArchivoInscripcion Archivo;
     Inscripcion Insc, InscGuardada;
     int idSocio;
     int idPlan;
     Fecha fechaDePago;
     bool pago;
     int cantReg=Archivo.getCantidadRegistros();
+
+    int idInscripcion = 1; //por defecto el primero es 1
+
+    if(cantReg>0){
+        InscGuardada = Archivo.Leer(cantReg - 1); //leo el ultimo registro
+        idInscripcion = InscGuardada.getIdInscripcion() + 1; // Sumo uno al ultimo registro
+    }
 
     cout << "Ingresar ID del Socio a Inscribir: ";
     cin >> idSocio;
@@ -26,23 +33,18 @@ void ManagerInscripcion::CargarInscripcion(){
 
     pago=true;
 
-    Insc=Inscripcion(idSocio, idPlan, fechaDePago, pago);
+    Insc=Inscripcion(idInscripcion,idSocio, idPlan, fechaDePago, pago);
 
     bool existe=false;
 
-    if (cantReg>0){
-    for(int i=0; i<cantReg; i++){
-
-        InscGuardada=Archivo.leer(i);
-
-        if(Insc==InscGuardada){
-
-           existe=true;
-
+    for(int i = 0; i < cantReg; i++){
+        InscGuardada = Archivo.Leer(i);
+        if(Insc == InscGuardada){
+            existe = true;
+            break;
         }
+    }
 
-    }
-    }
     if(!existe){
 
 
@@ -66,6 +68,6 @@ void ManagerInscripcion::CargarInscripcion(){
 
 
 }
-void ManagerInscripcion::ListarInscripciones();
-void ManagerInscripcion::ModificarInscripcion();
-void ManagerInscripcion::BuscarInscripcion();
+//void ManagerInscripcion::ListarInscripciones();
+//void ManagerInscripcion::ModificarInscripcion();
+//void ManagerInscripcion::BuscarInscripcion();

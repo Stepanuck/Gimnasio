@@ -8,16 +8,23 @@ using namespace std;
 
 Inscripcion::Inscripcion(){
 }
-Inscripcion::Inscripcion(int idSocio, int idPlan, Fecha fechaPago, pago){
-
+Inscripcion::Inscripcion(int idInscripcion,int idSocio, int idPlan, Fecha fechaPago, bool pago){
+    setIdInscripcion(idInscripcion);
     setIdSocioInscripto(idSocio);
     setIdPlanInscripto(idPlan);
     setFechaDePago(fechaPago);
     setPago(pago);
 
 }
-void Inscripcion::setIdSocioInscripto(int idSocio){
 
+ void Inscripcion::setIdInscripcion(int idInscripcion){
+    _idInscripcion = idInscripcion;
+ }
+
+ int Inscripcion::getIdInscripcion(){
+    return _idInscripcion;
+ }
+void Inscripcion::setIdSocioInscripto(int idSocio){
     _idSocioInscripto=idSocio;
 
 }

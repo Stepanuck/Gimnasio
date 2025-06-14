@@ -8,6 +8,7 @@ using namespace std;
 
 Socio::Socio(){
     _idsocio = 0;
+    _Estado = true;
 }
 
 void Socio::setIdSocio(int id){
@@ -17,7 +18,13 @@ void Socio::setIdSocio(int id){
 int Socio::getIDSocio(){
     return _idsocio;
 }
+void Socio::setEstado(bool estado){
+    _Estado = estado;
+}
 
+bool Socio::getEstado(){
+    return _Estado;
+}
 void Socio::cargar(){
     Persona::cargar();
 }
