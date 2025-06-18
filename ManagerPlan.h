@@ -9,8 +9,8 @@ public:
 
     void CargarPlan();
     void ListarPlanes();
-    void ModificarPlan();
-    void EliminarPlan();
-    void BuscarPlan();
+    //void ModificarPlan();
+    //void EliminarPlan();
+    //void BuscarPlan();
 
 };

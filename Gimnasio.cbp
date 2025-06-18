@@ -41,6 +41,13 @@
 		<Unit filename="ArchivoActividad.h">
 			<Option virtualFolder="Archivos.h/" />
 		</Unit>
+		<Unit filename="ArchivoCobro.cpp">
+			<Option virtualFolder="Archivos.cpp/" />
+		</Unit>
+		<Unit filename="ArchivoCobro.h">
+			<Option virtualFolder="Archivos.h/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="ArchivoInscripcion.cpp">
 			<Option virtualFolder="Archivos.cpp/" />
 		</Unit>
@@ -67,6 +74,10 @@
 		</Unit>
 		<Unit filename="ArchivoTutor.h">
 			<Option virtualFolder="Archivos.h/" />
+		</Unit>
+		<Unit filename="Cobro.cpp" />
+		<Unit filename="Cobro.h">
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="Domicilio.cpp" />
 		<Unit filename="Domicilio.h">

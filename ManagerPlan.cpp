@@ -105,6 +105,7 @@ void ManagerPlan::ListarPlanes(){
     system("pause");
 
 }
+/*
 void ManagerPlan::ModificarPlan(){
     Menu submenu("MODIFICAR PLAN");
 
@@ -331,6 +332,7 @@ void ManagerPlan::ModificarPlan(){
 
 
 }
+
 void ManagerPlan::EliminarPlan(){
             int id, posicion;
             bool estado;
@@ -373,6 +375,8 @@ void ManagerPlan::EliminarPlan(){
             system("pause");
 
 }
+
+
 void ManagerPlan::BuscarPlan(){
     Menu submenu("BUSCAR PLAN");
 
@@ -438,3 +442,4 @@ void ManagerPlan::BuscarPlan(){
     }while(!band);
 
 }
+*/

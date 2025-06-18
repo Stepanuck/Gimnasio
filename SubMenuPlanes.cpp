@@ -33,13 +33,13 @@ int SubMenuPlanes::EjecutarSubMenuPlanes(){
         switch(mPlan.SeleccionarOpcion()){
         case 1:managerPlan.CargarPlan();
             break;
-        case 2:managerPlan.ModificarPlan();
+        case 2://managerPlan.ModificarPlan();
             break;
         case 3:managerPlan.ListarPlanes();
            break;
-        case 4:managerPlan.BuscarPlan();
+        case 4://managerPlan.BuscarPlan();
             break;
-        case 5:managerPlan.EliminarPlan();
+        case 5://managerPlan.EliminarPlan();
             break;
         case 0: return 0;
             break;

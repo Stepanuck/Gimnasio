@@ -78,6 +78,25 @@ void Fecha::mostrar(){
     cout<<_dia<<"/"<<_mes<<"/"<<_anio<<endl;
 
 }
+    void Fecha::sumarMeses(int cantidad){
+        _mes+=cantidad;
+        while(_mes>12){
+            _mes-=12;
+            _anio++;
+        }
+        int diasPorMes[]={31,28,31,30,31,30,31,31,30,31,30,31};
+            //Calculo para el año bisiesto
+    if (_mes == 2 && (_anio % 4 == 0 && (_anio % 100 != 0 || _anio % 400 == 0))) {
+    if (_dia > 29) _dia = 29;
+    } else if (_dia > diasPorMes[_mes - 1]) {
+        _dia = diasPorMes[_mes - 1];
+    }
+    }
+
+    bool Fecha::operator==(const Fecha& otra) const {
+    return _dia == otra._dia && _mes == otra._mes && _anio == otra._anio;
+}
+
 bool Fecha::operator == (Fecha fecha){
 
     if(_dia!=fecha._dia)return false;

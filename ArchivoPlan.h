@@ -10,7 +10,8 @@ private:
 public:
         ArchivoPlan();
         ArchivoPlan(const char* nombreArchivo);
-        int buscarPlan(int idPlan);
+        Plan buscarPlan(int idPlan);
+        //int buscarPlan(int idPlan);
         int agregarRegistro(Plan pla);
         bool listarRegistros();
         Plan Leer(int pos);

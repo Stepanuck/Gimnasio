@@ -23,5 +23,8 @@ class Fecha{
         void cargar();
         void mostrar();
 
+        void sumarMeses(int cantidad);
+        bool operator==(const Fecha& otra) const;
+
         bool operator == (Fecha fecha);
 };

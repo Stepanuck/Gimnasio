@@ -10,23 +10,35 @@ class Inscripcion{
 private:
     int _idInscripcion;
     int _idSocioInscripto;
-    int _idPlanIncripto;
-    Fecha _fechaDePago;
-    bool _pago;
+    int _idPlanInscripto;
+    Fecha _fechaInicio;
+    Fecha _fechaFin;
+    bool _activo;
 public:
 
     Inscripcion();
-    Inscripcion(int idInscripcion,int idSocio, int idPlan, Fecha fechaPago, bool pago);
+
+    Inscripcion(int idInscripcion,int idSocio, int idPlan, Fecha fechaInicio, Fecha fechaFin, bool activo);
+
     void setIdSocioInscripto(int idSocio);
     int getIdSocioInscripto();
+
     void setIdPlanInscripto(int idPlan);
     int getIdPlanInscripto();
+
     void setIdInscripcion(int idInscripcion);
     int getIdInscripcion();
-    void setFechaDePago(Fecha fechaPago);
-    Fecha getFechaDePago();
-    void setPago(bool pago);
-    bool getPago();
+
+    void setFechaInicio(Fecha fechaInicio);
+    Fecha getFechaInicio();
+
+    void setFechaFin(Fecha fechaFin);
+    Fecha getFechaFin();
+
+    void setActivo(bool activo);
+    bool getActivo();
+    //operador para comparar inscripciones
+    bool operator == (const Inscripcion& otra) const;
     bool operator == (Inscripcion Insc);
 
 

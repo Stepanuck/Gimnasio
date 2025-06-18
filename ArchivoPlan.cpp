@@ -70,7 +70,26 @@ using namespace std;
         return escribio;
     }
 
+    Plan ArchivoPlan::buscarPlan(int idPlan) {
+    Plan plan;
+    FILE* pPlan = fopen(_nombre, "rb");
+    if (!pPlan) {
+        // Si no existe el archivo, Se devuelve un plan vacío (con id = 0, arancel = 0, etc.)
+        return plan;
+    }
+    while (fread(&plan, sizeof(Plan), 1, pPlan) == 1) {
+        if (plan.getIdPlan() == idPlan) {
+            fclose(pPlan);
+            return plan;
+        }
+    }
+    fclose(pPlan);
+    // Si no lo encontró, devuelve el plan vacío
+    return Plan();
+}
 
+
+/*
     int ArchivoPlan::buscarPlan(int idPlan){
         Plan pla;
         FILE* pPlan;
@@ -91,7 +110,7 @@ using namespace std;
         return -1;
     }
 
-
+*/
 /*bool ArchivoPlan::altaLogica(int idPlan){
         Plan pla;
         ArchivoPlan archiv;
