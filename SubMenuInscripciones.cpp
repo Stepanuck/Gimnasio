@@ -3,6 +3,7 @@
 #include <cstring>
 #include "Menu.h"
 #include "SubMenuInscripciones.h"
+#include "ManagerInscripcion.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ SubMenuInscripciones::SubMenuInscripciones(string nombre)
 
 }
 int SubMenuInscripciones::EjecutarSubMenuInscripciones(){
+    ManagerInscripcion ManagerInsc;
 
     SubMenuInscripciones mInscripcion("INSCRIPCIONES");
 
@@ -28,9 +30,9 @@ int SubMenuInscripciones::EjecutarSubMenuInscripciones(){
         mInscripcion.Mostrar();
 
         switch(mInscripcion.SeleccionarOpcion()){
-        case 1:
-            break;
-        case 2:
+        case 1:ManagerInsc.CargarInscripcion();
+        break;
+        case 2:ManagerInsc.ModificarInscripcion();
             break;
         case 3:
            break;

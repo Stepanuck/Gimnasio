@@ -6,6 +6,8 @@
 #include "ArchivoPlan.h"
 #include "ArchivoCobro.h"
 #include "Cobro.h"
+#include "Menu.h"
+
 using namespace std;
 
 
@@ -27,8 +29,8 @@ void ManagerInscripcion::CargarInscripcion(){
     int cantReg = archivoIns.getCantidadRegistros();
     int idInscripcion = 1;
     if(cantReg>0){
-            Inscripcion ultima = archivoIns.Leer(cantReg - 1);
-            idInscripcion = ultima.getIdInscripcion() + 1;
+        Inscripcion ultima = archivoIns.Leer(cantReg - 1);
+        idInscripcion = ultima.getIdInscripcion() + 1;
     }
         //datos
     cout << "Ingresar ID del Socio a Inscribir: ";
@@ -36,7 +38,7 @@ void ManagerInscripcion::CargarInscripcion(){
     cout << "Ingresar ID del Plan seleccionado: ";
     cin >> idPlan;
 
-     cout << "Ingrese fecha de pago/inicio (primer mes que paga): " << endl;
+    cout << "Ingrese fecha de pago/inicio (primer mes que paga): " << endl;
     fechaPago.cargar();
 
     cout << "¿Cuantos meses desea pagar? ";
@@ -95,8 +97,6 @@ void ManagerInscripcion::CargarInscripcion(){
     }
 
     }
-
-
 
 
 /*
@@ -161,5 +161,221 @@ void ManagerInscripcion::CargarInscripcion(){
 
 }*/
 //void ManagerInscripcion::ListarInscripciones();
-//void ManagerInscripcion::ModificarInscripcion();
+void ManagerInscripcion::ModificarInscripcion(){
+    Menu submenu("MODIFICAR INSCRIPCION");
+
+    submenu.CargarOpciones("ID SOCIO");
+    submenu.CargarOpciones("ID PLAN");
+    submenu.CargarOpciones("FECHA INICIO");
+    submenu.CargarOpciones("REGRESAR");
+    bool band=false;
+    do{
+        system("cls");
+        submenu.Mostrar();
+
+        switch(submenu.SeleccionarOpcion()){
+        case 1:{
+            int id, posicion, idSocio;
+            ArchivoInscripcion Archivo;
+            Inscripcion insc, inscGuardada;
+
+            cout << "Ingresar ID de la Inscripcion a modificar: ";
+            cin >> id;
+            cin.ignore();
+
+            posicion=Archivo.buscarInscripcion(id);
+
+            if(posicion>=0){
+
+               insc=Archivo.Leer(posicion);
+
+               cout << "Ingresar nuevo ID del socio: ";
+               cin >> idSocio;
+
+               insc.setIdSocioInscripto(idSocio);
+
+                int cantReg=Archivo.getCantidadRegistros();
+                bool existe=false;
+
+                for(int i=0; i<cantReg; i++){
+
+                    inscGuardada=Archivo.Leer(i);
+
+
+                    if(insc==inscGuardada){
+
+                        existe=true;
+
+                    }
+
+                }
+                if(!existe){
+
+
+                    if(Archivo.modificarInscripcion(insc,posicion)!=-1){
+
+                        cout << "El registro se guardo correctamente" << endl;
+
+                    }
+                    else{
+
+                        cout << "No se pudo guardar" << endl;
+                    }
+                }
+                else{
+
+                    cout << "Inscripcion existente" << endl;
+
+                }
+
+            }
+            else{
+                    if (posicion == -1){
+                        cout << "No existe el ID de la Inscripcion buscada." << endl;
+                    }
+                    else if (posicion == -2){
+                        cout << "El archivo no fue encontrado." << endl;
+                    }
+            }
+            system("pause");
+            break;
+        }
+        case 2:{
+            int id, posicion, idPlan;
+            ArchivoInscripcion Archivo;
+            Inscripcion insc, inscGuardada;
+
+            cout << "Ingresar ID de la Inscripcion a modificar: ";
+            cin >> id;
+            cin.ignore();
+
+            posicion=Archivo.buscarInscripcion(id);
+
+            if(posicion>=0){
+
+               insc=Archivo.Leer(posicion);
+
+               cout << "Ingresar nuevo ID del Plan: ";
+               cin >> idPlan;
+
+               insc.setIdPlanInscripto(idPlan);
+
+                int cantReg=Archivo.getCantidadRegistros();
+                bool existe=false;
+
+                for(int i=0; i<cantReg; i++){
+
+                    inscGuardada=Archivo.Leer(i);
+
+                    if(insc==inscGuardada){
+
+                        existe=true;
+
+                    }
+
+                }
+                if(!existe){
+
+
+                    if(Archivo.modificarInscripcion(insc,posicion)!=-1){
+
+                        cout << "El registro se guardo correctamente" << endl;
+
+                    }
+                    else{
+
+                        cout << "No se pudo guardar" << endl;
+                    }
+                }
+                else{
+
+                    cout << "Inscripcion existente" << endl;
+
+                }
+
+            }
+            else{
+                    if (posicion == -1){
+                        cout << "No existe el ID de la Inscripcion buscada." << endl;
+                    }
+                    else if (posicion == -2){
+                        cout << "El archivo no fue encontrado." << endl;
+                    }
+            }
+            system("pause");
+            break;
+        }
+        case 3:{
+            int id, posicion;
+            Fecha fechaDeInicio;
+            ArchivoInscripcion Archivo;
+            Inscripcion insc, inscGuardada;
+
+            cout << "Ingresar ID de la Inscripcion a modificar: ";
+            cin >> id;
+            cin.ignore();
+
+            posicion=Archivo.buscarInscripcion(id);
+
+            if(posicion>=0){
+
+               insc=Archivo.Leer(posicion);
+
+               cout << "Ingresar la nueva fecha ingreso: ";
+               fechaDeInicio.cargar();
+
+               insc.setFechaInicio(fechaDeInicio);
+
+                int cantReg=Archivo.getCantidadRegistros();
+                bool existe=false;
+
+                for(int i=0; i<cantReg; i++){
+
+                    inscGuardada=Archivo.Leer(i);
+
+                    if(insc==inscGuardada){
+
+                        existe=true;
+
+                    }
+
+                }
+                if(!existe){
+
+
+                    if(Archivo.modificarInscripcion(insc,posicion)!=-1){
+
+                        cout << "El registro se guardo correctamente" << endl;
+
+                    }
+                    else{
+
+                        cout << "No se pudo guardar" << endl;
+                    }
+                }
+                else{
+
+                    cout << "Inscripcion existente" << endl;
+
+                }
+
+            }
+            else{
+                    if (posicion == -1){
+                        cout << "No existe el ID de la Inscripcion buscada." << endl;
+                    }
+                    else if (posicion == -2){
+                        cout << "El archivo no fue encontrado." << endl;
+                    }
+            }
+            system("pause");
+            break;
+        }
+        case 0: band=true;
+            break;
+        }
+    }while(!band);
+
+
+}
 //void ManagerInscripcion::BuscarInscripcion();

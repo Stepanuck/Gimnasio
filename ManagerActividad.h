@@ -8,7 +8,8 @@ private:
 public:
 
     void CargarActividad();
-    void ListarActividades();
+    void ListarActividadesaActivas();
+    void ListarTodas();
     void ModificarActividad();
     void EliminarActividad();
     void BuscarActividad();

@@ -3,6 +3,7 @@
 #include "Actividad.h"
 #include "Tutor.h"
 #include "ArchivoActividad.h"
+#include "ArchivoTutor.h"
 
 
 using namespace std;
@@ -142,12 +143,18 @@ bool Actividad::operator == (Actividad Act){
     }
 }
 void Actividad::MostrarActividad(){
+    Tutor t;
+    ArchivoTutor archT;
 
+    t=archT.Leer(getIdTutorACargo());
+
+    cout << "------------------------------------------"<< endl;
     cout << "ID: " << getIdActividad() << endl;
     cout << "Actividad: " << getNombre() << endl;
     cout << getDiaDeLaSemana() << endl;
     getHorarioActividad().mostrar();
     cout << "Cupos: " << getCuposDisponibles() << endl;
-    cout << "Tutor a Cargo: "<< getIdTutorACargo() << endl;
+    cout << "Tutor a Cargo: ID "<< getIdTutorACargo() << " Nombre y Apellido: " << t.getNombres()<< " " << t.getApellidos() << endl;
+    cout << "------------------------------------------"<< endl;
 
 }

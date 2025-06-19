@@ -7,6 +7,7 @@
 #include "ArchivoActividad.h"
 #include "Menu.h"
 
+
 using namespace std;
 
 void ManagerActividad::CargarActividad(){
@@ -85,9 +86,10 @@ void ManagerActividad::CargarActividad(){
 
 
 }
-void ManagerActividad::ListarActividades(){
+void ManagerActividad::ListarActividadesaActivas(){
     Actividad Act;
     ArchivoActividad Archivo;
+
     int cantidadRegistros=Archivo.getCantidadRegistros();
 
     for(int i=0; i<cantidadRegistros; i++){
@@ -99,6 +101,22 @@ void ManagerActividad::ListarActividades(){
             Act.MostrarActividad();
 
         }
+    }
+    system("pause");
+
+}
+void ManagerActividad::ListarTodas(){
+    Actividad Act;
+    ArchivoActividad Archivo;
+    int cantidadRegistros=Archivo.getCantidadRegistros();
+
+    for(int i=0; i<cantidadRegistros; i++){
+
+        Act=Archivo.leer(i);
+
+        Act.MostrarActividad();
+
+
     }
     system("pause");
 

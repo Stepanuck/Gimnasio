@@ -21,7 +21,8 @@ int SubMenuActividades::EjecutarSubMenuActividades(){
 
     mActividad.CargarOpciones("CARGAR ACTIVIDAD");
     mActividad.CargarOpciones("MODIFICAR ACTIVIDAD");
-    mActividad.CargarOpciones("LISTAR ACTIVIDADES");
+    mActividad.CargarOpciones("LISTAR ACTIVIDADES ACTIVAS");
+    mActividad.CargarOpciones("LISTAR ACTIVIDADES TODAS");
     mActividad.CargarOpciones("BUSCAR ACTIVIDAD");
     mActividad.CargarOpciones("ELIMINAR ACTIVIDAD");
     mActividad.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
@@ -35,11 +36,13 @@ int SubMenuActividades::EjecutarSubMenuActividades(){
             break;
         case 2:ManagerAct.ModificarActividad();
             break;
-        case 3:ManagerAct.ListarActividades();
+        case 3:ManagerAct.ListarActividadesaActivas();
            break;
-        case 4:ManagerAct.BuscarActividad();
+        case 4:ManagerAct.ListarTodas();
             break;
-        case 5:ManagerAct.EliminarActividad();
+        case 5:ManagerAct.BuscarActividad();
+            break;
+        case 6:ManagerAct.EliminarActividad();
             break;
         case 0: return 0;
             break;
