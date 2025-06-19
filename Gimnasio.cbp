@@ -99,8 +99,15 @@
 		<Unit filename="ManagerActividad.h">
 			<Option virtualFolder="Managers.h/" />
 		</Unit>
-		<Unit filename="ManagerCobro.cpp" />
+		<Unit filename="ManagerCobro.cpp">
+			<Option virtualFolder="Managers.cpp/" />
+		</Unit>
 		<Unit filename="ManagerCobro.h">
+			<Option virtualFolder="Managers.h/" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="ManagerConfiguracion.cpp" />
+		<Unit filename="ManagerConfiguracion.h">
 			<Option virtualFolder="Managers.h/" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -161,6 +168,7 @@
 			<Option virtualFolder="Menus.cpp/" />
 		</Unit>
 		<Unit filename="SubMenuCobros.h">
+			<Option virtualFolder="Menus.h/" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="SubMenuConfiguraciones.cpp">
