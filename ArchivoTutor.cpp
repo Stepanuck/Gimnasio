@@ -62,7 +62,8 @@ using namespace std;
                 return false; //si no existe tira error y retorna false
             }
             while(fread(&tut,sizeof(Tutor), 1, pTutor)==1){
-            tut.mostrar();  //Condicion el estado, si devuelve true es activo, si devuelve false es inactivo.
+
+                tut.mostrar();  //Condicion el estado, si devuelve true es activo, si devuelve false es inactivo.
             cout<<"Estado: "<<(tut.getEstado()? "Activo" : "Inactivo")<<endl;
             cout<<"-------------------------------"<<endl;//lineas facheras
         }

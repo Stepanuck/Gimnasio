@@ -8,24 +8,22 @@
 #include "SubMenuActividades.h"
 #include "SubMenuPlanes.h"
 #include "SubMenuInscripciones.h"
+#include "SubMenuCobros.h"
 #include "SubMenuInformes.h"
 #include "SubMenuConfiguraciones.h"
 
 using namespace std;
 
-MenuPrincipal::MenuPrincipal()
-: Menu(){
-}
-MenuPrincipal::MenuPrincipal(string nombre)
-: Menu(nombre){
-}
+MenuPrincipal::MenuPrincipal() : Menu() {}
+MenuPrincipal::MenuPrincipal(string nombre) : Menu(nombre) {}
 
-int MenuPrincipal::EjecutarMenuPrincipal(){
+int MenuPrincipal::EjecutarMenuPrincipal() {
     SubMenuSocios SubMenuSocios;
     SubMenuTutores SubMenuTutores;
     SubMenuActividades SubMenuActividades;
     SubMenuPlanes SubMenuPlanes;
     SubMenuInscripciones SubMenuInscripciones;
+    SubMenuCobros SubMenuCobros;
     SubMenuInformes SubMenuInformes;
     SubMenuConfiguraciones SubMenuConfiguraciones;
 
@@ -35,15 +33,16 @@ int MenuPrincipal::EjecutarMenuPrincipal(){
     menuGimnacio.CargarOpciones("MENU ACTIVIDADES");
     menuGimnacio.CargarOpciones("MENU PLANES");
     menuGimnacio.CargarOpciones("MENU INSCRIPCIONES");
+    menuGimnacio.CargarOpciones("MENU COBROS");
     menuGimnacio.CargarOpciones("INFORMES");
     menuGimnacio.CargarOpciones("CONFIGURACIONES");
     menuGimnacio.CargarOpciones("FIN DEL PROGRAMA");
 
-    while(true){
+    while(true) {
         system("cls");
         menuGimnacio.Mostrar();
 
-        switch(menuGimnacio.SeleccionarOpcion()){
+        switch(menuGimnacio.SeleccionarOpcion()) {
             case 1: SubMenuSocios.EjecutarSubMenuSocios();
                     break;
             case 2: SubMenuTutores.EjecutarSubMenuTutores();
@@ -54,12 +53,13 @@ int MenuPrincipal::EjecutarMenuPrincipal(){
                     break;
             case 5: SubMenuInscripciones.EjecutarSubMenuInscripciones();
                     break;
-            case 6: SubMenuInformes.EjecutarSubMenuInformes();
+            case 6: SubMenuCobros.EjecutarSubMenuCobros();
                     break;
-            case 7: SubMenuConfiguraciones.EjecutarSubMenuConfiguraciones();
+            case 7: SubMenuInformes.EjecutarSubMenuInformes();
+                    break;
+            case 8: SubMenuConfiguraciones.EjecutarSubMenuConfiguraciones();
                     break;
             case 0: return 0;
-                    break;
         }
     }
 }

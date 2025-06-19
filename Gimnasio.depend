@@ -335,7 +335,7 @@
 	"Menu.h"
 	"SubMenuInscripciones.h"
 
-1749766254 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuplanes.cpp
+1750214150 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuplanes.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -370,7 +370,7 @@
 	"Plan.h"
 	"ArchivoPlan.h"
 
-1749779085 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivotutor.cpp
+1750295827 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivotutor.cpp
 	<iostream>
 	<cstring>
 	"Tutor.h"
@@ -499,7 +499,7 @@
 	"ManagerSocio.h"
 	"ArchivoSocio.h"
 
-1749427038 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managersocio.h
+1750301533 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managersocio.h
 
 1749708751 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerplan.cpp
 	<iostream>
@@ -542,7 +542,7 @@
 
 1749779085 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managertutor.h
 
-1750213812 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managerinscripcion.cpp
+1750301638 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managerinscripcion.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -562,12 +562,12 @@
 	<cstring>
 	"Plan.h"
 
-1750205325 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\cobro.cpp
+1750301814 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\cobro.cpp
 	<iostream>
 	<cstring>
 	"Cobro.h"
 
-1750205394 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\cobro.h
+1750300255 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\cobro.h
 	"Fecha.h"
 
 1750213322 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivocobro.cpp
@@ -578,4 +578,13 @@
 
 1750210800 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivocobro.h
 	"Cobro.h"
+
+1750301729 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managercobro.cpp
+	<iostream>
+	"Cobro.h"
+	"ManagerCobro.h"
+	"ArchivoCobro.h"
+	"ArchivoInscripcion.h"
+
+1750301533 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managercobro.h
 

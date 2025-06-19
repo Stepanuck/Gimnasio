@@ -8,12 +8,11 @@ private:
     int _idInscripcion;
     Fecha _fechaCobro;
     float _monto;
-    char _tipoCobro[20];
 
 public:
 
     Cobro();
-    Cobro(int idCobro, int idInscripcion, Fecha fechaCobro, float monto, const char* tipoCobro);
+    Cobro(int idCobro, int idInscripcion, Fecha fechaCobro, float monto);
 
     void setIdCobro(int id);
     int getIdCobro();
@@ -27,7 +26,6 @@ public:
     void setMonto(float monto);
     float getMonto();
 
-    void setTipoCobro(const char* tipo);
-    const char* getTipoCobro();
+
 
 };

@@ -7,12 +7,18 @@ using namespace std;
 
 
 Cobro::Cobro(){
-
+    _idCobro = 0;
+    _idInscripcion = 0;
+    _fechaCobro = Fecha();
+    _monto = 0;
 }
 
 
-Cobro::Cobro(int idCobro, int idInscripcion, Fecha fechaCobro, float monto, const char* tipoCobro){
-
+Cobro::Cobro(int idCobro, int idInscripcion, Fecha fechaCobro, float monto){
+    setIdCobro(idCobro);
+    setIdInscripcion(idInscripcion);
+    setFechaCobro(fechaCobro);
+    setMonto(monto);
 
 }
 
@@ -31,6 +37,10 @@ void Cobro::setIdInscripcion(int idInscripcion){
     _idInscripcion = idInscripcion;
 }
 
+int Cobro::getIdInscripcion(){
+    return _idInscripcion;
+}
+
 void Cobro::setFechaCobro(Fecha fechaCobro){
     _fechaCobro = fechaCobro;
 }
@@ -45,12 +55,4 @@ void Cobro::setMonto(float monto){
 
 float Cobro::getMonto(){
     return _monto;
-}
-
-void Cobro::setTipoCobro(const char* tipo){
-    strncpy(_tipoCobro, tipo, 19); _tipoCobro[19]= 0;
-}
-
-const char* Cobro::getTipoCobro(){
-    return _tipoCobro;
 }

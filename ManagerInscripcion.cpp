@@ -20,7 +20,7 @@ void ManagerInscripcion::CargarInscripcion(){
     Fecha fechaPago, fechaFin, fechaCobro;
     bool pago = true;
     float monto;
-    char tipoCobro[20];
+
 
     //calcular el id autonumerico
 
@@ -54,7 +54,7 @@ void ManagerInscripcion::CargarInscripcion(){
 
             Inscripcion guardada= archivoIns.Leer(i);
             if(guardada.getIdSocioInscripto()==idSocio &&
-               guardada.getIdPlanInscripto()== idPlan&&
+               guardada.getIdPlanInscripto()== idPlan &&
                guardada.getFechaInicio()==fechaPago){
                 existe = true;
                 break;
@@ -68,19 +68,20 @@ void ManagerInscripcion::CargarInscripcion(){
             cout << "Inscripción guardada correctamente. Generando cobro..." << endl;
 
             // Obtenemos el valor del plan
-            Plan p = archivoPlan.buscarPlan(idPlan); // Suponiendo que existe este método
+            Plan p = archivoPlan.buscarPlan(idPlan);
+            if(p.getIdPlan()==0){
+                cout<<"El plan ingresado no existe. Inscripcion cancelada."<<endl;
+                return;
+            }
             monto = p.getArancel() * cantidadMeses;
 
             cout << "Ingrese fecha de cobro: " << endl;
             fechaCobro.cargar();
 
-            cout << "Ingrese tipo de cobro (Efectivo, Tarjeta, etc): ";
-            cin >> tipoCobro;
-
              //Genero el id de cobro autonumérico
             int idCobro = archivoCobro.getCantidadRegistros() + 1;
 
-            Cobro cobro(idCobro, idInscripcion, fechaCobro, monto, tipoCobro);
+            Cobro cobro(idCobro, idInscripcion, fechaCobro, monto);
             if (archivoCobro.agregarRegistro(cobro) == 1) {
                 cout << "Cobro registrado correctamente." << endl;
             } else {
