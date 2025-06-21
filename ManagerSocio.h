@@ -14,5 +14,6 @@ class ManagerSocio {
     void modificarSocio();
     void eliminarLogicoSocio();
     void buscarSocio();
+    void listarDeudores();
 
 };

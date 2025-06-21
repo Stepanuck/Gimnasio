@@ -3,6 +3,8 @@
 #include <cstring>
 #include "Menu.h"
 #include "SubMenuInformes.h"
+#include "ManagerSocio.h"
+#include "ManagerCobro.h"
 
 using namespace std;
 
@@ -14,7 +16,8 @@ SubMenuInformes::SubMenuInformes(string nombre)
 
 }
 int SubMenuInformes::EjecutarSubMenuInformes(){
-
+    ManagerSocio mSoc;
+    ManagerCobro mCob;
     SubMenuInformes mInforme("INFORMES");
 
     mInforme.CargarOpciones("DETALLE DE COBROS");
@@ -29,8 +32,12 @@ int SubMenuInformes::EjecutarSubMenuInformes(){
 
         switch(mInforme.SeleccionarOpcion()){
         case 1:
+            mCob.listarCobros();
+            system ("Pause");
             break;
         case 2:
+            mSoc.listarDeudores();
+            system ("Pause");
             break;
         case 3:
            break;

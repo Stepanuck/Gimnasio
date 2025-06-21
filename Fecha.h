@@ -23,8 +23,9 @@ class Fecha{
         void cargar();
         void mostrar();
 
+        void hoy();
         void sumarMeses(int cantidad);
-        bool operator==(const Fecha& otra) const;
 
+        bool operator>=(const Fecha& otra) const;
         bool operator == (Fecha fecha);
 };

@@ -26,7 +26,7 @@
        Socio soc;
     pSocio=fopen(_nombre,"rb");//abrimos el archivo
     if(pSocio==nullptr){  ///NULL
-      cout<<"ERROR DE ARCHIVO"<<endl;
+      //cout<<"ERROR DE ARCHIVO"<<endl;
         soc.setDni("-1");//Si falla la lecturam devuelve error y se setea un socio con dni invalido
         return soc;//lo devuelve
     }

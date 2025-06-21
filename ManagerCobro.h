@@ -8,7 +8,7 @@ class ManagerCobro{
 private:
 
 public:
-    void altaCobro();
+
     void listarCobrosActivos();
     void listarCobros();
     void ListarCobrosPorSocio();

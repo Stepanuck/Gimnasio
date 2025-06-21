@@ -1,6 +1,7 @@
 #include <iostream>
 #include "ManagerTutor.h"
 #include "ArchivoTutor.h"
+#include "Menu.h"
 using namespace std;
 
 
@@ -43,27 +44,126 @@ using namespace std;
         ArchivoTutor archiv;
         archiv.listarRegistrosInactivos();
     }
-    void ManagerTutor::modificarTutor(){
-        ArchivoTutor archiv;
-        char dni[10];
-        cout<<"Ingrese el DNI del tutor a modificar: ";
-        cin>>dni;
-        int pos = archiv.buscarTutor(dni);//lo buscamos y obtenemos la posicion
-        if(pos==-1){
-            cout<<"No se ha encontrado un tutor con ese DNI."<<endl;// si no lo encuentra se va
-            return;
+   void ManagerTutor::modificarTutor() {
+    ArchivoTutor archiv;
+    char dni[10];
+    cout << "Ingrese el DNI del tutor a modificar: ";
+    cin >> dni;
+
+    int pos = archiv.buscarTutor(dni); // lo buscamos y obtenemos la posición
+    if (pos == -1) {
+        cout << "No se ha encontrado un tutor con ese DNI." << endl; // si no lo encuentra, se va
+        return;
+    }
+
+    Tutor tut = archiv.Leer(pos); // existe, lo leo
+    cout << "Datos actuales del tutor:" << endl;
+    tut.mostrar(); // muestro los datos actuales
+
+
+    Menu submenu("MODIFICAR TUTOR");
+    submenu.CargarOpciones("NOMBRE");
+    submenu.CargarOpciones("APELLIDO");
+    submenu.CargarOpciones("DNI");
+    submenu.CargarOpciones("EDAD");
+    submenu.CargarOpciones("GENERO");
+    submenu.CargarOpciones("TELEFONO");
+    submenu.CargarOpciones("EMAIL");
+    submenu.CargarOpciones("FECHA DE NACIMIENTO");
+    submenu.CargarOpciones("DOMICILIO");
+    submenu.CargarOpciones("REGRESAR");
+
+    bool salir = false;//Banderita que solo sale cuando le ponemos regresar.
+    do {
+        system("cls");
+        cout << "Datos actuales del tutor:" << endl;
+        tut.mostrar(); // Siempre muestra el estado actualizado.
+        submenu.Mostrar();
+
+        switch (submenu.SeleccionarOpcion()) {
+            case 1: {
+                char aux[40];//se crea un vector auxiliar.
+                cout << "Ingrese nuevo nombre: ";
+                cin.ignore();
+                cin.getline(aux, 40);
+                tut.setNombres(aux);// se setea el nuevo valor.
+                break;//se va
+            }
+            case 2: {
+                char aux[40];//Mismo proceso en cada uno.
+                cout << "Ingrese nuevo apellido: ";
+                cin.ignore();
+                cin.getline(aux, 40);
+                tut.setApellidos(aux);
+                break;
+            }
+            case 3: {
+                char aux[10];
+                cout << "Ingrese nuevo DNI: ";
+                cin.ignore();
+                cin.getline(aux, 9);
+                tut.setDni(aux);
+                break;
+            }
+            case 4: {
+                int edad;
+                cout << "Ingrese nueva edad: ";
+                cin >> edad;
+                tut.setEdad(edad);
+                break;
+            }
+            case 5: {
+                char aux[20];
+                cout << "Ingrese nuevo genero (Masculino/Femenino/Otro): ";
+                cin.ignore();
+                cin.getline(aux, 20);
+                tut.setGenero(aux);
+                break;
+            }
+            case 6: {
+                char aux[15];
+                cout << "Ingrese nuevo telefono: ";
+                cin.ignore();
+                cin.getline(aux, 15);
+                tut.setTelefono(aux);
+                break;
+            }
+            case 7: {
+                char aux[50];
+                cout << "Ingrese nuevo email: ";
+                cin.ignore();
+                cin.getline(aux, 50);
+                tut.setEmail(aux);
+                break;
+            }
+            case 8: {
+                Fecha f;
+                cout << "Ingrese nueva fecha de nacimiento:" << endl;
+                f.cargar();
+                tut.setFecha(f);
+                break;
+            }
+            case 9: {
+                Domicilio d;
+                cout << "Ingrese nuevo domicilio:" << endl;
+                d.cargar();
+                tut.setDomicilio(d);
+                break;
+            }
+            case 0:
+                salir = true; // la banderita se pone true y se sale del ciclo.
+                break;
         }
 
-        Tutor tut = archiv.Leer(pos);//existe lo leo
-        cout<<"Datos actuales del tutor:"<<endl;
-        tut.mostrar();// muestro los datos actuales
-
-        cout<<"Ingrese los nuevos datos: "<<endl;
-        tut.cargar();
-        tut.setIDTutor(archiv.Leer(pos).getIDTutor());//Le seteo el idTutor que ya tenia previamente para conservarle el mismo id
-        archiv.modificarTutor(tut,pos);
-        cout<<"Tutor modificado correctamente."<<endl;
-    }
+        if (!salir) {//como la banderia es false, entra y repite el proceso porque sigue con el while.
+            // Actualiza el tutor en el archivo después de cada modificación.
+            tut.setIDTutor(archiv.Leer(pos).getIDTutor()); // le seteo el idTutor que ya tenía para previamente para conservarle el mismo id.
+            archiv.modificarTutor(tut, pos); // modifica el tutor.
+            cout << "Dato modificado correctamente. Presione una tecla para continuar." << endl;
+            system("pause");
+        }
+    } while (!salir);
+}
     void ManagerTutor::eliminarLogicoTutor(){
     ArchivoTutor archiv;
     char dni[10];
