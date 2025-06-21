@@ -8,9 +8,10 @@ private:
 public:
 
     void CargarPlan();
+    void ListarPlanesActivos();
     void ListarPlanes();
-    //void ModificarPlan();
-    //void EliminarPlan();
-    //void BuscarPlan();
+    void ModificarPlan();
+    void EliminarPlan();
+    void BuscarPlan();
 
 };

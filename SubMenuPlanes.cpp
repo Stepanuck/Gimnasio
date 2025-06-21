@@ -21,7 +21,8 @@ int SubMenuPlanes::EjecutarSubMenuPlanes(){
 
     mPlan.CargarOpciones("CARGAR PLAN");
     mPlan.CargarOpciones("MODIFICAR PLAN");
-    mPlan.CargarOpciones("LISTAR PLANES");
+    mPlan.CargarOpciones("LISTAR PLANES ACTIVOS");
+    mPlan.CargarOpciones("LISTAR TODOS LOS PLANES");
     mPlan.CargarOpciones("BUSCAR PLAN");
     mPlan.CargarOpciones("ELIMINAR PLAN");
     mPlan.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
@@ -33,13 +34,15 @@ int SubMenuPlanes::EjecutarSubMenuPlanes(){
         switch(mPlan.SeleccionarOpcion()){
         case 1:managerPlan.CargarPlan();
             break;
-        case 2://managerPlan.ModificarPlan();
+        case 2:managerPlan.ModificarPlan();
             break;
-        case 3:managerPlan.ListarPlanes();
+        case 3:managerPlan.ListarPlanesActivos();
            break;
-        case 4://managerPlan.BuscarPlan();
+        case 4:managerPlan.ListarPlanes();
+           break;
+        case 5:managerPlan.BuscarPlan();
             break;
-        case 5://managerPlan.EliminarPlan();
+        case 6:managerPlan.EliminarPlan();
             break;
         case 0: return 0;
             break;

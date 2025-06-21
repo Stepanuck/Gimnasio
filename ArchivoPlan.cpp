@@ -89,8 +89,7 @@ using namespace std;
 }
 
 
-/*
-    int ArchivoPlan::buscarPlan(int idPlan){
+    int ArchivoPlan::buscarPosicionPlan(int idPlan){
         Plan pla;
         FILE* pPlan;
         pPlan = fopen(_nombre, "rb");
@@ -110,7 +109,7 @@ using namespace std;
         return -1;
     }
 
-*/
+
 /*bool ArchivoPlan::altaLogica(int idPlan){
         Plan pla;
         ArchivoPlan archiv;

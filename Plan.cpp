@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstring>
 #include "Plan.h"
+#include "Actividad.h"
+#include "ArchivoActividad.h"
 
 
 using namespace std;
@@ -109,16 +111,21 @@ bool Plan::operator == (Plan plan){
 
 }
 void Plan::MostrarPlan(){
+    Actividad act;
+    ArchivoActividad actArchivo;
 
+
+    cout << "------------------------------------------"<< endl;
     cout << "ID: " << getIdPlan() << endl;
     cout << "Plan: " << getNombre() << endl;
     cout << "Actividades Incluidas:" << endl;
     for (int i; i<5; i++){
         if(getIdActividadesIncluidas(i)!=0){
-            cout << getIdActividadesIncluidas(i) << endl;
+            act=actArchivo.leer(getIdActividadesIncluidas(i));
+            cout << "  -ID " << getIdActividadesIncluidas(i) << " " << act.getNombre() << endl;
         }
     }
     cout << "Valor del Plan: $" << getArancel() << endl;
-
+    cout << "------------------------------------------"<< endl;
 
 }

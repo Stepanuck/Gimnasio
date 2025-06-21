@@ -11,7 +11,7 @@ public:
         ArchivoPlan();
         ArchivoPlan(const char* nombreArchivo);
         Plan buscarPlan(int idPlan);
-        //int buscarPlan(int idPlan);
+        int buscarPosicionPlan(int idPlan);
         int agregarRegistro(Plan pla);
         bool listarRegistros();
         Plan Leer(int pos);

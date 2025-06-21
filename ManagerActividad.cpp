@@ -6,6 +6,8 @@
 #include "Horario.h"
 #include "ArchivoActividad.h"
 #include "Menu.h"
+#include "Tutor.h"
+#include "ArchivoTutor.h"
 
 
 using namespace std;
@@ -42,9 +44,12 @@ void ManagerActividad::CargarActividad(){
     cout << "Ingresar Cupos Disponibles: ";
     cin >> cuposDisponibles;
 
-    cout << "Ingresar el ID del Tutor a cargo: ";
-    cin >> idTutorACargo;
+    ArchivoTutor tutorArchivo;
+    do{
+        cout << "Ingresar el ID del Tutor a cargo: ";
+        cin >> idTutorACargo;
 
+    }while()
     estado=true;
 
     Act=Actividad(idActividad,nombre, diaDeLaSemana,cuposDisponibles,horarioActividad,idTutorACargo,estado);

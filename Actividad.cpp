@@ -154,7 +154,7 @@ void Actividad::MostrarActividad(){
     cout << getDiaDeLaSemana() << endl;
     getHorarioActividad().mostrar();
     cout << "Cupos: " << getCuposDisponibles() << endl;
-    cout << "Tutor a Cargo: ID "<< getIdTutorACargo() << " Nombre y Apellido: " << t.getNombres()<< " " << t.getApellidos() << endl;
+    cout << "Tutor a Cargo: ID "<< getIdTutorACargo() << " " << t.getNombres()<< " " << t.getApellidos() << endl;
     cout << "------------------------------------------"<< endl;
 
 }

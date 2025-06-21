@@ -87,7 +87,7 @@ void ManagerPlan::CargarPlan(){
     system("pause");
 
 }
-void ManagerPlan::ListarPlanes(){
+void ManagerPlan::ListarPlanesActivos(){
     Plan plan;
     ArchivoPlan Archivo;
     int cantidadRegistros=Archivo.getCantidadRegistros();
@@ -105,7 +105,21 @@ void ManagerPlan::ListarPlanes(){
     system("pause");
 
 }
-/*
+void ManagerPlan::ListarPlanes(){
+    Plan plan;
+    ArchivoPlan Archivo;
+    int cantidadRegistros=Archivo.getCantidadRegistros();
+
+    for(int i=0; i<cantidadRegistros; i++){
+
+        plan=Archivo.Leer(i);
+
+        plan.MostrarPlan();
+
+    }
+    system("pause");
+
+}
 void ManagerPlan::ModificarPlan(){
     Menu submenu("MODIFICAR PLAN");
 
@@ -129,7 +143,7 @@ void ManagerPlan::ModificarPlan(){
             cin >> id;
             cin.ignore();
 
-            posicion=Archivo.buscarPlan(id);
+            posicion=Archivo.buscarPosicionPlan(id);
 
             if(posicion>=0){
 
@@ -195,7 +209,7 @@ void ManagerPlan::ModificarPlan(){
             cin >> id;
             cin.ignore();
 
-            posicion=Archivo.buscarPlan(id);
+            posicion=Archivo.buscarPosicionPlan(id);
 
             if(posicion>=0){
 
@@ -268,7 +282,7 @@ void ManagerPlan::ModificarPlan(){
             cout << "Ingresar ID del Plan a modificar: ";
             cin >> id;
 
-            posicion=Archivo.buscarPlan(id);
+            posicion=Archivo.buscarPosicionPlan(id);
 
             if(posicion>=0){
 
@@ -343,7 +357,7 @@ void ManagerPlan::EliminarPlan(){
             cin >> id;
 
 
-            posicion=Archivo.buscarPlan(id);
+            posicion=Archivo.buscarPosicionPlan(id);
 
             if(posicion>=0){
 
@@ -398,7 +412,7 @@ void ManagerPlan::BuscarPlan(){
             cin >> id;
             cin.ignore();
 
-            posicion=Archivo.buscarPlan(id);
+            posicion=Archivo.buscarPosicionPlan(id);
 
             plan=Archivo.Leer(posicion);
 
@@ -442,4 +456,4 @@ void ManagerPlan::BuscarPlan(){
     }while(!band);
 
 }
-*/
+
