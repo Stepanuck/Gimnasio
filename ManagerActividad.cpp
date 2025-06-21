@@ -5,6 +5,8 @@
 #include "Actividad.h"
 #include "Horario.h"
 #include "ArchivoActividad.h"
+#include "ArchivoInscripcion.h"
+#include "ArchivoPlan.h"
 #include "Menu.h"
 #include "ArchivoTutor.h"
 
@@ -644,3 +646,64 @@ void ManagerActividad::BuscarActividad(){
     }while(!band);
 
 }
+ void ManagerActividad::detallesCuposEnActividades(){
+    ArchivoActividad archAct;
+    ArchivoInscripcion archIns;
+    ArchivoPlan archPlan;
+
+    /// obtenemos la fecha de hoy
+    Fecha hoy;
+    hoy.hoy();
+
+    int cantAct = archAct.getCantidadRegistros(); // obtenemos la cantidad de actividades
+    if(cantAct <= 0){
+        cout << "No hay actividades cargadas." << endl;
+        system("pause");
+        return;
+    }
+
+    cout << "------------------ DETALLE DE CUPOS EN ACTIVIDADES ----------" << endl;
+
+    // recorremos cada actividad
+    for(int i = 0; i < cantAct; i++){
+        Actividad act = archAct.leer(i);
+
+        // únicamente las que están activas
+        if(act.getEstado()){
+            int cuposTotales = act.getCuposDisponibles();
+            int cuposOcupados = 0;
+
+            int cantIns = archIns.getCantidadRegistros(); // obtenemos todas las inscripciones
+            // recorremos las inscripciones
+            for(int j = 0; j < cantIns; j++){
+                Inscripcion insc = archIns.Leer(j); // leemos la inscripción
+                // solo nos interesan las que están activas y vigentes
+                if(insc.getActivo() && insc.getFechaFin() >= hoy){
+                    // busco el plan de esa inscripción
+                    Plan p = archPlan.buscarPlan(insc.getIdPlanInscripto());
+                    // comprobamos si este plan incluye la actividad
+                    if(p.getIdPlan() != 0){
+                        // recorremos las 5 actividades del plan
+                        for(int k = 0; k < 5; k++){
+                            if(p.getIdActividadesIncluidas(k) == act.getIdActividad()){
+                                cuposOcupados++;
+                                // una vez encontrado no hace falta seguir buscando
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Mostrar el detalle para la actividad actual
+            cout << "Actividad:      " << act.getNombre()               << endl;
+            cout << "Cupos Totales:  " << cuposTotales                   << endl;
+            cout << "Cupos Ocupados: " << cuposOcupados                  << endl;
+            cout << "Cupos Libres:   " << (cuposTotales - cuposOcupados) << endl;
+            cout << "----------------------------------------" << endl;
+        }
+    }
+
+    system("pause");
+}
+

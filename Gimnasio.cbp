@@ -106,7 +106,9 @@
 			<Option virtualFolder="Managers.h/" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="ManagerConfiguracion.cpp" />
+		<Unit filename="ManagerConfiguracion.cpp">
+			<Option virtualFolder="Managers.cpp/" />
+		</Unit>
 		<Unit filename="ManagerConfiguracion.h">
 			<Option virtualFolder="Managers.h/" />
 			<Option target="&lt;{~None~}&gt;" />

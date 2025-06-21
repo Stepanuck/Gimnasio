@@ -44,7 +44,7 @@ ArchivoInscripcion::ArchivoInscripcion(const char* nombreArchivo) {
         FILE* pInscripcion;
         pInscripcion = fopen(_nombre, "rb");
         if(pInscripcion == nullptr){
-            cout<<"Error de archivo"<<endl;
+           // cout<<"Error de archivo"<<endl;
             return -1;
         }
         fseek(pInscripcion, 0, SEEK_END);

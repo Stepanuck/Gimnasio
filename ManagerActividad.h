@@ -13,5 +13,6 @@ public:
     void ModificarActividad();
     void EliminarActividad();
     void BuscarActividad();
+    void detallesCuposEnActividades();
 
 };

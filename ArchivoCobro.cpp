@@ -52,6 +52,7 @@ int ArchivoCobro::getCantidadRegistros(){
         return -1;
     }
     fseek(pCobro,0,SEEK_END);
+    total = ftell(pCobro);
     cantidad = total / sizeof(Cobro);
     fclose(pCobro);
     return cantidad;

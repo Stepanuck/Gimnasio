@@ -5,7 +5,7 @@
 #include "SubMenuInformes.h"
 #include "ManagerSocio.h"
 #include "ManagerCobro.h"
-
+#include "ManagerActividad.h"
 using namespace std;
 
 SubMenuInformes::SubMenuInformes()
@@ -18,6 +18,7 @@ SubMenuInformes::SubMenuInformes(string nombre)
 int SubMenuInformes::EjecutarSubMenuInformes(){
     ManagerSocio mSoc;
     ManagerCobro mCob;
+    ManagerActividad mAct;
     SubMenuInformes mInforme("INFORMES");
 
     mInforme.CargarOpciones("DETALLE DE COBROS");
@@ -37,11 +38,12 @@ int SubMenuInformes::EjecutarSubMenuInformes(){
             break;
         case 2:
             mSoc.listarDeudores();
-            system ("Pause");
             break;
         case 3:
+            mAct.ListarTodas();
            break;
         case 4:
+            mAct.detallesCuposEnActividades();
             break;
         case 0: return 0;
             break;

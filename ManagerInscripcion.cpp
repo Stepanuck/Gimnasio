@@ -77,13 +77,19 @@ void ManagerInscripcion::CargarInscripcion(){
             }
             monto = p.getArancel() * cantidadMeses;
 
-            cout << "Ingrese fecha de cobro: " << endl;
-            fechaCobro.cargar();
+            fechaCobro.hoy();//para calcular la fecha de la inscripcion del dia del sistema
+            cout<<"Fecha de cobro registrada automaticamente: ";
+            fechaCobro.mostrar();
+            cout<<endl;
 
              //Genero el id de cobro autonumérico
-            int idCobro = archivoCobro.getCantidadRegistros() + 1;
-
-            Cobro cobro(idCobro, idInscripcion, fechaCobro, monto);
+           int cantCobros = archivoCobro.getCantidadRegistros();//recuperamos la cantidad de cobros
+           int idCobro = 1;//al primero se le asigna uno
+           if(cantCobros>0){//si es el primero que se va a generar no entra aca
+            Cobro ultima = archivoCobro.Leer(cantCobros - 1);//si ya es el segundo se lee
+            idCobro = ultima.getIdCobro()+1;// y se toma el id y se suma 1
+           }
+            Cobro cobro(idCobro, idInscripcion, fechaCobro, monto);//constructor que crea el cobro con los datos que calculamos previamente
             if (archivoCobro.agregarRegistro(cobro) == 1) {
                 cout << "Cobro registrado correctamente." << endl;
             } else {
