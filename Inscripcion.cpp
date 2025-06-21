@@ -22,9 +22,7 @@ Inscripcion::Inscripcion(int idInscripcion,int idSocio, int idPlan, Fecha fechaI
     setFechaFin(fechaFin);
     setActivo(activo);
 }
-
-
- void Inscripcion::setIdInscripcion(int idInscripcion){
+void Inscripcion::setIdInscripcion(int idInscripcion){
     _idInscripcion = idInscripcion;
  }
 
@@ -95,3 +93,9 @@ bool Inscripcion::operator == (Inscripcion Insc){
     }
 }
 
+void MostrarInscripcion(){
+
+
+
+
+}

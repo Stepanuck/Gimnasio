@@ -9,6 +9,7 @@ private:
 public:
         ArchivoTutor(const char* nombreArchivo = "Tutor.dat");
         int buscarTutor(const char* dni);
+        int buscarTutor(int idTutor);
         int agregarRegistro(Tutor tut);
         bool listarRegistrosActivos();
         bool listarTodosLosRegistros();

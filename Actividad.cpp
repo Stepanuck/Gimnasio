@@ -146,7 +146,7 @@ void Actividad::MostrarActividad(){
     Tutor t;
     ArchivoTutor archT;
 
-    t=archT.Leer(getIdTutorACargo());
+    t=archT.Leer(getIdTutorACargo()-1);
 
     cout << "------------------------------------------"<< endl;
     cout << "ID: " << getIdActividad() << endl;

@@ -146,6 +146,27 @@ using namespace std;
         return -1;//si no lo encuentra devuelve -1
     }
 
+    int ArchivoTutor::buscarTutor(int idTutor){
+        Tutor tut;
+        FILE* pTutor;
+        pTutor = fopen(_nombre, "rb");
+        if(pTutor == nullptr){
+            cout<<"Error de archivo"<<endl;
+            return -2;
+        }
+        int pos = 0;
+        while(fread(&tut, sizeof(Tutor),1,pTutor)==1){
+            if(tut.getIDTutor() == idTutor){
+                fclose(pTutor);
+                return pos;
+            }
+            pos++;
+        }
+        fclose(pTutor);
+        return -1;
+    }
+
+
     bool ArchivoTutor::altaLogica(const char* dni){
         Tutor tut;
         ArchivoTutor archiv;

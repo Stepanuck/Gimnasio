@@ -8,6 +8,7 @@ private:
 public:
 
     void CargarInscripcion();
+    void ListarInscripcionesActivas();
     void ListarInscripciones();
     void ModificarInscripcion();
     void BuscarInscripcion();

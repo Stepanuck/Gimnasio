@@ -5,6 +5,7 @@
 #include "Plan.h"
 #include "ArchivoPlan.h"
 #include "Menu.h"
+#include "ArchivoActividad.h"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ void ManagerPlan::CargarPlan(){
     Plan plan, planGuardado;
     int idPlan;
     char nombre[20];
-    int IdActividadesIncluidas[5]={};
+    int IdActividad, IdActividadesIncluidas[5]={};
     float arancel;
     bool estado;
     int cantActividades;
@@ -34,13 +35,26 @@ void ManagerPlan::CargarPlan(){
     cout << "Ingresar la cantidad de Actividades a incluir en el plan, maximo 5: ";
     cin >> cantActividades;
 
+    ArchivoActividad archivoAct;
     if(cantActividades>0&&cantActividades<=5){
         cout << "Ingresar los ID: " << endl;
 
         for(int i=0; i<cantActividades;i++){
 
+            while(true){
             cout << "ID Actividad " << i+1 << ": ";
-            cin >> IdActividadesIncluidas[i];
+            cin >> IdActividad;
+                if(archivoAct.buscarActividad(IdActividad)!=-1){
+
+                    IdActividadesIncluidas[i]=IdActividad;
+                    break;
+                }
+                else{
+
+                    cout << "El ID del Plan Ingresado no existe" << endl;
+                    continue;
+                }
+            }
         }
     }
 
@@ -201,7 +215,7 @@ void ManagerPlan::ModificarPlan(){
         }
         case 2:{
             int id, posicion, cantActividades;
-            int IdActividadesIncluidas[5];
+            int IdActividad, IdActividadesIncluidas[5];
             ArchivoPlan Archivo;
             Plan plan, planGuardado;
 
@@ -218,15 +232,28 @@ void ManagerPlan::ModificarPlan(){
                 cout << "Ingresar la cantidad de Actividades a incluir en el plan, maximo 5: ";
                 cin >> cantActividades;
 
+                ArchivoActividad archivoAct;
                 if(cantActividades>0&&cantActividades<=5){
-                    cout << "Ingresar los ID: " << endl;
+                cout << "Ingresar los ID: " << endl;
 
-                    for(int i=0; i<cantActividades;i++){
+                for(int i=0; i<cantActividades;i++){
 
+                    while(true){
                         cout << "ID Actividad " << i+1 << ": ";
-                        cin >> IdActividadesIncluidas[i];
+                        cin >> IdActividad;
+                        if(archivoAct.buscarActividad(IdActividad)!=-1){
+
+                            IdActividadesIncluidas[i]=IdActividad;
+                            break;
+                        }
+                        else{
+
+                            cout << "El ID del Plan Ingresado no existe" << endl;
+                            continue;
+                        }
                     }
                 }
+            }
                 plan.setIdActividadesIncluidas(IdActividadesIncluidas);
 
                 int cantReg=Archivo.getCantidadRegistros();

@@ -6,7 +6,6 @@
 #include "Horario.h"
 #include "ArchivoActividad.h"
 #include "Menu.h"
-#include "Tutor.h"
 #include "ArchivoTutor.h"
 
 
@@ -45,11 +44,22 @@ void ManagerActividad::CargarActividad(){
     cin >> cuposDisponibles;
 
     ArchivoTutor tutorArchivo;
-    do{
+    while(true){
+
         cout << "Ingresar el ID del Tutor a cargo: ";
         cin >> idTutorACargo;
 
-    }while()
+        if(tutorArchivo.buscarTutor(idTutorACargo)!=-1){
+
+            break;
+        }
+        else{
+
+            cout << "El Tutor Ingresado no Existe" << endl;
+            continue;
+        }
+
+    }
     estado=true;
 
     Act=Actividad(idActividad,nombre, diaDeLaSemana,cuposDisponibles,horarioActividad,idTutorACargo,estado);
@@ -422,9 +432,23 @@ void ManagerActividad::ModificarActividad(){
 
                Act=Archivo.leer(posicion);
 
-               cout << "Ingresar nuevo ID Tutor: ";
-               cin >> idTutorACargo;
+                ArchivoTutor tutorArchivo;
+                while(true){
 
+                    cout << "Ingresar el ID del Tutor a cargo: ";
+                    cin >> idTutorACargo;
+
+                    if(tutorArchivo.buscarTutor(idTutorACargo)!=-1){
+
+                        break;
+                    }
+                    else{
+
+                        cout << "El Tutor Ingresado no Existe" << endl;
+                        continue;
+                    }
+
+                }
                Act.setIdTutorACargo(idTutorACargo);
 
                 int cantReg=Archivo.getCantidadRegistros();

@@ -21,7 +21,8 @@ int SubMenuInscripciones::EjecutarSubMenuInscripciones(){
 
     mInscripcion.CargarOpciones("CARGAR INSCRIPCION");
     mInscripcion.CargarOpciones("MODIFICAR INSCRIPCION");
-    mInscripcion.CargarOpciones("LISTAR INSCRIPCIONES");
+    mInscripcion.CargarOpciones("LISTAR INSCRIPCIONES ACTIVAS");
+    mInscripcion.CargarOpciones("LISTAR TODAS INSCRIPCIONES");
     mInscripcion.CargarOpciones("BUSCAR INSCRIPCION");
     mInscripcion.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
 
@@ -37,6 +38,8 @@ int SubMenuInscripciones::EjecutarSubMenuInscripciones(){
         case 3:
            break;
         case 4:
+            break;
+        case 5:
             break;
         case 0: return 0;
             break;

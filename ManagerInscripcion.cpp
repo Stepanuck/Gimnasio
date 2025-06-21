@@ -160,6 +160,7 @@ void ManagerInscripcion::CargarInscripcion(){
     system("pause");
 
 }*/
+//void ManagerInscripcion::ListarInscripcionesActivas();
 //void ManagerInscripcion::ListarInscripciones();
 void ManagerInscripcion::ModificarInscripcion(){
     Menu submenu("MODIFICAR INSCRIPCION");

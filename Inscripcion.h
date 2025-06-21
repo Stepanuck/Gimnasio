@@ -20,14 +20,14 @@ public:
 
     Inscripcion(int idInscripcion,int idSocio, int idPlan, Fecha fechaInicio, Fecha fechaFin, bool activo);
 
+    void setIdInscripcion(int idInscripcion);
+    int getIdInscripcion();
+
     void setIdSocioInscripto(int idSocio);
     int getIdSocioInscripto();
 
     void setIdPlanInscripto(int idPlan);
     int getIdPlanInscripto();
-
-    void setIdInscripcion(int idInscripcion);
-    int getIdInscripcion();
 
     void setFechaInicio(Fecha fechaInicio);
     Fecha getFechaInicio();
@@ -41,5 +41,6 @@ public:
     bool operator == (const Inscripcion& otra) const;
     bool operator == (Inscripcion Insc);
 
+    void MostrarInscripcion();
 
 };

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1750439959 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.cpp
+1750468054 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.cpp
 	<iostream>
 	<cstring>
 	"Actividad.h"
@@ -134,12 +134,13 @@
 	"SubMenuActividades.h"
 	"ManagerActividad.h"
 
-1748585743 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuconfiguraciones.cpp
+1750470577 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuconfiguraciones.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
 	"Menu.h"
 	"SubMenuConfiguraciones.h"
+	"ManagerConfiguracion.h"
 
 1748585743 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinformes.cpp
 	<iostream>
@@ -148,7 +149,7 @@
 	"Menu.h"
 	"SubMenuInformes.h"
 
-1750312741 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinscripciones.cpp
+1750467018 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinscripciones.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -156,7 +157,7 @@
 	"SubMenuInscripciones.h"
 	"ManagerInscripcion.h"
 
-1750223236 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuplanes.cpp
+1750455525 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuplanes.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -425,13 +426,13 @@
 1750452729 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivoplan.h
 	"Plan.h"
 
-1750303831 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivotutor.cpp
+1750467018 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivotutor.cpp
 	<iostream>
 	<cstring>
 	"Tutor.h"
 	"ArchivoTutor.h"
 
-1749783575 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivotutor.h
+1750467018 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivotutor.h
 	"Tutor.h"
 
 1749957295 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivoinscripcion.cpp
@@ -449,12 +450,12 @@
 1750214029 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivoplan.h
 	"Plan.h"
 
-1750223236 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\inscripcion.h
+1750467018 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\inscripcion.h
 	"Fecha.h"
 
 1749447518 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managersocio.h
 
-1750312545 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\inscripcion.cpp
+1750467019 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\inscripcion.cpp
 	<iostream>
 	"Socio.h"
 	"Fecha.h"
@@ -467,7 +468,7 @@
 	"ManagerSocio.h"
 	"ArchivoSocio.h"
 
-1750309510 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\manageractividad.cpp
+1750469880 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\manageractividad.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -476,6 +477,7 @@
 	"Horario.h"
 	"ArchivoActividad.h"
 	"Menu.h"
+	"ArchivoTutor.h"
 
 1750307910 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\manageractividad.h
 
@@ -518,7 +520,7 @@
 
 1750301533 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managersocio.h
 
-1750455499 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerplan.cpp
+1750470427 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerplan.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -526,10 +528,11 @@
 	"Plan.h"
 	"ArchivoPlan.h"
 	"Menu.h"
+	"ArchivoActividad.h"
 
 1750455499 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerplan.h
 
-1750454290 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\plan.cpp
+1750468245 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\plan.cpp
 	<iostream>
 	<cstring>
 	"Plan.h"
@@ -645,7 +648,7 @@
 	"SubMenuCobros.h"
 	"ManagerCobro.h"
 
-1750313514 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinscripcion.cpp
+1750467018 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinscripcion.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -656,11 +659,12 @@
 	"Cobro.h"
 	"Menu.h"
 
-1749790238 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinscripcion.h
+1750467018 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinscripcion.h
 
-<<<<<<< Updated upstream
+1750463373 ated upstream
+
 1750438043 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerconfiguracion.cpp
-=======
+
 1750302090 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenucobros.h
 	"Menu.h"
 
@@ -673,14 +677,14 @@
 	"ManagerCobro.h"
 
 1750463373 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managerconfiguracion.cpp
->>>>>>> Stashed changes
+
+1750464921 shed changes
 	<iostream>
 	<cstdio>
 	"ManagerConfiguracion.h"
 
-<<<<<<< Updated upstream
-1750438043 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerconfiguracion.h
-=======
+1750470577 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerconfiguracion.h
+
 1750463489 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managerconfiguracion.h
 
 1750464921 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\rlutil.h
@@ -696,5 +700,4 @@
 	<sys/ioctl.h>
 	<sys/types.h>
 	<sys/time.h>
->>>>>>> Stashed changes
 
