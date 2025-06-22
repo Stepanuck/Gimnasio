@@ -215,7 +215,7 @@ void ManagerPlan::ModificarPlan(){
         }
         case 2:{
             int id, posicion, cantActividades;
-            int IdActividad, IdActividadesIncluidas[5];
+            int IdActividad, IdActividadesIncluidas[5]={};
             ArchivoPlan Archivo;
             Plan plan, planGuardado;
 

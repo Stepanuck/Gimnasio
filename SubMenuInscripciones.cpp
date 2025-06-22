@@ -35,11 +35,11 @@ int SubMenuInscripciones::EjecutarSubMenuInscripciones(){
         break;
         case 2:ManagerInsc.ModificarInscripcion();
             break;
-        case 3:
+        case 3:ManagerInsc.ListarInscripcionesActivas();
            break;
-        case 4:
+        case 4:ManagerInsc.ListarInscripciones();
             break;
-        case 5:
+        case 5:ManagerInsc.BuscarInscripcion();
             break;
         case 0: return 0;
             break;

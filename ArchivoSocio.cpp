@@ -147,6 +147,25 @@
         fclose (pSocio);
         return -1;//si no lo encuentra devuelve -1
     }
+        int ArchivoSocio::buscarSocio(int idSocio){
+        Socio soc;
+        FILE* pSocio;
+        pSocio = fopen(_nombre, "rb");
+        if(pSocio == nullptr){
+            cout<<"Error de archivo"<<endl;
+            return -2;
+        }
+        int pos = 0;
+        while(fread(&soc, sizeof(Socio),1,pSocio)==1){
+            if(soc.getIDSocio() == idSocio){
+                fclose(pSocio);
+                return pos;
+            }
+            pos++;
+        }
+        fclose(pSocio);
+        return -1;
+    }
     bool ArchivoSocio::altaLogica(const char* dni){
         Socio soc;
         ArchivoSocio archiv;

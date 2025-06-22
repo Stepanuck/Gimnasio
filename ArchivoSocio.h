@@ -11,6 +11,7 @@ public:
 
         ArchivoSocio(const char* nombreArchivo = "Socios.dat");
         int buscarSocio(const char* dni);
+        int buscarSocio(int idSocio);
         int agregarRegistro(Socio soc);
         bool listarRegistrosActivos();
         bool listarTodosLosRegistros();

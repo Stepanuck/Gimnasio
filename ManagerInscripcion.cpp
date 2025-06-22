@@ -7,6 +7,7 @@
 #include "ArchivoCobro.h"
 #include "Cobro.h"
 #include "Menu.h"
+#include "ArchivoSocio.h"
 
 using namespace std;
 
@@ -17,6 +18,7 @@ void ManagerInscripcion::CargarInscripcion(){
     ArchivoInscripcion archivoIns;
     ArchivoCobro archivoCobro;
     ArchivoPlan archivoPlan;
+    ArchivoSocio socioArchivo;
 
     int idSocio, idPlan, cantidadMeses;
     Fecha fechaPago, fechaFin, fechaCobro;
@@ -33,10 +35,40 @@ void ManagerInscripcion::CargarInscripcion(){
         idInscripcion = ultima.getIdInscripcion() + 1;
     }
         //datos
-    cout << "Ingresar ID del Socio a Inscribir: ";
-    cin >> idSocio;
-    cout << "Ingresar ID del Plan seleccionado: ";
-    cin >> idPlan;
+
+    while(true){
+
+        cout << "Ingresar ID del Socio a Inscribir: ";
+        cin >> idSocio;
+
+        if(socioArchivo.buscarSocio(idSocio)!=-1){
+
+            break;
+        }
+        else{
+
+            cout << "El Socio Ingresado no Existe" << endl;
+            continue;
+        }
+
+    }
+    while(true){
+
+        cout << "Ingresar ID del Plan seleccionado: ";
+        cin >> idPlan;
+
+        if(archivoPlan.buscarPosicionPlan(idPlan)!=-1){
+
+            break;
+        }
+        else{
+
+            cout << "El Plan Ingresado no Existe" << endl;
+            continue;
+        }
+
+    }
+
 
     cout << "Ingrese fecha de pago/inicio (primer mes que paga): " << endl;
     fechaPago.cargar();
@@ -101,8 +133,9 @@ void ManagerInscripcion::CargarInscripcion(){
     } else {
         cout << "Inscripción existente para ese socio, plan y fecha de inicio." << endl;
     }
+    system("pause");
 
-    }
+}
 
 
 /*
@@ -166,8 +199,39 @@ void ManagerInscripcion::CargarInscripcion(){
     system("pause");
 
 }*/
-//void ManagerInscripcion::ListarInscripcionesActivas();
-//void ManagerInscripcion::ListarInscripciones();
+void ManagerInscripcion::ListarInscripcionesActivas(){
+    Inscripcion inscripcion;
+    ArchivoInscripcion Archivo;
+    int cantidadRegistros=Archivo.getCantidadRegistros();
+
+    for(int i=0; i<cantidadRegistros; i++){
+
+        inscripcion=Archivo.Leer(i);
+
+        if(inscripcion.getActivo()){
+
+            inscripcion.MostrarInscripcion();
+
+        }
+    }
+    system("pause");
+
+}
+void ManagerInscripcion::ListarInscripciones(){
+    Inscripcion inscripcion;
+    ArchivoInscripcion Archivo;
+    int cantidadRegistros=Archivo.getCantidadRegistros();
+
+    for(int i=0; i<cantidadRegistros; i++){
+
+        inscripcion=Archivo.Leer(i);
+
+        inscripcion.MostrarInscripcion();
+    }
+    system("pause");
+
+
+}
 void ManagerInscripcion::ModificarInscripcion(){
     Menu submenu("MODIFICAR INSCRIPCION");
 
@@ -185,6 +249,7 @@ void ManagerInscripcion::ModificarInscripcion(){
             int id, posicion, idSocio;
             ArchivoInscripcion Archivo;
             Inscripcion insc, inscGuardada;
+            ArchivoSocio socioArchivo;
 
             cout << "Ingresar ID de la Inscripcion a modificar: ";
             cin >> id;
@@ -196,8 +261,21 @@ void ManagerInscripcion::ModificarInscripcion(){
 
                insc=Archivo.Leer(posicion);
 
-               cout << "Ingresar nuevo ID del socio: ";
-               cin >> idSocio;
+                while(true){
+
+                    cout << "Ingresar nuevo ID del socio: ";
+                    cin >> idSocio;
+
+                    if(socioArchivo.buscarSocio(idSocio)!=-1){
+
+                        break;
+                    }
+                    else{
+
+                        cout << "El Socio Ingresado no Existe" << endl;
+                        continue;
+                    }
+                }
 
                insc.setIdSocioInscripto(idSocio);
 
@@ -251,6 +329,7 @@ void ManagerInscripcion::ModificarInscripcion(){
             int id, posicion, idPlan;
             ArchivoInscripcion Archivo;
             Inscripcion insc, inscGuardada;
+            ArchivoPlan planArchivo;
 
             cout << "Ingresar ID de la Inscripcion a modificar: ";
             cin >> id;
@@ -261,9 +340,23 @@ void ManagerInscripcion::ModificarInscripcion(){
             if(posicion>=0){
 
                insc=Archivo.Leer(posicion);
+                while(true){
 
-               cout << "Ingresar nuevo ID del Plan: ";
-               cin >> idPlan;
+                    cout << "Ingresar nuevo ID del Plan: ";
+                    cin >> idPlan;
+
+                    if(planArchivo.buscarPosicionPlan(idPlan)!=-1){
+
+
+                        break;
+                    }
+                    else{
+
+                        cout << "El Plan Ingresado no Existe" << endl;
+                        continue;
+                    }
+
+                }
 
                insc.setIdPlanInscripto(idPlan);
 
@@ -385,4 +478,114 @@ void ManagerInscripcion::ModificarInscripcion(){
 
 
 }
-//void ManagerInscripcion::BuscarInscripcion();
+void ManagerInscripcion::BuscarInscripcion(){
+
+    Menu submenu("BUSCAR INSCRIPCION");
+
+    submenu.CargarOpciones("POR ID SOCIO");
+    submenu.CargarOpciones("POR ID PLAN");
+    submenu.CargarOpciones("POR FECHA INGRESO");
+    submenu.CargarOpciones("REGRESAR");
+    bool band=false;
+    do{
+        system("cls");
+        submenu.Mostrar();
+
+        switch(submenu.SeleccionarOpcion()){
+        case 1:{
+            int idSocio;
+            ArchivoInscripcion Archivo;
+            Inscripcion insc;
+            int cantReg=Archivo.getCantidadRegistros();
+            bool band=false;
+
+            cout << "Ingresar ID Socio a buscar: ";
+            cin >> idSocio;
+            cin.ignore();
+
+            for(int i=0; i<cantReg; i++){
+
+                insc=Archivo.Leer(i);
+
+                if(insc.getIdSocioInscripto()==idSocio){
+
+                    insc.MostrarInscripcion();
+                    band=true;
+                }
+
+            }
+            if(!band){
+                cout << "No se encontraron Inscripciones para ese Socio." << endl;
+            }
+
+            system("pause");
+
+            break;
+        }
+        case 2:{
+            int idPlan;
+            ArchivoInscripcion Archivo;
+            Inscripcion insc;
+            int cantReg=Archivo.getCantidadRegistros();
+            bool band=false;
+
+            cout << "Ingresar ID Plan a buscar: ";
+            cin >> idPlan;
+            cin.ignore();
+
+            for(int i=0; i<cantReg; i++){
+
+                insc=Archivo.Leer(i);
+
+                if(insc.getIdPlanInscripto()==idPlan){
+
+                    insc.MostrarInscripcion();
+                    band=true;
+                }
+
+            }
+            if(!band){
+                cout << "No se encontraron Inscripciones para ese Plan." << endl;
+            }
+
+            system("pause");
+
+            break;
+        }
+        case 3:{
+            Fecha fechaConsulta;
+            ArchivoInscripcion Archivo;
+            Inscripcion insc;
+            int cantReg=Archivo.getCantidadRegistros();
+            bool band=false;
+
+            cout << "Ingresar la Fecha a Buscar: ";
+            fechaConsulta.cargar();
+            cin.ignore();
+
+            for(int i=0; i<cantReg; i++){
+
+                insc=Archivo.Leer(i);
+
+                if(insc.getFechaInicio()==fechaConsulta){
+
+                    insc.MostrarInscripcion();
+                    band=true;
+                }
+
+            }
+            if(!band){
+                cout << "No se encontraron Inscripciones para esa Fecha." << endl;
+            }
+
+            system("pause");
+
+            break;
+
+        }
+        case 0: band=true;
+            break;
+        }
+    }while(!band);
+
+}

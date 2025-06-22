@@ -58,17 +58,11 @@
 		<Unit filename="ArchivoPlan.cpp">
 			<Option virtualFolder="Archivos.cpp/" />
 		</Unit>
-		<Unit filename="ArchivoPlan.h">
-			<Option virtualFolder="Archivos.h/" />
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="ArchivoPlan.h" />
 		<Unit filename="ArchivoSocio.cpp">
 			<Option virtualFolder="Archivos.cpp/" />
 		</Unit>
-		<Unit filename="ArchivoSocio.h">
-			<Option virtualFolder="Archivos.h/" />
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="ArchivoSocio.h" />
 		<Unit filename="ArchivoTutor.cpp">
 			<Option virtualFolder="Archivos.cpp/" />
 		</Unit>
@@ -106,9 +100,7 @@
 			<Option virtualFolder="Managers.h/" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="ManagerConfiguracion.cpp">
-			<Option virtualFolder="Managers.cpp/" />
-		</Unit>
+		<Unit filename="ManagerConfiguracion.cpp" />
 		<Unit filename="ManagerConfiguracion.h">
 			<Option virtualFolder="Managers.h/" />
 			<Option target="&lt;{~None~}&gt;" />

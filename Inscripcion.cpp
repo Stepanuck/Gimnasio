@@ -3,6 +3,8 @@
 #include "Fecha.h"
 #include "Plan.h"
 #include "Inscripcion.h"
+#include "ArchivoSocio.h"
+#include "ArchivoPlan.h"
 
 using namespace std;
 
@@ -93,9 +95,25 @@ bool Inscripcion::operator == (Inscripcion Insc){
     }
 }
 
-void MostrarInscripcion(){
+void Inscripcion::MostrarInscripcion(){
 
+    Socio s;
+    ArchivoSocio archS;
+    Plan p;
+    ArchivoPlan archP;
 
+    s=archS.Leer(getIdSocioInscripto()-1);
+    p=archP.Leer(getIdPlanInscripto()-1);
+
+    cout << "------------------------------------------"<< endl;
+    cout << "Inscripcion: ID " << getIdInscripcion() << endl;
+    cout << "Socio Inscripto: ID " << getIdSocioInscripto()<< " " << s.getNombres() << " " << s.getApellidos() << endl;
+    cout << "Plan Inscripto: ID " << getIdPlanInscripto()<< " " << p.getNombre() << endl;
+    cout << "Fecha de Inicio: ";
+    getFechaInicio().mostrar();
+    cout << "Fecha de Fin: ";
+    getFechaFin().mostrar();
+    cout << "------------------------------------------"<< endl;
 
 
 }
