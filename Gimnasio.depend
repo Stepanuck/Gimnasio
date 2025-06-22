@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1750568715 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.cpp
+1750571769 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.cpp
 	<iostream>
 	<cstring>
 	"Actividad.h"
@@ -143,15 +143,12 @@
 	"SubMenuConfiguraciones.h"
 	"ManagerConfiguracion.h"
 
-1750568715 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinformes.cpp
+1750574508 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinformes.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
 	"Menu.h"
 	"SubMenuInformes.h"
-	"ManagerSocio.h"
-	"ManagerCobro.h"
-	"ManagerActividad.h"
 	"ManagerInformes.h"
 
 1750550778 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinscripciones.cpp
@@ -464,7 +461,7 @@
 	"ArchivoSocio.h"
 	"ArchivoPlan.h"
 
-1750483331 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managersocio.cpp
+1750572403 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managersocio.cpp
 	<iostream>
 	<cstring>
 	"Socio.h"
@@ -474,7 +471,7 @@
 	"Inscripcion.h"
 	"Menu.h"
 
-1750537872 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\manageractividad.cpp
+1750571234 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\manageractividad.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -728,5 +725,21 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1750568715 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinformes.h
+1750574392 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinformes.h
+
+1750578110 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinformes.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"ManagerInformes.h"
+	"Actividad.h"
+	"ArchivoActividad.h"
+	"Socio.h"
+	"ArchivoSocio.h"
+	"Inscripcion.h"
+	"ArchivoInscripcion.h"
+	"Plan.h"
+	"ArchivoPlan.h"
+	"Cobro.h"
+	"ArchivoCobro.h"
 

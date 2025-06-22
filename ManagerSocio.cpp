@@ -173,57 +173,6 @@ void ManagerSocio::modificarSocio(){
     }while(!salir);
 }
 
-void ManagerSocio::listarDeudores(){
-    ArchivoSocio archSocio;
-    ArchivoInscripcion archIns;//instanciamos los archivos.
-    int totalSocios = archSocio.getCantidadRegistros();//agarramos la cantidad de socios.
-    int totalInscripciones = archIns.getCantidadRegistros();
-    if(totalSocios==0){
-        cout << "No hay socios cargados." << endl;
-        system("pause");
-        return;
-    }
-    if(totalInscripciones == 0){
-        cout<<"No hay inscripciones cargadas. No se puede generar el reporte de deudores."<<endl;
-        system("pause");
-        return;
-    }
-    Fecha hoy;//instanciamos la fecha para sacar el dia de hoy.
-    hoy.hoy();//utilizamos la funcion para eso de arriba.
-
-    cout<<"--------- LISTADO DE DEUDORES -----------"<<endl;
-
-    bool hayDeudores = false;
-
-    for (int i=0;i<totalSocios;i++){
-        Socio soc = archSocio.Leer(i);
-         //validacion de que el socio se haya leido bien
-         if(strcmp(soc.getDni(), "-1") == 0) continue;
-        if(soc.getEstado()){//Solo los socios activos
-            //Buscamos si tienen inscripciones vigentes
-            bool tieneVigencia = false;
-
-
-            for(int j = 0; j<totalInscripciones; j++){//recorremos las inscripciones
-                Inscripcion insc = archIns.Leer(j);//leemos
-                if(insc.getIdSocioInscripto()==soc.getIDSocio()&& insc.getActivo() && insc.getFechaFin() >= hoy){//comprobamos que coinicida el id
-                        //que este activo y que la fecha de fin se mayor o igual a la de hoy
-                    tieneVigencia = true;
-                    break;// si es asi, tiene vigencia y no adeuda
-                }
-            }
-            if(!tieneVigencia){//caso contrario adeuda y se muestra, ademas se pone la flag en true.
-                hayDeudores = true;
-                soc.mostrar();
-                cout<<"-----------------------------------"<<endl;
-            }
-        }
-    }
-    if(!hayDeudores) cout<<"No hay deudores actualmente."<<endl;
-    system("pause");
-}
-
-
 void ManagerSocio::buscarSocio(){
     ArchivoSocio archiv;
     char dni[10];
