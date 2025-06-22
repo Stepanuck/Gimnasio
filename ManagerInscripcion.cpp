@@ -13,7 +13,8 @@ using namespace std;
 
 
 
-void ManagerInscripcion::CargarInscripcion(){
+void ManagerInscripcion::CargarInscripcion()
+{
 
     ArchivoInscripcion archivoIns;
     ArchivoCobro archivoCobro;
@@ -30,38 +31,45 @@ void ManagerInscripcion::CargarInscripcion(){
 
     int cantReg = archivoIns.getCantidadRegistros();
     int idInscripcion = 1;
-    if(cantReg>0){
+    if(cantReg>0)
+    {
         Inscripcion ultima = archivoIns.Leer(cantReg - 1);
         idInscripcion = ultima.getIdInscripcion() + 1;
     }
-        //datos
+    //datos
 
-    while(true){
+    while(true)
+    {
 
         cout << "Ingresar ID del Socio a Inscribir: ";
         cin >> idSocio;
 
-        if(socioArchivo.buscarSocio(idSocio)!=-1){
+        if(socioArchivo.buscarSocio(idSocio)!=-1)
+        {
 
             break;
         }
-        else{
+        else
+        {
 
             cout << "El Socio Ingresado no Existe" << endl;
             continue;
         }
 
     }
-    while(true){
+    while(true)
+    {
 
         cout << "Ingresar ID del Plan seleccionado: ";
         cin >> idPlan;
 
-        if(archivoPlan.buscarPosicionPlan(idPlan)!=-1){
+        if(archivoPlan.buscarPosicionPlan(idPlan)!=-1)
+        {
 
             break;
         }
-        else{
+        else
+        {
 
             cout << "El Plan Ingresado no Existe" << endl;
             continue;
@@ -84,26 +92,31 @@ void ManagerInscripcion::CargarInscripcion(){
     ///Verificar si la inscripcion ya existe para el mismo socio, plan y periodo
 
     bool existe = false;
-    for(int i=0;i<cantReg;i++){
+    for(int i=0; i<cantReg; i++)
+    {
 
-            Inscripcion guardada= archivoIns.Leer(i);
-            if(guardada.getIdSocioInscripto()==idSocio &&
-               guardada.getIdPlanInscripto()== idPlan &&
-               guardada.getFechaInicio()==fechaPago){
-                existe = true;
-                break;
-               }
+        Inscripcion guardada= archivoIns.Leer(i);
+        if(guardada.getIdSocioInscripto()==idSocio &&
+                guardada.getIdPlanInscripto()== idPlan &&
+                guardada.getFechaInicio()==fechaPago)
+        {
+            existe = true;
+            break;
+        }
     }
 
-    if(!existe){
+    if(!existe)
+    {
         //creamos la inscripcion y la guardamos
-         Inscripcion insc(idInscripcion, idSocio, idPlan, fechaPago, fechaFin, true);
-        if(archivoIns.agregarRegistro(insc) != -1) {
-            cout << "Inscripción guardada correctamente. Generando cobro..." << endl;
+        Inscripcion insc(idInscripcion, idSocio, idPlan, fechaPago, fechaFin, true);
+        if(archivoIns.agregarRegistro(insc) != -1)
+        {
+            cout << "Inscripcin guardada correctamente. Generando cobro..." << endl;
 
             // Obtenemos el valor del plan
             Plan p = archivoPlan.buscarPlan(idPlan);
-            if(p.getIdPlan()==0){
+            if(p.getIdPlan()==0)
+            {
                 cout<<"El plan ingresado no existe. Inscripcion cancelada."<<endl;
                 return;
             }
@@ -114,24 +127,32 @@ void ManagerInscripcion::CargarInscripcion(){
             fechaCobro.mostrar();
             cout<<endl;
 
-             //Genero el id de cobro autonumérico
-           int cantCobros = archivoCobro.getCantidadRegistros();//recuperamos la cantidad de cobros
-           int idCobro = 1;//al primero se le asigna uno
-           if(cantCobros>0){//si es el primero que se va a generar no entra aca
-            Cobro ultima = archivoCobro.Leer(cantCobros - 1);//si ya es el segundo se lee
-            idCobro = ultima.getIdCobro()+1;// y se toma el id y se suma 1
-           }
+            //Genero el id de cobro autonumérico
+            int cantCobros = archivoCobro.getCantidadRegistros();//recuperamos la cantidad de cobros
+            int idCobro = 1;//al primero se le asigna uno
+            if(cantCobros>0) //si es el primero que se va a generar no entra aca
+            {
+                Cobro ultima = archivoCobro.Leer(cantCobros - 1);//si ya es el segundo se lee
+                idCobro = ultima.getIdCobro()+1;// y se toma el id y se suma 1
+            }
             Cobro cobro(idCobro, idInscripcion, fechaCobro, monto);//constructor que crea el cobro con los datos que calculamos previamente
-            if (archivoCobro.agregarRegistro(cobro) == 1) {
+            if (archivoCobro.agregarRegistro(cobro) == 1)
+            {
                 cout << "Cobro registrado correctamente." << endl;
-            } else {
+            }
+            else
+            {
                 cout << "Error al registrar el cobro." << endl;
             }
-        } else {
-            cout << "No se pudo guardar la inscripción" << endl;
         }
-    } else {
-        cout << "Inscripción existente para ese socio, plan y fecha de inicio." << endl;
+        else
+        {
+            cout << "No se pudo guardar la inscripcion" << endl;
+        }
+    }
+    else
+    {
+        cout << "Inscripcion existente para ese socio, plan y fecha de inicio." << endl;
     }
     system("pause");
 
@@ -326,10 +347,13 @@ void ManagerInscripcion::ModificarInscripcion(){
             break;
         }
         case 2:{
-            int id, posicion, idPlan;
+            int id, posicion, idPlan, cantMeses;
             ArchivoInscripcion Archivo;
             Inscripcion insc, inscGuardada;
             ArchivoPlan planArchivo;
+            Cobro cobro;
+            ArchivoCobro cobroArchivo;
+
 
             cout << "Ingresar ID de la Inscripcion a modificar: ";
             cin >> id;
@@ -340,6 +364,8 @@ void ManagerInscripcion::ModificarInscripcion(){
             if(posicion>=0){
 
                insc=Archivo.Leer(posicion);
+               cantMeses=insc.getFechaFin()-insc.getFechaInicio();
+
                 while(true){
 
                     cout << "Ingresar nuevo ID del Plan: ";
@@ -358,7 +384,7 @@ void ManagerInscripcion::ModificarInscripcion(){
 
                 }
 
-               insc.setIdPlanInscripto(idPlan);
+                insc.setIdPlanInscripto(idPlan);
 
                 int cantReg=Archivo.getCantidadRegistros();
                 bool existe=false;
@@ -380,6 +406,23 @@ void ManagerInscripcion::ModificarInscripcion(){
                     if(Archivo.modificarInscripcion(insc,posicion)!=-1){
 
                         cout << "El registro se guardo correctamente" << endl;
+
+                        cobro=cobroArchivo.Leer(posicion);
+
+                        Plan p;
+                        p=planArchivo.buscarPlan(idPlan);
+                        int monto=p.getArancel()*cantMeses;
+                        cobro.setMonto(monto);
+
+                        if(cobroArchivo.modificarCobro(cobro,posicion)!=-1){
+
+                            cout << "El cobro se guardo correctamente" << endl;
+                        }
+                        else {
+
+                            cout << "Error al guardar el cobro" << endl;
+
+                        }
 
                     }
                     else{
@@ -406,8 +449,8 @@ void ManagerInscripcion::ModificarInscripcion(){
             break;
         }
         case 3:{
-            int id, posicion;
-            Fecha fechaDeInicio;
+            int id, posicion, cantMeses;
+            Fecha fechaDeInicio, fechaFin;
             ArchivoInscripcion Archivo;
             Inscripcion insc, inscGuardada;
 
@@ -421,10 +464,21 @@ void ManagerInscripcion::ModificarInscripcion(){
 
                insc=Archivo.Leer(posicion);
 
+               cantMeses=insc.getFechaFin()-insc.getFechaInicio();
+
+               cout<< cantMeses<< endl;
+
                cout << "Ingresar la nueva fecha ingreso: ";
                fechaDeInicio.cargar();
 
+
                insc.setFechaInicio(fechaDeInicio);
+
+               fechaFin = fechaDeInicio;
+               fechaFin.sumarMeses(cantMeses);
+
+               insc.setFechaFin(fechaFin);
+
 
                 int cantReg=Archivo.getCantidadRegistros();
                 bool existe=false;

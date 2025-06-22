@@ -28,4 +28,6 @@ class Fecha{
 
         bool operator>=(const Fecha& otra) const;
         bool operator == (Fecha fecha);
+
+        int operator-(Fecha fecha);
 };

@@ -57,5 +57,16 @@ int ArchivoCobro::getCantidadRegistros(){
     fclose(pCobro);
     return cantidad;
 }
-
+    int ArchivoCobro::modificarCobro(Cobro cobro, int pos){
+        FILE* pCobro;
+        pCobro = fopen(_nombre, "rb+");
+        if(pCobro == nullptr){
+            cout<<"Error de archivo"<<endl;
+            return -1;
+        }
+        fseek(pCobro, pos*sizeof(Cobro), SEEK_SET);
+        int escribio = fwrite(&cobro, sizeof(Cobro),1,pCobro);
+        fclose(pCobro);
+        return escribio;
+    }
 

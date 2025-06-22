@@ -12,5 +12,5 @@ public:
     int agregarRegistro(Cobro cobro);
     int getCantidadRegistros();
     Cobro Leer(int pos);
-
+    int modificarCobro(Cobro cobro, int pos);
 };

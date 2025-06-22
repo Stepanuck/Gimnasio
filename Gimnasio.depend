@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1750468054 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.cpp
+1750568715 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.cpp
 	<iostream>
 	<cstring>
 	"Actividad.h"
@@ -20,7 +20,7 @@
 	"Fecha.h"
 	"Domicilio.h"
 
-1750483331 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\fecha.h
+1750554295 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\fecha.h
 
 1748042737 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\domicilio.h
 
@@ -48,7 +48,7 @@
 	<cstring>
 	"Domicilio.h"
 
-1750483331 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\fecha.cpp
+1750562433 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\fecha.cpp
 	<iostream>
 	<ctime>
 	"Fecha.h"
@@ -143,7 +143,7 @@
 	"SubMenuConfiguraciones.h"
 	"ManagerConfiguracion.h"
 
-1750537872 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinformes.cpp
+1750568715 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinformes.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -152,6 +152,7 @@
 	"ManagerSocio.h"
 	"ManagerCobro.h"
 	"ManagerActividad.h"
+	"ManagerInformes.h"
 
 1750550778 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinscripciones.cpp
 	<iostream>
@@ -630,13 +631,13 @@
 
 1750480727 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managercobro.h
 
-1750537872 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivocobro.cpp
+1750560968 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivocobro.cpp
 	<iostream>
 	<cstring>
 	"ArchivoCobro.h"
 	"Cobro.h"
 
-1750223236 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivocobro.h
+1750560968 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\archivocobro.h
 	"Cobro.h"
 
 1750303831 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\cobro.h
@@ -667,7 +668,7 @@
 	"SubMenuCobros.h"
 	"ManagerCobro.h"
 
-1750551426 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinscripcion.cpp
+1750562185 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinscripcion.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -726,4 +727,6 @@
 	<sys/ioctl.h>
 	<sys/types.h>
 	<sys/time.h>
+
+1750568715 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinformes.h
 

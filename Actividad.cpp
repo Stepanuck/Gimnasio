@@ -155,6 +155,6 @@ void Actividad::MostrarActividad(){
     getHorarioActividad().mostrar();
     cout << "Cupos: " << getCuposDisponibles() << endl;
     cout << "Tutor a Cargo: ID "<< getIdTutorACargo() << " " << t.getNombres()<< " " << t.getApellidos() << endl;
-    cout << "------------------------------------------"<< endl;
+    //cout << "------------------------------------------"<< endl;
 
 }
