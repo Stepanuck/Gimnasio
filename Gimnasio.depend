@@ -188,7 +188,7 @@
 	"Tutor.h"
 	"Persona.h"
 
-1750473665 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\actividad.cpp
+1750599475 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\actividad.cpp
 	<iostream>
 	<cstring>
 	"Actividad.h"
@@ -209,7 +209,7 @@
 	"Fecha.h"
 	"Domicilio.h"
 
-1750479315 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\fecha.h
+1750599475 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\fecha.h
 
 1747962558 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\domicilio.h
 
@@ -220,7 +220,7 @@
 1748903715 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivo.h
 	<cstring>
 
-1750520719 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivosocio.cpp
+1750599475 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivosocio.cpp
 	<iostream>
 	<cstring>
 	"Socio.h"
@@ -229,7 +229,7 @@
 1749934241 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\socio.h
 	"Persona.h"
 
-1749429904 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivosocio.h
+1750599475 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivosocio.h
 	"Socio.h"
 
 1749249800 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\domicilio.cpp
@@ -237,7 +237,7 @@
 	<cstring>
 	"Domicilio.h"
 
-1750480252 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\fecha.cpp
+1750599475 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\fecha.cpp
 	<iostream>
 	<ctime>
 	"Fecha.h"
@@ -332,16 +332,15 @@
 	"SubMenuConfiguraciones.h"
 	"ManagerConfiguracion.h"
 
-1750528580 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuinformes.cpp
+1750599475 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuinformes.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
 	"Menu.h"
 	"SubMenuInformes.h"
-	"ManagerSocio.h"
-	"ManagerCobro.h"
+	"ManagerInformes.h"
 
-1750473665 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuinscripciones.cpp
+1750599475 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\submenuinscripciones.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -498,14 +497,16 @@
 1749851520 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivoinscripcion.h
 	"Inscripcion.h"
 
-1750473665 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\inscripcion.cpp
+1750605047 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\inscripcion.cpp
 	<iostream>
 	"Socio.h"
 	"Fecha.h"
 	"Plan.h"
 	"Inscripcion.h"
+	"ArchivoSocio.h"
+	"ArchivoPlan.h"
 
-1750532330 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\manageractividad.cpp
+1750599475 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\manageractividad.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -520,7 +521,7 @@
 
 1750532310 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\manageractividad.h
 
-1750481693 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managersocio.cpp
+1750599475 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managersocio.cpp
 	<iostream>
 	<cstring>
 	"Socio.h"
@@ -559,7 +560,7 @@
 
 1749781824 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managertutor.h
 
-1750473665 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managerplan.cpp
+1750599475 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managerplan.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -579,7 +580,7 @@
 
 1749779085 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managertutor.h
 
-1750530615 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managerinscripcion.cpp
+1750607100 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managerinscripcion.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -589,8 +590,9 @@
 	"ArchivoCobro.h"
 	"Cobro.h"
 	"Menu.h"
+	"ArchivoSocio.h"
 
-1750473665 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managerinscripcion.h
+1750605705 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managerinscripcion.h
 
 1749766254 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\plan.h
 	"Actividad.h"
@@ -610,13 +612,13 @@
 1750300255 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\cobro.h
 	"Fecha.h"
 
-1750530180 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivocobro.cpp
+1750599475 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivocobro.cpp
 	<iostream>
 	<cstring>
 	"ArchivoCobro.h"
 	"Cobro.h"
 
-1750210800 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivocobro.h
+1750599475 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\archivocobro.h
 	"Cobro.h"
 
 1750529541 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managercobro.cpp
@@ -742,4 +744,22 @@
 	"ArchivoPlan.h"
 	"Cobro.h"
 	"ArchivoCobro.h"
+
+1750599475 source:c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managerinformes.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"ManagerInformes.h"
+	"Actividad.h"
+	"ArchivoActividad.h"
+	"Socio.h"
+	"ArchivoSocio.h"
+	"Inscripcion.h"
+	"ArchivoInscripcion.h"
+	"Plan.h"
+	"ArchivoPlan.h"
+	"Cobro.h"
+	"ArchivoCobro.h"
+
+1750599475 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managerinformes.h
 

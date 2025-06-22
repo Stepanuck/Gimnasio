@@ -12,5 +12,6 @@ public:
     void ListarInscripciones();
     void ModificarInscripcion();
     void BuscarInscripcion();
+    void actualizarEstados();
 
 };

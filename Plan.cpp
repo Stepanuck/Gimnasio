@@ -119,7 +119,7 @@ void Plan::MostrarPlan(){
     cout << "ID: " << getIdPlan() << endl;
     cout << "Plan: " << getNombre() << endl;
     cout << "Actividades Incluidas:" << endl;
-    for (int i; i<5; i++){
+    for (int i=0; i<5; i++){
         if(getIdActividadesIncluidas(i)!=0){
             act=actArchivo.leer(getIdActividadesIncluidas(i)-1);
             cout << "  -ID " << getIdActividadesIncluidas(i) << " " << act.getNombre() << endl;

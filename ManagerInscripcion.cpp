@@ -158,84 +158,48 @@ void ManagerInscripcion::CargarInscripcion()
 
 }
 
-
 /*
-void ManagerInscripcion::CargarInscripcion(){
-
-    ArchivoInscripcion Archivo;
-    Inscripcion Insc, InscGuardada;
-    int idSocio;
-    int idPlan;
-    Fecha fechaDePago;
-    bool pago;
-    int cantReg=Archivo.getCantidadRegistros();
-
-    int idInscripcion = 1; //por defecto el primero es 1
-
-    if(cantReg>0){
-        InscGuardada = Archivo.Leer(cantReg - 1); //leo el ultimo registro
-        idInscripcion = InscGuardada.getIdInscripcion() + 1; // Sumo uno al ultimo registro
-    }
-
-    cout << "Ingresar ID del Socio a Inscribir: ";
-    cin >> idSocio;
-
-    cout << "Ingresar ID del Plan seleccionado: ";
-    cin >> idPlan;
-
-    fechaDePago.cargar();
-
-    pago=true;
-
-    Insc=Inscripcion(idInscripcion,idSocio, idPlan, fechaDePago, pago);
-
-    bool existe=false;
-
-    for(int i = 0; i < cantReg; i++){
-        InscGuardada = Archivo.Leer(i);
-        if(Insc == InscGuardada){
-            existe = true;
-            break;
+void ManagerInscripcion::ListarInscripcionesActivas() {
+    actualizarEstadosEnDisco();//aca para que modifique los estados antes de mostrarlo.
+    ArchivoInscripcion archivo;
+    int total = archivo.getCantidadRegistros();
+    for (int i = 0; i < total; ++i) {
+        Inscripcion insc = archivo.Leer(i);
+        if (insc.getActivo()) {
+            insc.MostrarInscripcion();
         }
-    }
-
-    if(!existe){
-
-
-        if(Archivo.agregarRegistro(Insc)!=-1){
-
-            cout << "El registro se guardo correctamente" << endl;
-
-        }
-        else{
-
-            cout << "No se pudo guardar" << endl;
-        }
-    }
-    else{
-
-        cout << "Inscripcion existente" << endl;
-
     }
     system("pause");
-
-}*/
+}
+*/
 void ManagerInscripcion::ListarInscripcionesActivas(){
-    Inscripcion inscripcion;
-    ArchivoInscripcion Archivo;
-    int cantidadRegistros=Archivo.getCantidadRegistros();
-
-    for(int i=0; i<cantidadRegistros; i++){
-
-        inscripcion=Archivo.Leer(i);
-
-        if(inscripcion.getActivo()){
-
-            inscripcion.MostrarInscripcion();
-
-        }
-    }
+   ArchivoInscripcion archIns;
+   int total = archIns.getCantidadRegistros();
+   if(total<=0){
+    cout<<"No hay inscripciones cargadas."<<endl;
     system("pause");
+    return;
+   }
+
+   Fecha hoy;
+   hoy.hoy();
+
+   cout<<"--------------- INSCRIPCIONES ACTIVAS ----------"<<endl;
+   bool alguna = false;
+
+   for (int i=0; i < total; i++){
+    Inscripcion insc = archIns.Leer(i);
+
+    if(insc.getActivo() && insc.getFechaFin() >= hoy){
+        insc.MostrarInscripcion();
+        alguna = true;
+    }
+   }
+
+   if(!alguna){
+    cout<<"No hay inscripciones activas vigentes."<<endl;
+   }
+   system("pause");
 
 }
 void ManagerInscripcion::ListarInscripciones(){
@@ -641,5 +605,23 @@ void ManagerInscripcion::BuscarInscripcion(){
             break;
         }
     }while(!band);
+
+}
+
+
+void ManagerInscripcion::actualizarEstados(){
+    ArchivoInscripcion archIns;//instanciamos el archivo
+    int total = archIns.getCantidadRegistros();//obtenemos todos los registros
+    Fecha hoy;//instanciamos la fecha
+    hoy.hoy();//obtenemos la fecha de hoy
+
+    for (int i = 0; i<total;i++){//recorremos las isncripciones
+        Inscripcion insc = archIns.Leer(i);//las leemos
+        //si estan activas pero la fecha fin es menor a la de hoy es que no tiene vigencia
+        if(insc.getActivo() && !(insc.getFechaFin()>= hoy)){
+            insc.setActivo(false);//por ende seteamos el activo a false, la damos de baja.
+            archIns.modificarInscripcion(insc, i);//modificamos la inscripcion
+        }
+    }
 
 }

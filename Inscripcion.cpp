@@ -105,6 +105,11 @@ void Inscripcion::MostrarInscripcion(){
     s=archS.Leer(getIdSocioInscripto()-1);
     p=archP.Leer(getIdPlanInscripto()-1);
 
+    Fecha hoy;
+    hoy.hoy(); //para cargar la fecha de hoy
+
+    bool vigente = _activo && (_fechaFin >= hoy);
+
     cout << "------------------------------------------"<< endl;
     cout << "Inscripcion: ID " << getIdInscripcion() << endl;
     cout << "Socio Inscripto: ID " << getIdSocioInscripto()<< " " << s.getNombres() << " " << s.getApellidos() << endl;
@@ -113,6 +118,7 @@ void Inscripcion::MostrarInscripcion(){
     getFechaInicio().mostrar();
     cout << "Fecha de Fin: ";
     getFechaFin().mostrar();
+    cout<<"Estado: "<<(vigente? "Activo" : "Vencido/Inactivo")<<endl;
     cout << "------------------------------------------"<< endl;
 
 
