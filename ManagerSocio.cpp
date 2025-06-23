@@ -41,6 +41,7 @@ void ManagerSocio::altaSocio(){
 void ManagerSocio::listarSociosActivos(){
     ArchivoSocio archiv;
     archiv.listarRegistrosActivos();
+
 }
 
 void ManagerSocio::listarTodosLosSocios(){
@@ -51,6 +52,7 @@ void ManagerSocio::listarTodosLosSocios(){
 void ManagerSocio::listarSociosInactivos(){
     ArchivoSocio archiv;
     archiv.listarRegistrosInactivos();
+
 }
 
 
@@ -200,6 +202,21 @@ void ManagerSocio::eliminarLogicoSocio(){
         cout<<"Socio dado de baja correctamente."<<endl;
     }else{
         cout<<"No se pudo dar de baja al socio. Verifique el DNI."<<endl;
+    }
+
+}
+
+void ManagerSocio::altaLogicoSocio(){
+    ArchivoSocio archiv;
+    char dni[10];
+
+    cout<<"Ingrese el DNI del socio a dar de alta: ";
+    cin>>dni;
+
+    if(archiv.altaLogica(dni)){
+        cout<<"Socio dado de alta correctamente."<<endl;
+    }else{
+        cout<<"No se pudo dar de alta al socio. Verifique el DNI."<<endl;
     }
 
 }

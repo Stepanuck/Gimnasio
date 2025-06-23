@@ -48,6 +48,7 @@ using namespace std;
             while(fread(&tut, sizeof(Tutor),1,pTutor)==1){
                 if(tut.getEstado()){
                     tut.mostrar();
+                    cout<<"----------------------------------------------------"<<endl;
                 }
             }
             fclose(pTutor);
@@ -84,6 +85,7 @@ using namespace std;
             if(!tut.getEstado()){//vemos si el estado es distinto de true
                 tut.mostrar();//si lo es lo muestro porque esta inactivo
                 hayInactivos= true;//mi bandera la vuelvo true porque encontre inactivos
+                cout<<"----------------------------------------------------"<<endl;
             }
         }
         fclose(pTutor);//cierro el archivo

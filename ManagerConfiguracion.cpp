@@ -63,7 +63,7 @@ using namespace std;
     backupArchivo("Tutor.dat", "Tutor.bkp");
     backupArchivo("Plan.dat", "Plan.bkp");
     backupArchivo("Actividad.dat", "Actividad.bkp");
-    backupArchivo("Inscripcion.dat", "Inscripcion.bkp");
+    backupArchivo("Inscripciones.dat", "Inscripciones.bkp");
     backupArchivo("Cobro.dat", "Cobro.bkp");
     cout << "Backup completo realizado!" << endl;
 }

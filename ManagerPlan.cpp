@@ -373,6 +373,19 @@ void ManagerPlan::ModificarPlan(){
 
 
 }
+void ManagerPlan::altaLogicaPlan(){
+    ArchivoPlan archPlan;
+    int idPlan;
+    cout<<"Ingrese el ID del plan que queres dar de alta nuevamente: ";
+    cin>>idPlan;
+
+    if(archPlan.altaLogica(idPlan)){
+        cout<<"Plan dado de alta correctamente."<<endl;
+    }else{
+        cout<<"No se pudo dar de alta el plan. Verifique el ID."<<endl;
+    }
+    }
+
 
 void ManagerPlan::EliminarPlan(){
             int id, posicion;

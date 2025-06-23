@@ -23,6 +23,7 @@ int SubMenuTutores::EjecutarSubMenuTutores(){
     mTutor.CargarOpciones("LISTAR TUTORES INACTIVOS");
     mTutor.CargarOpciones("LISTAR TUTORES ACTIVOS");
     mTutor.CargarOpciones("BUSCAR TUTOR");
+    mTutor.CargarOpciones("DAR DE ALTA NUEVAMENTE AL TUTOR");
     mTutor.CargarOpciones("ELIMINAR TUTOR");
     mTutor.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
 
@@ -56,6 +57,10 @@ int SubMenuTutores::EjecutarSubMenuTutores(){
             system("Pause");
             break;
         case 7:
+            mTut.altaLogicoTutor();
+            system("Pause");
+            break;
+        case 8:
             mTut.eliminarLogicoTutor();
             system("Pause");
             break;

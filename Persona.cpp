@@ -113,7 +113,7 @@ const char* Persona::getTelefono(){
 //verifica que el email contenga un @
 
 void Persona::setEmail(const char* email){
-     if (strchr(email, '@') != nullptr) {
+     if (strchr(email, '@') != nullptr) {///strchr compara cada caracter con @, si encuentra una coincidencia, devuelve un puntero al lugar de la cadena, si no, devuelve nullptr
         strcpy(_email, email);
     } else {
         strcpy(_email, "invalido@mail.com");
@@ -143,36 +143,107 @@ bool Persona::getEstado(){
 
 
 void Persona::cargar() {
-    cout << "Ingrese nombres: ";
-    cin.getline(_nombres, 40);
 
-    cout << "Ingrese apellidos: ";
-    cin.getline(_apellidos, 40);
+    char auxNombres[40];
+    do {
+        cout << "Ingrese nombres: ";
+        cin.getline(auxNombres, 40);
+        if (strlen(auxNombres) == 0) {
+            cout << "Error: El nombre no puede estar vacio.";
+        }
+    } while (strlen(auxNombres) == 0);
+    setNombres(auxNombres);
 
-    cout << "Ingrese DNI: ";
-    cin.getline(_dni, 9);
 
-    cout << "Ingrese edad: ";
-    cin >> _edad;
+    char auxApellidos[40];
+    do {
+        cout << "Ingrese apellidos: ";
+        cin.getline(auxApellidos, 40);
+        if (strlen(auxApellidos) == 0) {
+            cout << "Error: El apellido no puede estar vacio.";
+        }
+    } while (strlen(auxApellidos) == 0);
+    setApellidos(auxApellidos);
+
+
+    char auxDni[9];
+    do {
+        cout << "Ingrese DNI (7 u 8 digitos): ";
+        cin.getline(auxDni, 9);
+        size_t len = strlen(auxDni);//tipo de dato que mide logintudes y tamanios, strlen devuelve la longitud de la cadena
+        if (len < 7 || len > 8) {
+            cout << "Error: El DNI debe tener entre 7 y 8 caracteres.";
+        }
+    } while (strlen(auxDni) < 7 || strlen(auxDni) > 8);
+    setDni(auxDni);
+
+
+    int auxEdad;//cin.fail() lo usamos para ver que en el ingreso sea un numero y si es una letra tira el fallo, es una bandera que se pone en true al tener el fallo
+    do {//cin.clear() limpia la bandera del fallo para restablecer el flujo
+        cout << "Ingrese edad (mayor a 0): ";
+        cin >> auxEdad;
+        if (cin.fail() || auxEdad <= 0) {
+            cout << "Error: Edad invalida.";
+            cin.clear();
+            cin.ignore();
+            auxEdad = 0;
+        }
+    } while (auxEdad <= 0);
+    setEdad(auxEdad);
     cin.ignore();
 
-    cout << "Ingrese genero (Masculino/Femenino/Otro): ";
-    cin.getline(_genero, 20);
 
-    cout << "Ingrese telefono: ";
-    cin.getline(_telefono, 11);
+    char auxGenero[20];
+    do {
+        cout << "Ingrese genero (Masculino/Femenino/Otro): ";
+        cin.getline(auxGenero, 20);
+        if (strcmp(auxGenero, "Masculino") != 0 &&
+            strcmp(auxGenero, "Femenino")  != 0 &&
+            strcmp(auxGenero, "Otro")      != 0) {
+            cout << "Error: Genero invalido.";
+        }
+    } while (strcmp(auxGenero, "Masculino") != 0 &&
+             strcmp(auxGenero, "Femenino")  != 0 &&
+             strcmp(auxGenero, "Otro")      != 0);
+    setGenero(auxGenero);
 
-    cout << "Ingrese email: ";
-    cin.getline(_email, 50);
 
+   char auxTelefono[15];
+do {
+    cout << "Ingrese teléfono: ";
+    cin.getline(auxTelefono, 15);
+    if (strlen(auxTelefono) == 0) {
+        cout << "Error: El telefono no puede estar vacio." << endl;
+    }
+} while (strlen(auxTelefono) == 0);
+setTelefono(auxTelefono);
+
+
+
+    char auxEmail[50];
+    do {
+        cout << "Ingrese email (debe contener '@'): ";
+        cin.getline(auxEmail, 50);
+        if (strchr(auxEmail, '@') == nullptr) {
+            cout << "Error: Email invalido.";
+        }
+    } while (strchr(auxEmail, '@') == nullptr);
+    setEmail(auxEmail);
+
+
+    Fecha auxFecha;
     cout << "Ingrese fecha de nacimiento:" << endl;
-    _fechaNacimiento.cargar();
+    auxFecha.cargar();
+    setFecha(auxFecha);
 
-    cin.ignore();
+
+    Domicilio auxDomicilio;
     cout << "Ingrese domicilio:" << endl;
-    _domicilio.cargar();
+    cin.ignore();
+    auxDomicilio.cargar();
+    setDomicilio(auxDomicilio);
 
-    _estado = true;
+    setEstado(true);
 }
 
 void Persona::mostrar() {

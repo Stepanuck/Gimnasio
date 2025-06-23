@@ -49,6 +49,7 @@
         while(fread(&soc, sizeof(Socio),1,pSocio)==1){//si existe el archivo lee socio por socio
             if(soc.getEstado()){//revisamos que el estado este true de activo.
                 soc.mostrar();//lo mostramos
+                cout<<"-------------------------------------------------"<<endl;
             }
         }
         fclose(pSocio);
@@ -85,6 +86,7 @@
             if(!soc.getEstado()){//vemos si el estado es distinto de true
                 soc.mostrar();//si lo es lo muestro porque esta inactivo
                 hayInactivos= true;//mi bandera la vuelvo true porque encontre inactivos
+                cout<<"-------------------------------------------------"<<endl;
             }
         }
         fclose(pSocio);//cierro el archivo

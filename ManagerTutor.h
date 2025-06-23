@@ -13,6 +13,7 @@ class ManagerTutor {
     void listarTutoresInactivos();
     void modificarTutor();
     void eliminarLogicoTutor();
+    void altaLogicoTutor();
     void buscarTutor();
 
 };

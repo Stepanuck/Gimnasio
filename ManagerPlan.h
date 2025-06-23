@@ -13,5 +13,6 @@ public:
     void ModificarPlan();
     void EliminarPlan();
     void BuscarPlan();
+    void altaLogicaPlan();
 
 };

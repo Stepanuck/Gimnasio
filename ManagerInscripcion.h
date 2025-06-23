@@ -13,5 +13,6 @@ public:
     void ModificarInscripcion();
     void BuscarInscripcion();
     void actualizarEstados();
+    bool restarCuposPorPlan(int idPlan);
 
 };

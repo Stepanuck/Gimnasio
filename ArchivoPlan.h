@@ -8,8 +8,8 @@ class ArchivoPlan{
 private:
   char _nombre[50];
 public:
-        ArchivoPlan();
-        ArchivoPlan(const char* nombreArchivo);
+       // ArchivoPlan();
+        ArchivoPlan(const char* nombreArchivo = "Plan.dat");
         Plan buscarPlan(int idPlan);
         int buscarPosicionPlan(int idPlan);
         int agregarRegistro(Plan pla);

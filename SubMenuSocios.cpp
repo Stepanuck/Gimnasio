@@ -25,6 +25,7 @@ int SubMenuSocios::EjecutarSubMenuSocios(){
     mSocio.CargarOpciones("LISTAR SOCIOS INACTIVOS");
     mSocio.CargarOpciones("LISTAR SOCIOS ACTIVOS");
     mSocio.CargarOpciones("BUSCAR SOCIO");
+    mSocio.CargarOpciones("DAR DE ALTA NUEVAMENTE AL SOCIO");
     mSocio.CargarOpciones("ELIMINAR SOCIO");
     mSocio.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
 
@@ -59,6 +60,10 @@ int SubMenuSocios::EjecutarSubMenuSocios(){
             system("Pause");
             break;
         case 7:
+            mSoc.altaLogicoSocio();
+            system("Pause");
+            break;
+        case 8:
             mSoc.eliminarLogicoSocio();
             system("Pause");
             break;

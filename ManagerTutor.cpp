@@ -176,6 +176,18 @@ using namespace std;
         cout<<"No se pudo dar de baja al tutor. Verifique el DNI."<<endl;
     }
     }
+        void ManagerTutor::altaLogicoTutor(){
+    ArchivoTutor archiv;
+    char dni[10];
+    cout<<"Ingrese el DNI del tutor a dar de alta: ";
+    cin>>dni;
+
+    if(archiv.altaLogica(dni)){
+        cout<<"Tutor dado de alta correctamente."<<endl;
+    }else{
+        cout<<"No se pudo dar de alta al tutor. Verifique el DNI."<<endl;
+    }
+    }
     void ManagerTutor::buscarTutor(){
         ArchivoTutor archiv;
         char dni[10];

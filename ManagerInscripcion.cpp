@@ -5,6 +5,7 @@
 #include "ArchivoInscripcion.h"
 #include "ArchivoPlan.h"
 #include "ArchivoCobro.h"
+#include "ArchivoActividad.h"
 #include "Cobro.h"
 #include "Menu.h"
 #include "ArchivoSocio.h"
@@ -81,7 +82,7 @@ void ManagerInscripcion::CargarInscripcion()
     cout << "Ingrese fecha de pago/inicio (primer mes que paga): " << endl;
     fechaPago.cargar();
 
-    cout << "¿Cuantos meses desea pagar? ";
+    cout << "Cuantos meses desea pagar? ";
     cin >> cantidadMeses;
 
     // Calcular la fecha de vencimiento
@@ -92,19 +93,20 @@ void ManagerInscripcion::CargarInscripcion()
     ///Verificar si la inscripcion ya existe para el mismo socio, plan y periodo
 
     bool existe = false;
-    for(int i=0; i<cantReg; i++)
-    {
-
+    for(int i=0; i<cantReg; i++){
         Inscripcion guardada= archivoIns.Leer(i);
         if(guardada.getIdSocioInscripto()==idSocio &&
                 guardada.getIdPlanInscripto()== idPlan &&
-                guardada.getFechaInicio()==fechaPago)
-        {
-            existe = true;
-            break;
-        }
+                guardada.getFechaInicio()==fechaPago){
+                    existe = true;
+                    break;
+                }
     }
-
+        if(!restarCuposPorPlan(idPlan)){
+            cout<<"Inscripcion cancelada: Faltan cupos en alguna actividad."<<endl;
+            system("Pause");
+            return;
+        }
     if(!existe)
     {
         //creamos la inscripcion y la guardamos
@@ -158,9 +160,9 @@ void ManagerInscripcion::CargarInscripcion()
 
 }
 
-/*
+
 void ManagerInscripcion::ListarInscripcionesActivas() {
-    actualizarEstadosEnDisco();//aca para que modifique los estados antes de mostrarlo.
+    actualizarEstados();//aca para que modifique los estados antes de mostrarlo.
     ArchivoInscripcion archivo;
     int total = archivo.getCantidadRegistros();
     for (int i = 0; i < total; ++i) {
@@ -171,37 +173,7 @@ void ManagerInscripcion::ListarInscripcionesActivas() {
     }
     system("pause");
 }
-*/
-void ManagerInscripcion::ListarInscripcionesActivas(){
-   ArchivoInscripcion archIns;
-   int total = archIns.getCantidadRegistros();
-   if(total<=0){
-    cout<<"No hay inscripciones cargadas."<<endl;
-    system("pause");
-    return;
-   }
 
-   Fecha hoy;
-   hoy.hoy();
-
-   cout<<"--------------- INSCRIPCIONES ACTIVAS ----------"<<endl;
-   bool alguna = false;
-
-   for (int i=0; i < total; i++){
-    Inscripcion insc = archIns.Leer(i);
-
-    if(insc.getActivo() && insc.getFechaFin() >= hoy){
-        insc.MostrarInscripcion();
-        alguna = true;
-    }
-   }
-
-   if(!alguna){
-    cout<<"No hay inscripciones activas vigentes."<<endl;
-   }
-   system("pause");
-
-}
 void ManagerInscripcion::ListarInscripciones(){
     Inscripcion inscripcion;
     ArchivoInscripcion Archivo;
@@ -608,7 +580,42 @@ void ManagerInscripcion::BuscarInscripcion(){
 
 }
 
+bool ManagerInscripcion::restarCuposPorPlan(int idPlan){
+    ArchivoPlan archPlan;//instanciamos el archivo
+    Plan plan = archPlan.buscarPlan(idPlan);//obtenemos el plan
+    ArchivoActividad archAct;//instanciamos el archivo
 
+    bool todasConCupo = true;//esto es para comprobar todas las actividades tengan cupo disponible
+    for (int i = 0; i<5; i++){//recorremos el plan
+        int idAct = plan.getIdActividadesIncluidas(i);//obtenemos los id de las actividades
+        if(idAct>0){//sii es mayor a 0 buscamos la posicion
+            int posAct = archAct.buscarActividad(idAct);//
+            if(posAct>0){//si la actividad existe
+                Actividad act = archAct.leer(posAct);//la leo
+                if(act.getCuposDisponibles()<=0){//si no hay cupos disponibles lo decimos y ponemos la bandera en false
+                    cout<<"No hay cupos disponibles en la actividad "<<act.getNombre()<<" ID: "<<idAct<<endl;
+                    todasConCupo = false;
+                }
+            }
+        }
+    }
+        if(!todasConCupo){//cuando alguna actividad le falte cupos retornamos en false
+            return false;
+        }
+    //esto es ya para hacer la resta
+    for(int i=0;i<5;i++){//recorremos la actividades
+        int idAct = plan.getIdActividadesIncluidas(i);///recuperamos los id
+        if(idAct>0){//existen obtenemos su posicion
+            int posAct = archAct.buscarActividad(idAct);
+            if(posAct > 0){//las leemos
+                Actividad act = archAct.leer(posAct);
+                act.setCuposDisponibles(act.getCuposDisponibles()-1);//y a los cuposdisponibles les restamos 1
+                archAct.modificarActividad(act,posAct);//modificamos el archivo
+            }
+        }
+    }
+    return true;//una vvez todo ok, retornamos true.
+}
 void ManagerInscripcion::actualizarEstados(){
     ArchivoInscripcion archIns;//instanciamos el archivo
     int total = archIns.getCantidadRegistros();//obtenemos todos los registros

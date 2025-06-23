@@ -5,16 +5,11 @@
 
 using namespace std;
 
-    ArchivoPlan::ArchivoPlan(){
 
-        strcpy(_nombre, "Plan.dat");
-    }
+        ArchivoPlan::ArchivoPlan(const char* nombreArchivo){
+            strcpy(_nombre, nombreArchivo);
+        }
 
-    ArchivoPlan::ArchivoPlan(const char* nombreArchivo= "Plan.dat"){
-
-        strcpy(_nombre,nombreArchivo);
-
-    }
     int ArchivoPlan::agregarRegistro(Plan pla){
         FILE* pPlan;
         pPlan = fopen(_nombre, "ab");
@@ -110,26 +105,17 @@ using namespace std;
     }
 
 
-/*bool ArchivoPlan::altaLogica(int idPlan){
+bool ArchivoPlan::altaLogica(int idPlan){
         Plan pla;
         ArchivoPlan archiv;
-        int pos = archiv.buscarPlan(idPlan);
+        int pos = archiv.buscarPosicionPlan(idPlan);
         if(pos==-1)return false;
         pla=archiv.Leer(pos);
         pla.setEstado(true);
         return archiv.modificarPlan(pla, pos);
     }
 
-    bool ArchivoPlan::bajaLogica(int idPlan){
-        Plan pla;
-        ArchivoPlan archiv;
-        int pos = archiv.buscarPlan(idPlan);
-        if(pos==-1) return false;
-        pla=archiv.Leer(pos);
-        pla.setEstado(false);
-        return archiv.modificarPlan(pla, pos);
-    }
-*/
+
 
 
 
