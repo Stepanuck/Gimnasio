@@ -43,8 +43,7 @@ int SubMenuPlanes::EjecutarSubMenuPlanes(){
            break;
         case 5:managerPlan.BuscarPlan();
             break;
-        case 6:
-            managerPlan.altaLogicaPlan();
+        case 6:managerPlan.altaLogicaPlan();
             break;
         case 7:managerPlan.EliminarPlan();
             break;

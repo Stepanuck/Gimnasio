@@ -38,7 +38,6 @@ public:
     void setActivo(bool activo);
     bool getActivo();
     //operador para comparar inscripciones
-    bool operator == (const Inscripcion& otra) const;
     bool operator == (Inscripcion Insc);
 
     void MostrarInscripcion();

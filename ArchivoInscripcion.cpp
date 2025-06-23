@@ -88,29 +88,6 @@ ArchivoInscripcion::ArchivoInscripcion(const char* nombreArchivo) {
         return -1;
     }
 
-/*
-    bool ArchivoInscripcion::altaLogica(int idInscripcion){
-        Inscripcion insc;
-        ArchivoInscripcion archiv;
-        int pos = archiv.buscarInscripcion(idInscripcion);
-        if(pos==-1)return false;
-        insc=archiv.Leer(pos);
-        insc.setEstado(true);
-        return archiv.modificarInscripcion(insc, pos);
-    }
-
-    bool ArchivoInscripcion::bajaLogica(int idInscripcion){
-        Inscripcion insc;
-        ArchivoInscripcion archiv;
-        int pos = archiv.buscarInscripcion(idInscripcion);
-        if(pos==-1) return false;
-        insc=archiv.Leer(pos);
-        insc.setEstado(false);
-        return archiv.modificarInscripcion(insc, pos);
-    }
-
-*/
-
 
 
 

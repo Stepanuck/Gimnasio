@@ -17,11 +17,6 @@ public:
     bool listarRegistros();
     int getCantidadRegistros();
     int modificarInscripcion(Inscripcion insc, int pos);
-    bool bajaLogica(int idInscripcion);
-    bool altaLogica(int idInscripcion);
-
-
-
 
 };
 

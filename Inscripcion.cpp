@@ -74,13 +74,6 @@ bool Inscripcion::getActivo(){
     return _activo;
 }
     /// comparacion  (para evitar dobles inscripciones iguales)
-/*bool Inscripcion::operator==(const Inscripcion& otra) const {
-    return _idSocioInscripto == otra._idSocioInscripto &&
-           _idPlanInscripto == otra._idPlanInscripto &&
-           _fechaInicio == otra._fechaInicio;
-}
-*/
-
 bool Inscripcion::operator == (Inscripcion Insc){
 
     if(_idSocioInscripto==Insc._idSocioInscripto&&_idPlanInscripto==Insc._idPlanInscripto&&_fechaInicio==Insc._fechaInicio){
