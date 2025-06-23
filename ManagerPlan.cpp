@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "rlutil.h"
 #include "ManagerPlan.h"
 #include "Plan.h"
 #include "ArchivoPlan.h"
@@ -10,7 +11,7 @@
 using namespace std;
 
 void ManagerPlan::CargarPlan(){
-
+    rlutil::cls();
     ArchivoPlan Archivo;
     Plan plan, planGuardado;
     int idPlan;
@@ -20,6 +21,9 @@ void ManagerPlan::CargarPlan(){
     bool estado;
     int cantActividades;
     int cantReg=Archivo.getCantidadRegistros();
+    cout << "---------------------------------------" << endl;
+    cout << "              ALTA PLAN                " << endl;
+    cout << "---------------------------------------" << endl;
 
     if(cantReg>0){
 
@@ -98,13 +102,17 @@ void ManagerPlan::CargarPlan(){
         cout << "Plan existente" << endl;
 
     }
-    system("pause");
+    rlutil::anykey();
 
 }
 void ManagerPlan::ListarPlanesActivos(){
+    rlutil::cls();
     Plan plan;
     ArchivoPlan Archivo;
     int cantidadRegistros=Archivo.getCantidadRegistros();
+    cout << "---------------------------------------" << endl;
+    cout << "        LISTADO PLANES ACTIVOS         " << endl;
+    cout << "---------------------------------------" << endl;
 
     for(int i=0; i<cantidadRegistros; i++){
 
@@ -116,13 +124,17 @@ void ManagerPlan::ListarPlanesActivos(){
 
         }
     }
-    system("pause");
+    rlutil::anykey();
 
 }
 void ManagerPlan::ListarPlanes(){
+    rlutil::cls();
     Plan plan;
     ArchivoPlan Archivo;
     int cantidadRegistros=Archivo.getCantidadRegistros();
+    cout << "---------------------------------------" << endl;
+    cout << "        LISTADO TODOS LOS PLANES       " << endl;
+    cout << "---------------------------------------" << endl;
 
     for(int i=0; i<cantidadRegistros; i++){
 
@@ -131,7 +143,7 @@ void ManagerPlan::ListarPlanes(){
         plan.MostrarPlan();
 
     }
-    system("pause");
+    rlutil::anykey();
 
 }
 void ManagerPlan::ModificarPlan(){
@@ -143,15 +155,19 @@ void ManagerPlan::ModificarPlan(){
     submenu.CargarOpciones("REGRESAR");
     bool band=false;
     do{
-        system("cls");
+        rlutil::cls();
         submenu.Mostrar();
 
         switch(submenu.SeleccionarOpcion()){
         case 1:{
+            rlutil::cls();
             int id, posicion;
             char nombre[20];
             ArchivoPlan Archivo;
             Plan plan, planGuardado;
+            cout << "---------------------------------------" << endl;
+            cout << "             MODIFICAR PLAN            " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID del Plan a modificar: ";
             cin >> id;
@@ -210,14 +226,18 @@ void ManagerPlan::ModificarPlan(){
                         cout << "El archivo no fue encontrado." << endl;
                     }
             }
-            system("pause");
+            rlutil::anykey();
             break;
         }
         case 2:{
+            rlutil::cls();
             int id, posicion, cantActividades;
             int IdActividad, IdActividadesIncluidas[5]={};
             ArchivoPlan Archivo;
             Plan plan, planGuardado;
+            cout << "---------------------------------------" << endl;
+            cout << "             MODIFICAR PLAN            " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID del Plan a modificar: ";
             cin >> id;
@@ -297,14 +317,18 @@ void ManagerPlan::ModificarPlan(){
                     else if (posicion == -2){
                         cout << "El archivo no fue encontrado." << endl;
                     }
-            }            system("pause");
+            }            rlutil::anykey();
             break;
         }
         case 3:{
+            rlutil::cls();
             int id, posicion;
             float arancel;
             ArchivoPlan Archivo;
             Plan plan, planGuardado;
+            cout << "---------------------------------------" << endl;
+            cout << "             MODIFICAR PLAN            " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID del Plan a modificar: ";
             cin >> id;
@@ -362,7 +386,7 @@ void ManagerPlan::ModificarPlan(){
                         cout << "El archivo no fue encontrado." << endl;
                     }
             }
-            system("pause");
+            rlutil::anykey();
             break;
         }
         case 0: band=true;
@@ -374,8 +398,13 @@ void ManagerPlan::ModificarPlan(){
 
 }
 void ManagerPlan::altaLogicaPlan(){
+    rlutil::cls();
     ArchivoPlan archPlan;
     int idPlan;
+    cout << "---------------------------------------" << endl;
+    cout << "     DAR DE ALTA NUEVAMENTE UN PLAN    " << endl;
+    cout << "---------------------------------------" << endl;
+
     cout<<"Ingrese el ID del plan que queres dar de alta nuevamente: ";
     cin>>idPlan;
 
@@ -388,10 +417,14 @@ void ManagerPlan::altaLogicaPlan(){
 
 
 void ManagerPlan::EliminarPlan(){
+            rlutil::cls();
             int id, posicion;
             bool estado;
             ArchivoPlan Archivo;
             Plan plan, planGuardado;
+    cout << "---------------------------------------" << endl;
+    cout << "             ELIMINAR PLAN             " << endl;
+    cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID del Plan a Eliminar: ";
             cin >> id;
@@ -426,12 +459,13 @@ void ManagerPlan::EliminarPlan(){
                         cout << "El archivo no fue encontrado." << endl;
                     }
             }
-            system("pause");
+            rlutil::anykey();
 
 }
 
 
 void ManagerPlan::BuscarPlan(){
+
     Menu submenu("BUSCAR PLAN");
 
     submenu.CargarOpciones("POR ID");
@@ -439,14 +473,18 @@ void ManagerPlan::BuscarPlan(){
     submenu.CargarOpciones("REGRESAR");
     bool band=false;
     do{
-        system("cls");
+        rlutil::cls();
         submenu.Mostrar();
 
         switch(submenu.SeleccionarOpcion()){
         case 1:{
+            rlutil::cls();
             int id, posicion;
             ArchivoPlan Archivo;
             Plan plan;
+            cout << "---------------------------------------" << endl;
+            cout << "              BUSCAR PLAN              " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID Plan a buscar: ";
             cin >> id;
@@ -458,16 +496,20 @@ void ManagerPlan::BuscarPlan(){
 
             plan.MostrarPlan();
 
-            system("pause");
+            rlutil::anykey();
 
             break;
         }
         case 2:{
+            rlutil::cls();
             char nombre[20];
             ArchivoPlan Archivo;
             Plan plan;
             int cantReg=Archivo.getCantidadRegistros();
             bool band=false;
+            cout << "---------------------------------------" << endl;
+            cout << "              BUSCAR PLAN              " << endl;
+            cout << "---------------------------------------" << endl;
 
             cin.ignore();
             cout << "Ingresar Nombre Plan a buscar: ";
@@ -487,7 +529,7 @@ void ManagerPlan::BuscarPlan(){
             if(!band){
                 cout << "No se encontraron Planes con ese nombre." << endl;
             }
-            system("pause");
+            rlutil::anykey();
             break;
         }
         case 0: band=true;

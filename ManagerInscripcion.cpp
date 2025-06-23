@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "rlutil.h"
 #include "ManagerInscripcion.h"
 #include "ArchivoInscripcion.h"
 #include "ArchivoPlan.h"
@@ -16,7 +17,7 @@ using namespace std;
 
 void ManagerInscripcion::CargarInscripcion()
 {
-
+    rlutil::cls();
     ArchivoInscripcion archivoIns;
     ArchivoCobro archivoCobro;
     ArchivoPlan archivoPlan;
@@ -26,6 +27,9 @@ void ManagerInscripcion::CargarInscripcion()
     Fecha fechaPago, fechaFin, fechaCobro;
     bool pago = true;
     float monto;
+    cout << "---------------------------------------" << endl;
+    cout << "           ALTA INSCRIPCION            " << endl;
+    cout << "---------------------------------------" << endl;
 
 
     //calcular el id autonumerico
@@ -152,28 +156,37 @@ void ManagerInscripcion::CargarInscripcion()
     {
         cout << "Inscripcion existente para ese socio, plan y fecha de inicio." << endl;
     }
-    system("pause");
+    rlutil::anykey();
 
 }
 
 
 void ManagerInscripcion::ListarInscripcionesActivas() {
+    rlutil::cls();
     actualizarEstados();//aca para que modifique los estados antes de mostrarlo.
     ArchivoInscripcion archivo;
     int total = archivo.getCantidadRegistros();
+    cout << "---------------------------------------" << endl;
+    cout << "      LISTAR INSCRIPCIONES ACTIVAS     " << endl;
+    cout << "---------------------------------------" << endl;
+
     for (int i = 0; i < total; ++i) {
         Inscripcion insc = archivo.Leer(i);
         if (insc.getActivo()) {
             insc.MostrarInscripcion();
         }
     }
-    system("pause");
+    rlutil::anykey();
 }
 
 void ManagerInscripcion::ListarInscripciones(){
+    rlutil::cls();
     Inscripcion inscripcion;
     ArchivoInscripcion Archivo;
     int cantidadRegistros=Archivo.getCantidadRegistros();
+    cout << "---------------------------------------" << endl;
+    cout << "       LISTAR TODAS INSCRIPCIONES      " << endl;
+    cout << "---------------------------------------" << endl;
 
     for(int i=0; i<cantidadRegistros; i++){
 
@@ -181,7 +194,7 @@ void ManagerInscripcion::ListarInscripciones(){
 
         inscripcion.MostrarInscripcion();
     }
-    system("pause");
+    rlutil::anykey();
 
 
 }
@@ -194,15 +207,19 @@ void ManagerInscripcion::ModificarInscripcion(){
     submenu.CargarOpciones("REGRESAR");
     bool band=false;
     do{
-        system("cls");
+        rlutil::cls();
         submenu.Mostrar();
 
         switch(submenu.SeleccionarOpcion()){
         case 1:{
+            rlutil::cls();
             int id, posicion, idSocio;
             ArchivoInscripcion Archivo;
             Inscripcion insc, inscGuardada;
             ArchivoSocio socioArchivo;
+            cout << "---------------------------------------" << endl;
+            cout << "          MODIFICAR INSCRIPCION        " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID de la Inscripcion a modificar: ";
             cin >> id;
@@ -275,16 +292,20 @@ void ManagerInscripcion::ModificarInscripcion(){
                         cout << "El archivo no fue encontrado." << endl;
                     }
             }
-            system("pause");
+            rlutil::anykey();
             break;
         }
         case 2:{
+            rlutil::cls();
             int id, posicion, idPlan, cantMeses;
             ArchivoInscripcion Archivo;
             Inscripcion insc, inscGuardada;
             ArchivoPlan planArchivo;
             Cobro cobro;
             ArchivoCobro cobroArchivo;
+            cout << "---------------------------------------" << endl;
+            cout << "          MODIFICAR INSCRIPCION        " << endl;
+            cout << "---------------------------------------" << endl;
 
 
             cout << "Ingresar ID de la Inscripcion a modificar: ";
@@ -377,14 +398,18 @@ void ManagerInscripcion::ModificarInscripcion(){
                         cout << "El archivo no fue encontrado." << endl;
                     }
             }
-            system("pause");
+            rlutil::anykey();
             break;
         }
         case 3:{
+            rlutil::cls();
             int id, posicion, cantMeses;
             Fecha fechaDeInicio, fechaFin;
             ArchivoInscripcion Archivo;
             Inscripcion insc, inscGuardada;
+            cout << "---------------------------------------" << endl;
+            cout << "          MODIFICAR INSCRIPCION        " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID de la Inscripcion a modificar: ";
             cin >> id;
@@ -454,7 +479,7 @@ void ManagerInscripcion::ModificarInscripcion(){
                         cout << "El archivo no fue encontrado." << endl;
                     }
             }
-            system("pause");
+            rlutil::anykey();
             break;
         }
         case 0: band=true;
@@ -474,16 +499,20 @@ void ManagerInscripcion::BuscarInscripcion(){
     submenu.CargarOpciones("REGRESAR");
     bool band=false;
     do{
-        system("cls");
+        rlutil::cls();
         submenu.Mostrar();
 
         switch(submenu.SeleccionarOpcion()){
         case 1:{
+            rlutil::cls();
             int idSocio;
             ArchivoInscripcion Archivo;
             Inscripcion insc;
             int cantReg=Archivo.getCantidadRegistros();
             bool band=false;
+            cout << "---------------------------------------" << endl;
+            cout << "           BUSCAR INSCRIPCION          " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID Socio a buscar: ";
             cin >> idSocio;
@@ -504,16 +533,20 @@ void ManagerInscripcion::BuscarInscripcion(){
                 cout << "No se encontraron Inscripciones para ese Socio." << endl;
             }
 
-            system("pause");
+            rlutil::anykey();
 
             break;
         }
         case 2:{
+            rlutil::cls();
             int idPlan;
             ArchivoInscripcion Archivo;
             Inscripcion insc;
             int cantReg=Archivo.getCantidadRegistros();
             bool band=false;
+            cout << "---------------------------------------" << endl;
+            cout << "           BUSCAR INSCRIPCION          " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID Plan a buscar: ";
             cin >> idPlan;
@@ -534,16 +567,20 @@ void ManagerInscripcion::BuscarInscripcion(){
                 cout << "No se encontraron Inscripciones para ese Plan." << endl;
             }
 
-            system("pause");
+            rlutil::anykey();
 
             break;
         }
         case 3:{
+            rlutil::cls();
             Fecha fechaConsulta;
             ArchivoInscripcion Archivo;
             Inscripcion insc;
             int cantReg=Archivo.getCantidadRegistros();
             bool band=false;
+            cout << "---------------------------------------" << endl;
+            cout << "           BUSCAR INSCRIPCION          " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar la Fecha a Buscar: ";
             fechaConsulta.cargar();
@@ -564,7 +601,7 @@ void ManagerInscripcion::BuscarInscripcion(){
                 cout << "No se encontraron Inscripciones para esa Fecha." << endl;
             }
 
-            system("pause");
+            rlutil::anykey();
 
             break;
 

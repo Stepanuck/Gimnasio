@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1750571769 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.cpp
+1750659134 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\actividad.cpp
 	<iostream>
 	<cstring>
 	"Actividad.h"
@@ -58,7 +58,7 @@
 	<cstring>
 	"Horario.h"
 
-1749447518 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\main.cpp
+1750663137 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\main.cpp
 	<iostream>
 	"Fecha.h"
 	"Persona.h"
@@ -67,23 +67,26 @@
 	"MenuPrincipal.h"
 	"ArchivoSocio.h"
 	"Socio.h"
+	"rlutil.h"
 
 1748577164 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menuprincipal.h
 	"Menu.h"
 
 1748572449 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menu.h
 
-1749613474 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menu.cpp
+1750653071 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menu.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
 	<limits>
 	"Menu.h"
+	"rlutil.h"
 
-1750303831 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menuprincipal.cpp
+1750653506 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\menuprincipal.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"rlutil.h"
 	"Menu.h"
 	"MenuPrincipal.h"
 	"SubMenuSocios.h"
@@ -127,58 +130,65 @@
 	"Socio.h"
 	"Persona.h"
 
-1750648788 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuactividades.cpp
+1750661236 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuactividades.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"rlutil.h"
 	"Menu.h"
 	"SubMenuActividades.h"
 	"ManagerActividad.h"
 
-1750470577 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuconfiguraciones.cpp
+1750660010 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuconfiguraciones.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"rlutil.h"
 	"Menu.h"
 	"SubMenuConfiguraciones.h"
 	"ManagerConfiguracion.h"
 
-1750574508 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinformes.cpp
+1750653566 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinformes.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"rlutil.h"
 	"Menu.h"
 	"SubMenuInformes.h"
 	"ManagerInformes.h"
 
-1750550778 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinscripciones.cpp
+1750653573 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuinscripciones.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"rlutil.h"
 	"Menu.h"
 	"SubMenuInscripciones.h"
 	"ManagerInscripcion.h"
 
-1750650128 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuplanes.cpp
+1750653589 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenuplanes.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"rlutil.h"
 	"Menu.h"
 	"SubMenuPlanes.h"
 	"ManagerPlan.h"
 
-1750646396 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenusocios.cpp
+1750655006 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenusocios.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"rlutil.h"
 	"Menu.h"
 	"SubMenuSocios.h"
 	"ManagerSocio.h"
 
-1750646396 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenututores.cpp
+1750655791 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenututores.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"rlutil.h"
 	"Menu.h"
 	"ManagerTutor.h"
 	"SubMenuTutores.h"
@@ -460,9 +470,10 @@
 	"ArchivoSocio.h"
 	"ArchivoPlan.h"
 
-1750646396 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managersocio.cpp
+1750662150 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managersocio.cpp
 	<iostream>
 	<cstring>
+	"rlutil.h"
 	"Socio.h"
 	"ManagerSocio.h"
 	"ArchivoSocio.h"
@@ -470,10 +481,11 @@
 	"Inscripcion.h"
 	"Menu.h"
 
-1750648788 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\manageractividad.cpp
+1750661637 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\manageractividad.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"rlutil.h"
 	"ManagerActividad.h"
 	"Actividad.h"
 	"Horario.h"
@@ -533,10 +545,11 @@
 
 1750638744 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managersocio.h
 
-1750646396 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerplan.cpp
+1750662262 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerplan.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"rlutil.h"
 	"ManagerPlan.h"
 	"Plan.h"
 	"ArchivoPlan.h"
@@ -545,15 +558,16 @@
 
 1750646396 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerplan.h
 
-1750643686 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\plan.cpp
+1750662310 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\plan.cpp
 	<iostream>
 	<cstring>
 	"Plan.h"
 	"Actividad.h"
 	"ArchivoActividad.h"
 
-1750646396 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managertutor.cpp
+1750661948 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managertutor.cpp
 	<iostream>
+	"rlutil.h"
 	"ManagerTutor.h"
 	"ArchivoTutor.h"
 	"Menu.h"
@@ -648,8 +662,9 @@
 	<cstring>
 	"Cobro.h"
 
-1750303831 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managercobro.cpp
+1750660441 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managercobro.cpp
 	<iostream>
+	"rlutil.h"
 	"Cobro.h"
 	"ManagerCobro.h"
 	"ArchivoCobro.h"
@@ -660,18 +675,20 @@
 1750303831 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenucobros.h
 	"Menu.h"
 
-1750303831 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenucobros.cpp
+1750660441 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\submenucobros.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"rlutil.h"
 	"Menu.h"
 	"SubMenuCobros.h"
 	"ManagerCobro.h"
 
-1750648788 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinscripcion.cpp
+1750662622 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinscripcion.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"rlutil.h"
 	"ManagerInscripcion.h"
 	"ArchivoInscripcion.h"
 	"ArchivoPlan.h"
@@ -685,7 +702,7 @@
 
 1750463373 ated upstream
 
-1750646396 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerconfiguracion.cpp
+1750660106 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerconfiguracion.cpp
 	<iostream>
 	<cstdio>
 	"ManagerConfiguracion.h"
@@ -731,10 +748,11 @@
 
 1750574392 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinformes.h
 
-1750578110 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinformes.cpp
+1750663075 source:c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\managerinformes.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"rlutil.h"
 	"ManagerInformes.h"
 	"Actividad.h"
 	"ArchivoActividad.h"
@@ -764,4 +782,18 @@
 	"ArchivoCobro.h"
 
 1750599475 c:\users\marin\documents\utn\pr2\gimnasio\gimnasio\managerinformes.h
+
+1750470578 c:\users\user\documents\maru\facultad utn\programacion 2\cursada 2\proyecto gimnacio\gimnasio\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
 

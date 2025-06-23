@@ -3,6 +3,7 @@
 #include <cstring>
 #include <limits>
 #include "Menu.h"
+#include "rlutil.h"
 
 using namespace std;
 
@@ -27,7 +28,10 @@ void Menu::CargarOpciones(string opcionMenu){
 }
 void Menu::Mostrar(){
 
-    cout << "-------------"<<_nombre<<"-------------" << endl;
+    cout << "---------------------------------------" << endl;
+    cout << "           "<<_nombre<<"           " << endl;
+    cout << "---------------------------------------" << endl;
+
 
     for(int i=0; i<_numOpcion; i++){
 
@@ -42,7 +46,7 @@ void Menu::Mostrar(){
         }
     }
 
-    cout << "---------------------------------" << endl;
+    cout << "---------------------------------------" << endl;
 }
 int Menu::SeleccionarOpcion(){
 
@@ -57,9 +61,12 @@ int Menu::SeleccionarOpcion(){
             cin.clear();///cin clear limpia el error.
             cin.ignore(numeric_limits<streamsize>::max(),'\n');///Descarta todo el contenido para dejar la variable sin basura.
 
+            rlutil::setColor(rlutil::RED);
             cout << "INGRESO INVALIDO, DEBE INGRESAR UN NUMERO" <<endl;
+            rlutil::setColor(rlutil::BLACK);
 
-            system("pause");
+            rlutil::anykey();
+
 
             continue;///Salta al  siguiente ciclo del bucle, omitiendo el resto del codigo,
             ///regresando al inicio para sollicitar un nuevo ingreso y lo evalua.
@@ -70,9 +77,11 @@ int Menu::SeleccionarOpcion(){
 
         }
         else {
-
+            rlutil::setColor(rlutil::RED);
             cout<<"LA SELECCION NO ES CORRECTA, INTENTELO NUEVAMENTE"<<endl;
-            system("pause");
+            rlutil::setColor(rlutil::BLACK);
+
+            rlutil::anykey();
 
         }
     }

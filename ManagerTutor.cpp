@@ -1,4 +1,5 @@
 #include <iostream>
+#include "rlutil.h"
 #include "ManagerTutor.h"
 #include "ArchivoTutor.h"
 #include "Menu.h"
@@ -8,8 +9,14 @@ using namespace std;
 
 
     void ManagerTutor::altaTutor(){
-        ArchivoTutor archiv;
+    rlutil::cls();
+    ArchivoTutor archiv;
     Tutor tut;
+    cout << "---------------------------------------" << endl;
+    cout << "             ALTA TUTOR                " << endl;
+    cout << "---------------------------------------" << endl;
+
+
     cin.ignore();
     tut.cargar();//Se le piden los datos al tutor
 
@@ -33,20 +40,40 @@ using namespace std;
     }
     }
     void ManagerTutor::listarTutoresActivos(){
+        rlutil::cls();
         ArchivoTutor archiv;
+    cout << "---------------------------------------" << endl;
+    cout << "         LISTADO TUTORES ACTIVOS       " << endl;
+    cout << "---------------------------------------" << endl;
+
         archiv.listarRegistrosActivos();
     }
     void ManagerTutor::listarTodosLosTutores(){
+        rlutil::cls();
         ArchivoTutor archiv;
+    cout << "---------------------------------------" << endl;
+    cout << "      LISTADO DE TODOS LOS TUTORES     " << endl;
+    cout << "---------------------------------------" << endl;
+
         archiv.listarTodosLosRegistros();
     }
     void ManagerTutor::listarTutoresInactivos(){
+        rlutil::cls();
         ArchivoTutor archiv;
+    cout << "---------------------------------------" << endl;
+    cout << "        LISTADO TUTORES INACTIVOS      " << endl;
+    cout << "---------------------------------------" << endl;
+
         archiv.listarRegistrosInactivos();
     }
    void ManagerTutor::modificarTutor() {
+    rlutil::cls();
     ArchivoTutor archiv;
     char dni[10];
+    cout << "---------------------------------------" << endl;
+    cout << "            MOFIFICAR TUTOR            " << endl;
+    cout << "---------------------------------------" << endl;
+
     cout << "Ingrese el DNI del tutor a modificar: ";
     cin >> dni;
 
@@ -75,14 +102,19 @@ using namespace std;
 
     bool salir = false;//Banderita que solo sale cuando le ponemos regresar.
     do {
-        system("cls");
+        rlutil::cls();
         cout << "Datos actuales del tutor:" << endl;
         tut.mostrar(); // Siempre muestra el estado actualizado.
         submenu.Mostrar();
 
         switch (submenu.SeleccionarOpcion()) {
             case 1: {
+                rlutil::cls();
                 char aux[40];//se crea un vector auxiliar.
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR TUTOR            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nuevo nombre: ";
                 cin.ignore();
                 cin.getline(aux, 40);
@@ -90,7 +122,12 @@ using namespace std;
                 break;//se va
             }
             case 2: {
+                rlutil::cls();
                 char aux[40];//Mismo proceso en cada uno.
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR TUTOR            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nuevo apellido: ";
                 cin.ignore();
                 cin.getline(aux, 40);
@@ -98,7 +135,12 @@ using namespace std;
                 break;
             }
             case 3: {
+                rlutil::cls();
                 char aux[10];
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR TUTOR            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nuevo DNI: ";
                 cin.ignore();
                 cin.getline(aux, 9);
@@ -106,14 +148,24 @@ using namespace std;
                 break;
             }
             case 4: {
+                rlutil::cls();
                 int edad;
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR TUTOR            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nueva edad: ";
                 cin >> edad;
                 tut.setEdad(edad);
                 break;
             }
             case 5: {
+                rlutil::cls();
                 char aux[20];
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR TUTOR            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nuevo genero (Masculino/Femenino/Otro): ";
                 cin.ignore();
                 cin.getline(aux, 20);
@@ -121,7 +173,12 @@ using namespace std;
                 break;
             }
             case 6: {
+                rlutil::cls();
                 char aux[15];
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR TUTOR            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nuevo telefono: ";
                 cin.ignore();
                 cin.getline(aux, 15);
@@ -129,7 +186,12 @@ using namespace std;
                 break;
             }
             case 7: {
+                rlutil::cls();
                 char aux[50];
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR TUTOR            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nuevo email: ";
                 cin.ignore();
                 cin.getline(aux, 50);
@@ -137,14 +199,24 @@ using namespace std;
                 break;
             }
             case 8: {
+                rlutil::cls();
                 Fecha f;
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR TUTOR            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nueva fecha de nacimiento:" << endl;
                 f.cargar();
                 tut.setFecha(f);
                 break;
             }
             case 9: {
+                rlutil::cls();
                 Domicilio d;
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR TUTOR            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nuevo domicilio:" << endl;
                 d.cargar();
                 tut.setDomicilio(d);
@@ -160,13 +232,18 @@ using namespace std;
             tut.setIDTutor(archiv.Leer(pos).getIDTutor()); // le seteo el idTutor que ya tenía para previamente para conservarle el mismo id.
             archiv.modificarTutor(tut, pos); // modifica el tutor.
             cout << "Dato modificado correctamente. Presione una tecla para continuar." << endl;
-            system("pause");
+            rlutil::anykey();
         }
     } while (!salir);
 }
     void ManagerTutor::eliminarLogicoTutor(){
+    rlutil::cls();
     ArchivoTutor archiv;
     char dni[10];
+    cout << "---------------------------------------" << endl;
+    cout << "            ELIMINAR TUTOR             " << endl;
+    cout << "---------------------------------------" << endl;
+
     cout<<"Ingrese el DNI del tutor a dar de baja: ";
     cin>>dni;
 
@@ -176,9 +253,14 @@ using namespace std;
         cout<<"No se pudo dar de baja al tutor. Verifique el DNI."<<endl;
     }
     }
-        void ManagerTutor::altaLogicoTutor(){
+    void ManagerTutor::altaLogicoTutor(){
+    rlutil::cls();
     ArchivoTutor archiv;
     char dni[10];
+    cout << "---------------------------------------" << endl;
+    cout << "    DAR DE ALTA NUEVAMENTE AL TUTOR    " << endl;
+    cout << "---------------------------------------" << endl;
+
     cout<<"Ingrese el DNI del tutor a dar de alta: ";
     cin>>dni;
 
@@ -189,8 +271,13 @@ using namespace std;
     }
     }
     void ManagerTutor::buscarTutor(){
+        rlutil::cls();
         ArchivoTutor archiv;
         char dni[10];
+    cout << "---------------------------------------" << endl;
+    cout << "             BUSCAR TUTOR              " << endl;
+    cout << "---------------------------------------" << endl;
+
         cout<<"Ingrese el DNI del Tutor a buscar: ";
         cin>>dni;
         int pos = archiv.buscarTutor(dni);//con buscar obtengo la posicion.

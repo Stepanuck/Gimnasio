@@ -1,4 +1,5 @@
 #include <iostream>
+#include "rlutil.h"
 #include "Cobro.h"
 #include "ManagerCobro.h"
 #include "ArchivoCobro.h"
@@ -6,8 +7,12 @@
 using namespace std;
 
 void ManagerCobro::listarCobros(){
+    rlutil::cls();
     ArchivoCobro archivo;
     int cantidad = archivo.getCantidadRegistros();
+    cout << "---------------------------------------" << endl;
+    cout << "        LISTAR TODOS LOS COBROS        " << endl;
+    cout << "---------------------------------------" << endl;
 
     if (cantidad == 0) {
         cout << "No hay cobros registrados." << endl;
@@ -26,10 +31,14 @@ void ManagerCobro::listarCobros(){
 }
 
 void ManagerCobro::buscarCobroPorID(){
+    rlutil::cls();
     ArchivoCobro archivo;
     int cantidad = archivo.getCantidadRegistros();
     int idBuscar;
     bool encontrado = false;
+    cout << "---------------------------------------" << endl;
+    cout << "          BUSCAR COBRO POR ID          " << endl;
+    cout << "---------------------------------------" << endl;
 
     cout << "Ingrese ID del cobro a buscar: ";
     cin >> idBuscar;
@@ -52,11 +61,16 @@ void ManagerCobro::buscarCobroPorID(){
     }
 }
 void ManagerCobro::ListarCobrosPorSocio() {
+    rlutil::cls();
     ArchivoCobro archivoCobro;
     ArchivoInscripcion archivoInscripcion;
     int cantidad = archivoCobro.getCantidadRegistros();
     int idSocioBuscar;
     bool alguno = false;
+    cout << "---------------------------------------" << endl;
+    cout << "        LISTAR COBROS POR SOCIO        " << endl;
+    cout << "---------------------------------------" << endl;
+
 
     cout << "Ingrese ID del socio: ";
     cin >> idSocioBuscar;

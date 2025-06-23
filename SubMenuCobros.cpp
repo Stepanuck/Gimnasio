@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "rlutil.h"
 #include "Menu.h"
 #include "SubMenuCobros.h"
 #include "ManagerCobro.h"
@@ -21,21 +22,21 @@ int SubMenuCobros::EjecutarSubMenuCobros() {
     mCobros.CargarOpciones("REGRESAR AL MENU ANTERIOR");
 
     while (true) {
-        system("cls");
+        rlutil::cls();
         mCobros.Mostrar();
 
         switch (mCobros.SeleccionarOpcion()) {
             case 1:
                 managerCobro.listarCobros();
-                system("pause");
+                rlutil::anykey();
                 break;
             case 2:
                 managerCobro.buscarCobroPorID();
-                system("pause");
+                rlutil::anykey();
                 break;
             case 3:
                 managerCobro.ListarCobrosPorSocio();
-                system("pause");
+                rlutil::anykey();
                 break;
             case 0: return 0;
         }

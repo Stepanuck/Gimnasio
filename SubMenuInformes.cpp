@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "rlutil.h"
 #include "Menu.h"
 #include "SubMenuInformes.h"
 #include "ManagerInformes.h"
@@ -26,7 +27,7 @@ int SubMenuInformes::EjecutarSubMenuInformes(){
     mInforme.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
 
     while(true){
-        system("cls");
+        rlutil::cls();
         mInforme.Mostrar();
 
         switch(mInforme.SeleccionarOpcion()){

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include "rlutil.h"
 #include "Socio.h"
 #include "ManagerSocio.h"
 #include "ArchivoSocio.h"
@@ -12,9 +13,12 @@ using namespace std;
 
 
 void ManagerSocio::altaSocio(){
+    rlutil::cls();
     ArchivoSocio archiv;
     Socio soc;
-
+    cout << "---------------------------------------" << endl;
+    cout << "             ALTA SOCIO                " << endl;
+    cout << "---------------------------------------" << endl;
     soc.cargar();//Se le piden los datos al socio
 
    int pos = archiv.buscarSocio(soc.getDni());
@@ -39,26 +43,47 @@ void ManagerSocio::altaSocio(){
 
 
 void ManagerSocio::listarSociosActivos(){
+    rlutil::cls();
     ArchivoSocio archiv;
+    cout << "---------------------------------------" << endl;
+    cout << "          LISTADO SOCIOS ACTIVOS       " << endl;
+    cout << "---------------------------------------" << endl;
+
     archiv.listarRegistrosActivos();
 
 }
 
 void ManagerSocio::listarTodosLosSocios(){
+    rlutil::cls();
     ArchivoSocio archiv;
+    cout << "---------------------------------------" << endl;
+    cout << "       LISTADO DE TODOS LOS SOCIOS     " << endl;
+    cout << "---------------------------------------" << endl;
+
     archiv.listarTodosLosRegistros();
 }
 
 void ManagerSocio::listarSociosInactivos(){
+    rlutil::cls();
     ArchivoSocio archiv;
+    cout << "---------------------------------------" << endl;
+    cout << "        LISTADO SOCIOS INACTIVOS       " << endl;
+    cout << "---------------------------------------" << endl;
+
     archiv.listarRegistrosInactivos();
 
 }
 
 
 void ManagerSocio::modificarSocio(){
+    rlutil::cls();
     ArchivoSocio archiv;
     char dni[10];
+
+    cout << "---------------------------------------" << endl;
+    cout << "            MOFIFICAR SOCIO            " << endl;
+    cout << "---------------------------------------" << endl;
+
     cout<<"Ingrese el DNI del socio a modificar: ";
     cin>>dni;
 
@@ -70,7 +95,7 @@ void ManagerSocio::modificarSocio(){
 
     Socio soc = archiv.Leer(pos);//existe lo leo
 
-     Menu submenu("MODIFICAR SOCIO");
+    Menu submenu("MODIFICAR SOCIO");
     submenu.CargarOpciones("NOMBRES");
     submenu.CargarOpciones("APELLIDOS");
     submenu.CargarOpciones("DNI");
@@ -84,7 +109,7 @@ void ManagerSocio::modificarSocio(){
 
     bool salir = false;//Banderita que solo sale cuando le ponemos regresar.
     do{
-         system("cls");
+        rlutil::cls();
         cout << "Datos actuales del socio:" << endl;
         soc.mostrar(); // Muestra los datos actuales.
 
@@ -92,7 +117,12 @@ void ManagerSocio::modificarSocio(){
 
         switch(submenu.SeleccionarOpcion()) {//switch para cada caso a modificar.
             case 1: {
+                rlutil::cls();
                 char aux[40];//se crea un vector auxiliar.
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR SOCIO            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nuevos nombres: ";
                 cin.ignore();
                 cin.getline(aux, 40);
@@ -100,7 +130,12 @@ void ManagerSocio::modificarSocio(){
                 break;//se va.
             }
             case 2: {
+                rlutil::cls();
                 char aux[40];//Mismo proceso en cada uno.
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR SOCIO            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nuevos apellidos: ";
                 cin.ignore();
                 cin.getline(aux, 40);
@@ -108,7 +143,12 @@ void ManagerSocio::modificarSocio(){
                 break;
             }
             case 3: {
+                rlutil::cls();
                 char aux[10];
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR SOCIO            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nuevo DNI: ";
                 cin.ignore();
                 cin.getline(aux, 9);
@@ -116,14 +156,24 @@ void ManagerSocio::modificarSocio(){
                 break;
             }
             case 4: {
+                rlutil::cls();
                 int edad;
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR SOCIO            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nueva edad: ";
                 cin >> edad;
                 soc.setEdad(edad);
                 break;
             }
             case 5: {
+                rlutil::cls();
                 char aux[20];
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR SOCIO            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nuevo genero (Masculino/Femenino/Otro): ";
                 cin.ignore();
                 cin.getline(aux, 20);
@@ -131,7 +181,12 @@ void ManagerSocio::modificarSocio(){
                 break;
             }
             case 6: {
+                rlutil::cls();
                 char aux[15];
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR SOCIO            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nuevo telefono: ";
                 cin.ignore();
                 cin.getline(aux, 15);
@@ -139,7 +194,12 @@ void ManagerSocio::modificarSocio(){
                 break;
             }
             case 7: {
+                rlutil::cls();
                 char aux[50];
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR SOCIO            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nuevo email: ";
                 cin.ignore();
                 cin.getline(aux, 50);
@@ -147,14 +207,24 @@ void ManagerSocio::modificarSocio(){
                 break;
             }
             case 8: {
+                rlutil::cls();
                 Fecha f;
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR SOCIO            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nueva fecha de nacimiento:" << endl;
                 f.cargar();
                 soc.setFecha(f);
                 break;
             }
             case 9: {
+                rlutil::cls();
                 Domicilio d;
+                cout << "---------------------------------------" << endl;
+                cout << "            MOFIFICAR SOCIO            " << endl;
+                cout << "---------------------------------------" << endl;
+
                 cout << "Ingrese nuevo domicilio:" << endl;
                 d.cargar();
                 soc.setDomicilio(d);
@@ -170,14 +240,18 @@ void ManagerSocio::modificarSocio(){
             soc.setIdSocio(archiv.Leer(pos).getIDSocio());//le seteo el idsocio que ya tenia previamente para conservarle el mismo id.
             archiv.modificarSocio(soc, pos);//modifica el socio.
             cout << "Dato modificado correctamente. Presione una tecla para continuar." << endl;
-            system("pause");
+            rlutil::anykey();
         }
     }while(!salir);
 }
 
 void ManagerSocio::buscarSocio(){
+    rlutil::cls();
     ArchivoSocio archiv;
     char dni[10];
+    cout << "---------------------------------------" << endl;
+    cout << "             BUSCAR SOCIO              " << endl;
+    cout << "---------------------------------------" << endl;
 
     cout<<"Ingrese el DNI del socio a buscar: ";
     cin>>dni;
@@ -192,8 +266,12 @@ void ManagerSocio::buscarSocio(){
 }
 
 void ManagerSocio::eliminarLogicoSocio(){
+    rlutil::cls();
     ArchivoSocio archiv;
     char dni[10];
+    cout << "---------------------------------------" << endl;
+    cout << "            ELIMINAR SOCIO             " << endl;
+    cout << "---------------------------------------" << endl;
 
     cout<<"Ingrese el DNI del socio a dar de baja: ";
     cin>>dni;
@@ -207,8 +285,12 @@ void ManagerSocio::eliminarLogicoSocio(){
 }
 
 void ManagerSocio::altaLogicoSocio(){
+    rlutil::cls();
     ArchivoSocio archiv;
     char dni[10];
+    cout << "---------------------------------------" << endl;
+    cout << "    DAR DE ALTA NUEVAMENTE AL SOCIO    " << endl;
+    cout << "---------------------------------------" << endl;
 
     cout<<"Ingrese el DNI del socio a dar de alta: ";
     cin>>dni;

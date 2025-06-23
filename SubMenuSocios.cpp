@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "rlutil.h"
 #include "Menu.h"
 #include "SubMenuSocios.h"
 #include "ManagerSocio.h"
@@ -30,42 +31,42 @@ int SubMenuSocios::EjecutarSubMenuSocios(){
     mSocio.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
 
     while(true){
-        system("cls");
+        rlutil::cls();
         mSocio.Mostrar();
 
         switch(mSocio.SeleccionarOpcion()){
         case 1:
             cin.ignore();
             mSoc.altaSocio();
-            system("Pause");
+            rlutil::anykey();
             break;
         case 2:
             mSoc.modificarSocio();
-            system("Pause");
+            rlutil::anykey();
             break;
         case 3:
             mSoc.listarTodosLosSocios();
-            system("Pause");
+            rlutil::anykey();
            break;
         case 4:
             mSoc.listarSociosInactivos();
-            system("Pause");
+            rlutil::anykey();
             break;
         case 5:
             mSoc.listarSociosActivos();
-            system("Pause");
+            rlutil::anykey();
             break;
         case 6:
             mSoc.buscarSocio();
-            system("Pause");
+            rlutil::anykey();
             break;
         case 7:
             mSoc.altaLogicoSocio();
-            system("Pause");
+            rlutil::anykey();
             break;
         case 8:
             mSoc.eliminarLogicoSocio();
-            system("Pause");
+            rlutil::anykey();
             break;
         case 0: return 0;
             break;

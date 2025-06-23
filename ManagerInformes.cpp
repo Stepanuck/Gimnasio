@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "rlutil.h"
 #include "ManagerInformes.h"
 #include "Actividad.h"
 #include "ArchivoActividad.h"
@@ -16,7 +17,7 @@
 using namespace std;
 
 void ManagerInformes::InformarActividades(){
-
+    rlutil::cls();
     Actividad act;
     ArchivoActividad actArchivo;
     Socio soc;
@@ -28,12 +29,13 @@ void ManagerInformes::InformarActividades(){
     Fecha hoy;
     hoy.hoy();
 
-
+    rlutil::setColor(rlutil::LIGHTMAGENTA);
     int CantRegAct=actArchivo.getCantidadRegistros();
     int CantRegPlan=planArchivo.getCantidadRegistros();
     int CantRegInsc=inscArchivo.getCantidadRegistros();
-
-    cout << "------------------ DETALLE DE ACTIVIDADES Y SOCIOS INSCRIPTOS ------------------" << endl;
+    cout << "--------------------------------------------------------------------------------" << endl;
+    cout << "                   DETALLE DE ACTIVIDADES Y SOCIOS INSCRIPTOS                   " << endl;
+    cout << "--------------------------------------------------------------------------------" << endl;
 
     for(int i=0; i<CantRegAct; i++){
 
@@ -65,6 +67,7 @@ void ManagerInformes::InformarActividades(){
                                 soc=socArchivo.Leer(insc.getIdSocioInscripto()-1);
 
                                 cout << " -ID " << insc.getIdSocioInscripto() << " " << soc.getNombres() << " " << soc.getApellidos() << endl;
+
                             }
 
                         }
@@ -80,16 +83,17 @@ void ManagerInformes::InformarActividades(){
         }
 
     }
-    cout << "------------------------------------------------------------------------------" << endl;
-    system("pause");
-
+    cout << "--------------------------------------------------------------------------------" << endl;
+    rlutil::setColor(rlutil::BLACK);
+    rlutil::anykey();
 
 }
 void ManagerInformes::DetallesCuposEnActividades(){
+    rlutil::cls();
     ArchivoActividad archAct;
     ArchivoInscripcion archIns;
     ArchivoPlan archPlan;
-
+    rlutil::setColor(rlutil::LIGHTMAGENTA);
     /// obtenemos la fecha de hoy
     Fecha hoy;
     hoy.hoy();
@@ -97,11 +101,13 @@ void ManagerInformes::DetallesCuposEnActividades(){
     int cantAct = archAct.getCantidadRegistros(); // obtenemos la cantidad de actividades
     if(cantAct <= 0){
         cout << "No hay actividades cargadas." << endl;
-        system("pause");
+        rlutil::anykey();
         return;
     }
 
-    cout << "------------------ DETALLE DE CUPOS EN ACTIVIDADES ----------" << endl;
+    cout << "--------------------------------------------------------------------------------" << endl;
+    cout << "                         DETALLE DE CUPOS EN ACTIVIDADES                        " << endl;
+    cout << "--------------------------------------------------------------------------------" << endl;
 
     // recorremos cada actividad
     for(int i = 0; i < cantAct; i++){
@@ -142,33 +148,35 @@ void ManagerInformes::DetallesCuposEnActividades(){
             cout << "----------------------------------------" << endl;
         }
     }
-
-    system("pause");
+    rlutil::setColor(rlutil::BLACK);
+    rlutil::anykey();
 }
 void ManagerInformes::ListarDeudores(){
+    rlutil::cls();
     ArchivoSocio archSocio;
     ArchivoCobro archCobro;
     ArchivoInscripcion archIns;//instanciamos los archivos.
     Fecha ultimoPago;
     int totalSocios = archSocio.getCantidadRegistros();//agarramos la cantidad de socios.
     int totalInscripciones = archIns.getCantidadRegistros();
+    rlutil::setColor(rlutil::LIGHTMAGENTA);
     if(totalSocios==0){
         cout << "No hay socios cargados." << endl;
-        system("pause");
+        rlutil::anykey();
         return;
     }
     if(totalInscripciones == 0){
         cout<<"No hay inscripciones cargadas. No se puede generar el reporte de deudores."<<endl;
-        system("pause");
+        rlutil::anykey();
         return;
     }
     Fecha hoy;//instanciamos la fecha para sacar el dia de hoy.
     hoy.hoy();//utilizamos la funcion para eso de arriba.
 
-    cout << "-------------------------------------------" << endl;
-    cout <<" LISTADO DE DEUDORES AL ";
+    cout << "--------------------------------------------------------------------------------" << endl;
+    cout << "                       LISTADO DE DEUDORES AL ";
     hoy.mostrar();
-    cout << "-------------------------------------------" << endl;
+    cout << "--------------------------------------------------------------------------------" << endl;
 
     bool hayDeudores = false;
 
@@ -206,9 +214,11 @@ void ManagerInformes::ListarDeudores(){
         }
     }
     if(!hayDeudores) cout<<"No hay deudores actualmente."<<endl;
-    system("pause");
+    rlutil::setColor(rlutil::BLACK);
+    rlutil::anykey();
 }
 void ManagerInformes::ListarCobros(){
+    rlutil::cls();
     ArchivoCobro archivo;
     ArchivoInscripcion inscArchivo;
     ArchivoSocio socArchivo;
@@ -241,8 +251,12 @@ void ManagerInformes::ListarCobros(){
             continue;
         }
     }
+    rlutil::cls();
+    rlutil::setColor(rlutil::LIGHTMAGENTA);
+    cout << "--------------------------------------------------------------------------------" << endl;
+    cout << "                  LISTADO DE COBROS AL "<< mes << "/" << anio <<"               " << endl;
+    cout << "--------------------------------------------------------------------------------" << endl;
 
-    cout<<"----------- LISTADO DE COBROS AL "<< mes << "/" << anio <<" -----------"<<endl;
     if (cantidad == 0) {
         cout << "No hay cobros registrados." << endl;
         return;
@@ -267,7 +281,7 @@ void ManagerInformes::ListarCobros(){
 
         cout << "No hay cobros en ese periodo" << endl;
     }
-
-    system ("Pause");
+    rlutil::setColor(rlutil::BLACK);
+    rlutil::anykey();
 
 }

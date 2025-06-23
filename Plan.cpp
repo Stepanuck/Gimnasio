@@ -126,6 +126,6 @@ void Plan::MostrarPlan(){
         }
     }
     cout << "Valor del Plan: $" << getArancel() << endl;
-    cout << "------------------------------------------"<< endl;
+
 
 }

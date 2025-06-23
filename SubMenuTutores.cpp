@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "rlutil.h"
 #include "Menu.h"
 #include "ManagerTutor.h"
 #include "SubMenuTutores.h"
@@ -28,41 +29,41 @@ int SubMenuTutores::EjecutarSubMenuTutores(){
     mTutor.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
 
     while(true){
-        system("cls");
+        rlutil::cls();
         mTutor.Mostrar();
 
         switch(mTutor.SeleccionarOpcion()){
         case 1:
             mTut.altaTutor();
-            system("Pause");
+            rlutil::anykey();
             break;
         case 2:
             mTut.modificarTutor();
-            system("Pause");
+            rlutil::anykey();
             break;
         case 3:
             mTut.listarTodosLosTutores();
-            system("Pause");
+            rlutil::anykey();
            break;
         case 4:
             mTut.listarTutoresInactivos();
-            system("Pause");
+            rlutil::anykey();
             break;
         case 5:
             mTut.listarTutoresActivos();
-            system("Pause");
+            rlutil::anykey();
             break;
         case 6:
             mTut.buscarTutor();
-            system("Pause");
+            rlutil::anykey();
             break;
         case 7:
             mTut.altaLogicoTutor();
-            system("Pause");
+            rlutil::anykey();
             break;
         case 8:
             mTut.eliminarLogicoTutor();
-            system("Pause");
+            rlutil::anykey();
             break;
         case 0: return 0;
             break;

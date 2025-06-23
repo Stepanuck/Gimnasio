@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "rlutil.h"
 #include "Menu.h"
 #include "SubMenuActividades.h"
 #include "ManagerActividad.h"
@@ -22,14 +23,14 @@ int SubMenuActividades::EjecutarSubMenuActividades(){
     mActividad.CargarOpciones("CARGAR ACTIVIDAD");
     mActividad.CargarOpciones("MODIFICAR ACTIVIDAD");
     mActividad.CargarOpciones("LISTAR ACTIVIDADES ACTIVAS");
-    mActividad.CargarOpciones("LISTAR ACTIVIDADES TODAS");
+    mActividad.CargarOpciones("LISTAR TODAS LAS ACTIVIDADES");
     mActividad.CargarOpciones("BUSCAR ACTIVIDAD");
     mActividad.CargarOpciones("DAR DE ALTA NUEVAMENTE UNA ACTIVIDAD");
     mActividad.CargarOpciones("ELIMINAR ACTIVIDAD");
     mActividad.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
 
     while(true){
-        system("cls");
+        rlutil::cls();
         mActividad.Mostrar();
 
         switch(mActividad.SeleccionarOpcion()){

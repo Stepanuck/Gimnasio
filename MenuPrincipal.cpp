@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "rlutil.h"
 #include "Menu.h"
 #include "MenuPrincipal.h"
 #include "SubMenuSocios.h"
@@ -39,7 +40,9 @@ int MenuPrincipal::EjecutarMenuPrincipal() {
     menuGimnacio.CargarOpciones("FIN DEL PROGRAMA");
 
     while(true) {
-        system("cls");
+
+        rlutil::cls();
+
         menuGimnacio.Mostrar();
 
         switch(menuGimnacio.SeleccionarOpcion()) {

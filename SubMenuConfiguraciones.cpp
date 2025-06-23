@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "rlutil.h"
 #include "Menu.h"
 #include "SubMenuConfiguraciones.h"
 #include "ManagerConfiguracion.h"
@@ -23,17 +24,17 @@ int SubMenuConfiguraciones::EjecutarSubMenuConfiguraciones(){
     mConfiguracion.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
 
     while(true){
-        system("cls");
+        rlutil::cls();
         mConfiguracion.Mostrar();
 
         switch(mConfiguracion.SeleccionarOpcion()){
         case 1:
             ManagerConfiguracion::backupCompleto();
-            system("pause");
+            rlutil::anykey();
             break;
         case 2:
             ManagerConfiguracion::restoreCompleto();
-            system("pause");
+            rlutil::anykey();
             break;
         case 0: return 0;
             break;

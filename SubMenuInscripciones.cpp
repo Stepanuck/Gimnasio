@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "rlutil.h"
 #include "Menu.h"
 #include "SubMenuInscripciones.h"
 #include "ManagerInscripcion.h"
@@ -27,7 +28,7 @@ int SubMenuInscripciones::EjecutarSubMenuInscripciones(){
     mInscripcion.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
 
     while(true){
-        system("cls");
+        rlutil::cls();
         mInscripcion.Mostrar();
 
         switch(mInscripcion.SeleccionarOpcion()){

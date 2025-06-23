@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "rlutil.h"
 #include "ManagerActividad.h"
 #include "Actividad.h"
 #include "Horario.h"
@@ -14,7 +15,7 @@
 using namespace std;
 
 void ManagerActividad::CargarActividad(){
-
+    rlutil::cls();
     ArchivoActividad Archivo;
     Actividad Act, ActGuardada;
     int idActividad;
@@ -25,6 +26,9 @@ void ManagerActividad::CargarActividad(){
     int idTutorACargo;
     bool estado;
     int cantReg=Archivo.getCantidadRegistros();
+    cout << "---------------------------------------" << endl;
+    cout << "            ALTA ACTIVIDAD             " << endl;
+    cout << "---------------------------------------" << endl;
 
     if(cantReg>0){
 
@@ -99,13 +103,17 @@ void ManagerActividad::CargarActividad(){
         cout << "Actividad existente en ese Dia y Horario" << endl;
 
     }
-    system("pause");
+    rlutil::anykey();
 
 
 }
 void ManagerActividad::ListarActividadesaActivas(){
+    rlutil::cls();
     Actividad Act;
     ArchivoActividad Archivo;
+    cout << "---------------------------------------" << endl;
+    cout << "       LISTAR ACTIVIDADES ACTIVAS      " << endl;
+    cout << "---------------------------------------" << endl;
 
     int cantidadRegistros=Archivo.getCantidadRegistros();
 
@@ -119,13 +127,17 @@ void ManagerActividad::ListarActividadesaActivas(){
 
         }
     }
-    system("pause");
+    rlutil::anykey();
 
 }
 void ManagerActividad::ListarTodas(){
+    rlutil::cls();
     Actividad Act;
     ArchivoActividad Archivo;
     int cantidadRegistros=Archivo.getCantidadRegistros();
+    cout << "---------------------------------------" << endl;
+    cout << "       LISTAR TODAS LAS ACTIVIDADES     " << endl;
+    cout << "---------------------------------------" << endl;
 
     for(int i=0; i<cantidadRegistros; i++){
 
@@ -135,7 +147,7 @@ void ManagerActividad::ListarTodas(){
 
 
     }
-    system("pause");
+    rlutil::anykey();
 
 }
 void ManagerActividad::ModificarActividad(){
@@ -149,15 +161,19 @@ void ManagerActividad::ModificarActividad(){
     submenu.CargarOpciones("REGRESAR");
     bool band=false;
     do{
-        system("cls");
+        rlutil::cls();
         submenu.Mostrar();
 
         switch(submenu.SeleccionarOpcion()){
         case 1:{
+            rlutil::cls();
             int id, posicion;
             char nombre[20];
             ArchivoActividad Archivo;
             Actividad Act, ActGuardada;
+            cout << "---------------------------------------" << endl;
+            cout << "           MODIFICAR ACTIVIDAD         " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID de la Actividad a modificar: ";
             cin >> id;
@@ -216,14 +232,18 @@ void ManagerActividad::ModificarActividad(){
                         cout << "El archivo no fue encontrado." << endl;
                     }
             }
-            system("pause");
+            rlutil::anykey();
             break;
         }
         case 2:{
+            rlutil::cls();
             int id, posicion;
             char diaDeLaSemana[10];
             ArchivoActividad Archivo;
             Actividad Act, ActGuardada;
+            cout << "---------------------------------------" << endl;
+            cout << "           MODIFICAR ACTIVIDAD         " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID de la Actividad a modificar: ";
             cin >> id;
@@ -282,14 +302,18 @@ void ManagerActividad::ModificarActividad(){
                         cout << "El archivo no fue encontrado." << endl;
                     }
             }
-            system("pause");
+            rlutil::anykey();
             break;
         }
         case 3:{
+            rlutil::cls();
             int id, posicion;
             Horario horarioActividad;
             ArchivoActividad Archivo;
             Actividad Act, ActGuardada;
+            cout << "---------------------------------------" << endl;
+            cout << "           MODIFICAR ACTIVIDAD         " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID de la Actividad a modificar: ";
             cin >> id;
@@ -348,14 +372,18 @@ void ManagerActividad::ModificarActividad(){
                         cout << "El archivo no fue encontrado." << endl;
                     }
             }
-            system("pause");
+            rlutil::anykey();
             break;
         }
         case 4:{
+            rlutil::cls();
             int id, posicion;
             int cuposDisponibles;
             ArchivoActividad Archivo;
             Actividad Act, ActGuardada;
+            cout << "---------------------------------------" << endl;
+            cout << "           MODIFICAR ACTIVIDAD         " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID de la Actividad a modificar: ";
             cin >> id;
@@ -414,14 +442,18 @@ void ManagerActividad::ModificarActividad(){
                         cout << "El archivo no fue encontrado." << endl;
                     }
             }
-            system("pause");
+            rlutil::anykey();
             break;
         }
         case 5:{
+            rlutil::cls();
             int id, posicion;
             int idTutorACargo;
             ArchivoActividad Archivo;
             Actividad Act, ActGuardada;
+            cout << "---------------------------------------" << endl;
+            cout << "           MODIFICAR ACTIVIDAD         " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID de la Actividad a modificar: ";
             cin >> id;
@@ -495,7 +527,7 @@ void ManagerActividad::ModificarActividad(){
                         cout << "El archivo no fue encontrado." << endl;
                     }
             }
-            system("pause");
+            rlutil::anykey();
             break;
         }
         case 0: band=true;
@@ -507,10 +539,14 @@ void ManagerActividad::ModificarActividad(){
 
 }
 void ManagerActividad::EliminarActividad(){
+            rlutil::cls();
             int id, posicion;
             bool estado;
             ArchivoActividad Archivo;
             Actividad Act;
+            cout << "---------------------------------------" << endl;
+            cout << "           ELIMINAR ACTIVIDAD          " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID de la Actividad a Eliminar: ";
             cin >> id;
@@ -545,14 +581,18 @@ void ManagerActividad::EliminarActividad(){
                         cout << "El archivo no fue encontrado." << endl;
                     }
             }
-            system("pause");
+            rlutil::anykey();
 
 }
- void ManagerActividad::altaLogica(){
+void ManagerActividad::altaLogica(){
+            rlutil::cls();
             int id, posicion;
             bool estado;
             ArchivoActividad Archivo;
             Actividad Act;
+            cout << "---------------------------------------" << endl;
+            cout << "  DAR DE ALTA NUEVAMENTE UNA ACTIVIDAD " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID de la Actividad a dar alta: ";
             cin >> id;
@@ -587,7 +627,7 @@ void ManagerActividad::EliminarActividad(){
                         cout << "El archivo no fue encontrado." << endl;
                     }
             }
-            system("pause");
+            rlutil::anykey();
 
 }
 void ManagerActividad::BuscarActividad(){
@@ -599,14 +639,18 @@ void ManagerActividad::BuscarActividad(){
     submenu.CargarOpciones("REGRESAR");
     bool band=false;
     do{
-        system("cls");
+        rlutil::cls();
         submenu.Mostrar();
 
         switch(submenu.SeleccionarOpcion()){
         case 1:{
+            rlutil::cls();
             int id, posicion;
             ArchivoActividad Archivo;
             Actividad Act;
+            cout << "---------------------------------------" << endl;
+            cout << "            BUSCAR ACTIVIDAD           " << endl;
+            cout << "---------------------------------------" << endl;
 
             cout << "Ingresar ID Actividad a buscar: ";
             cin >> id;
@@ -618,16 +662,20 @@ void ManagerActividad::BuscarActividad(){
 
             Act.MostrarActividad();
 
-            system("pause");
+            rlutil::anykey();
 
             break;
         }
         case 2:{
+            rlutil::cls();
             char nombre[20];
             ArchivoActividad Archivo;
             Actividad Act;
             int cantReg=Archivo.getCantidadRegistros();
             bool band=false;
+            cout << "---------------------------------------" << endl;
+            cout << "            BUSCAR ACTIVIDAD           " << endl;
+            cout << "---------------------------------------" << endl;
 
             cin.ignore();
             cout << "Ingresar Nombre Actividad a buscar: ";
@@ -647,15 +695,19 @@ void ManagerActividad::BuscarActividad(){
             if(!band){
                 cout << "No se encontraron Actividades con ese nombre." << endl;
             }
-            system("pause");
+            rlutil::anykey();
             break;
         }
         case 3:{
+            rlutil::cls();
             char diaDeLaSemana[10];
             ArchivoActividad Archivo;
             Actividad Act;
             int cantReg=Archivo.getCantidadRegistros();
             bool band=false;
+            cout << "---------------------------------------" << endl;
+            cout << "            BUSCAR ACTIVIDAD           " << endl;
+            cout << "---------------------------------------" << endl;
 
             cin.ignore();
             cout << "Ingresar dia de la semana: ";
@@ -675,7 +727,7 @@ void ManagerActividad::BuscarActividad(){
             if(!band){
                 cout << "No se encontraron Actividades en ese dia de la semana." << endl;
             }
-            system("pause");
+            rlutil::anykey();
 
             break;
         }

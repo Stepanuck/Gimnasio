@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include "rlutil.h"
 #include "Menu.h"
 #include "SubMenuPlanes.h"
 #include "ManagerPlan.h"
@@ -29,7 +30,7 @@ int SubMenuPlanes::EjecutarSubMenuPlanes(){
     mPlan.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
 
     while(true){
-        system("cls");
+        rlutil::cls();
         mPlan.Mostrar();
 
         switch(mPlan.SeleccionarOpcion()){
