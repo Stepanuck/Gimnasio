@@ -547,8 +547,47 @@ void ManagerActividad::EliminarActividad(){
             }
             system("pause");
 
+}
+ void ManagerActividad::altaLogica(){
+            int id, posicion;
+            bool estado;
+            ArchivoActividad Archivo;
+            Actividad Act;
+
+            cout << "Ingresar ID de la Actividad a dar alta: ";
+            cin >> id;
 
 
+            posicion=Archivo.buscarActividad(id);
+
+            if(posicion>=0){
+
+                Act=Archivo.leer(posicion);
+
+                estado=true;
+
+                Act.setEstado(estado);
+
+
+                if(Archivo.modificarActividad(Act,posicion)!=-1){
+
+                    cout << "El registro se dio de alta correctamene" << endl;
+
+                }
+                else{
+
+                    cout << "No se pudo dar de alta" << endl;
+                }
+            }
+            else{
+                    if (posicion == -1){
+                        cout << "No existe el ID de la Actividad a dar de alta." << endl;
+                    }
+                    else if (posicion == -2){
+                        cout << "El archivo no fue encontrado." << endl;
+                    }
+            }
+            system("pause");
 
 }
 void ManagerActividad::BuscarActividad(){

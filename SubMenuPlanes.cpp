@@ -24,6 +24,7 @@ int SubMenuPlanes::EjecutarSubMenuPlanes(){
     mPlan.CargarOpciones("LISTAR PLANES ACTIVOS");
     mPlan.CargarOpciones("LISTAR TODOS LOS PLANES");
     mPlan.CargarOpciones("BUSCAR PLAN");
+    mPlan.CargarOpciones("DAR DE ALTA NUEVAMENTE UN PLAN");
     mPlan.CargarOpciones("ELIMINAR PLAN");
     mPlan.CargarOpciones("REGRESAR AL MENU PRINCIPAL");
 
@@ -42,7 +43,10 @@ int SubMenuPlanes::EjecutarSubMenuPlanes(){
            break;
         case 5:managerPlan.BuscarPlan();
             break;
-        case 6:managerPlan.EliminarPlan();
+        case 6:
+            managerPlan.altaLogicaPlan();
+            break;
+        case 7:managerPlan.EliminarPlan();
             break;
         case 0: return 0;
             break;

@@ -15,7 +15,6 @@ public:
     bool listarRegistros();
     int getCantidadRegistros();
     int modificarActividad(Actividad act, int pos);
-    bool bajaLogica(int idActividad);
-    bool altaLogica(int idActividad);
+
 };
 

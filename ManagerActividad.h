@@ -14,5 +14,5 @@ public:
     void EliminarActividad();
     void BuscarActividad();
     void detallesCuposEnActividades();
-
+    void altaLogica();
 };

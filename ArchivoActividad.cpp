@@ -93,28 +93,6 @@ using namespace std;
         return -1;
     }
 
-    /*bool ArchivoActividad::altaLogica(int idActividad){
-        Actividad act;
-        ArchivoActividad archiv("Actvidad.dat");
-        int pos = archiv.buscarActividad(idActividad);
-        if(pos==-1)return false;
-        act=archiv.leer(pos);
-        act.setEstado(true);
-        return archiv.modificarActividad(act, pos);
-    }
-
-    bool ArchivoActividad::bajaLogica(int idActividad){
-        Actividad act;
-        ArchivoActividad archiv;
-        int pos = archiv.buscarActividad(idActividad);
-        if(pos==-1) return false;
-        act=archiv.leer(pos);
-        act.setEstado(false);
-        return archiv.modificarActividad(act, pos);
-    }
-*/
-
-
 
 
 
