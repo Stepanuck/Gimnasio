@@ -73,7 +73,7 @@ using namespace std;
     restoreArchivo("Tutor.bkp", "Tutor.dat");
     restoreArchivo("Plan.bkp", "Plan.dat");
     restoreArchivo("Actividad.bkp", "Actividad.dat");
-    restoreArchivo("Inscripcion.bkp", "Inscripcion.dat");
+    restoreArchivo("Inscripciones.bkp", "Inscripciones.dat");
     restoreArchivo("Cobro.bkp", "Cobro.dat");
     cout << "Restauración completa realizada!" << endl;
 }
