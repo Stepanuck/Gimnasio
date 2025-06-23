@@ -102,18 +102,14 @@ void ManagerInscripcion::CargarInscripcion()
                     break;
                 }
     }
-        if(!restarCuposPorPlan(idPlan)){
-            cout<<"Inscripcion cancelada: Faltan cupos en alguna actividad."<<endl;
-            system("Pause");
-            return;
-        }
+
     if(!existe)
     {
         //creamos la inscripcion y la guardamos
         Inscripcion insc(idInscripcion, idSocio, idPlan, fechaPago, fechaFin, true);
         if(archivoIns.agregarRegistro(insc) != -1)
         {
-            cout << "Inscripcin guardada correctamente. Generando cobro..." << endl;
+            cout << "Inscripcion guardada correctamente. Generando cobro..." << endl;
 
             // Obtenemos el valor del plan
             Plan p = archivoPlan.buscarPlan(idPlan);
