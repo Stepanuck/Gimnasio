@@ -13,7 +13,7 @@ using namespace std;
 
 int main()
 {
-    rlutil::setBackgroundColor(rlutil::LIGHTBLUE);
+    rlutil::setBackgroundColor(rlutil::YELLOW);
     rlutil::setColor(rlutil::BLACK);
     MenuPrincipal MenuGimnasio;
     MenuGimnasio.EjecutarMenuPrincipal();
