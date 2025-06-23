@@ -576,42 +576,7 @@ void ManagerInscripcion::BuscarInscripcion(){
 
 }
 
-bool ManagerInscripcion::restarCuposPorPlan(int idPlan){
-    ArchivoPlan archPlan;//instanciamos el archivo
-    Plan plan = archPlan.buscarPlan(idPlan);//obtenemos el plan
-    ArchivoActividad archAct;//instanciamos el archivo
 
-    bool todasConCupo = true;//esto es para comprobar todas las actividades tengan cupo disponible
-    for (int i = 0; i<5; i++){//recorremos el plan
-        int idAct = plan.getIdActividadesIncluidas(i);//obtenemos los id de las actividades
-        if(idAct>0){//sii es mayor a 0 buscamos la posicion
-            int posAct = archAct.buscarActividad(idAct);//
-            if(posAct>0){//si la actividad existe
-                Actividad act = archAct.leer(posAct);//la leo
-                if(act.getCuposDisponibles()<=0){//si no hay cupos disponibles lo decimos y ponemos la bandera en false
-                    cout<<"No hay cupos disponibles en la actividad "<<act.getNombre()<<" ID: "<<idAct<<endl;
-                    todasConCupo = false;
-                }
-            }
-        }
-    }
-        if(!todasConCupo){//cuando alguna actividad le falte cupos retornamos en false
-            return false;
-        }
-    //esto es ya para hacer la resta
-    for(int i=0;i<5;i++){//recorremos la actividades
-        int idAct = plan.getIdActividadesIncluidas(i);///recuperamos los id
-        if(idAct>0){//existen obtenemos su posicion
-            int posAct = archAct.buscarActividad(idAct);
-            if(posAct > 0){//las leemos
-                Actividad act = archAct.leer(posAct);
-                act.setCuposDisponibles(act.getCuposDisponibles()-1);//y a los cuposdisponibles les restamos 1
-                archAct.modificarActividad(act,posAct);//modificamos el archivo
-            }
-        }
-    }
-    return true;//una vvez todo ok, retornamos true.
-}
 void ManagerInscripcion::actualizarEstados(){
     ArchivoInscripcion archIns;//instanciamos el archivo
     int total = archIns.getCantidadRegistros();//obtenemos todos los registros
